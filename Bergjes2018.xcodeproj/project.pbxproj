@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A1771ED2095FF29005B83BA /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1771EC2095FF29005B83BA /* GameManager.swift */; };
+		9A1771F02095FFA0005B83BA /* GameLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1771EF2095FFA0005B83BA /* GameLocation.swift */; };
+		9A1771F22096023E005B83BA /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1771F12096023E005B83BA /* DistanceCalculator.swift */; };
+		9A1771F420960C09005B83BA /* RugzakTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1771F320960C09005B83BA /* RugzakTableViewCell.swift */; };
+		9A72BB91209DBFE7006F417D /* Location Start.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB8E209DBFE6006F417D /* Location Start.gpx */; };
+		9A72BB92209DBFE7006F417D /* All Game Locations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */; };
+		9A72BB93209DBFE7006F417D /* Location Boom.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB90209DBFE7006F417D /* Location Boom.gpx */; };
+		9A72BB95209DCB69006F417D /* Location Kloofrand.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB94209DCB69006F417D /* Location Kloofrand.gpx */; };
+		9A72BB9D209DEBEB006F417D /* Location Moeras.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB97209DEBEB006F417D /* Location Moeras.gpx */; };
+		9A72BB9E209DEBEB006F417D /* Location Kloofbodem.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB98209DEBEB006F417D /* Location Kloofbodem.gpx */; };
+		9A72BB9F209DEBEB006F417D /* Location Rivier.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB99209DEBEB006F417D /* Location Rivier.gpx */; };
+		9A72BBA0209DEBEB006F417D /* Location Hut.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB9A209DEBEB006F417D /* Location Hut.gpx */; };
+		9A72BBA1209DEBEB006F417D /* Location Koopman.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB9B209DEBEB006F417D /* Location Koopman.gpx */; };
+		9A72BBA2209DEBEB006F417D /* Location Berg.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB9C209DEBEB006F417D /* Location Berg.gpx */; };
+		9A72BBA4209DF843006F417D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72BBA3209DF843006F417D /* Utility.swift */; };
 		9AB1BF4F2095E4FF00B4B413 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB1BF4E2095E4FF00B4B413 /* AppDelegate.swift */; };
 		9AB1BF512095E4FF00B4B413 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB1BF502095E4FF00B4B413 /* ViewController.swift */; };
 		9AB1BF542095E4FF00B4B413 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AB1BF522095E4FF00B4B413 /* Main.storyboard */; };
@@ -14,6 +29,9 @@
 		9AB1BF592095E50000B4B413 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AB1BF572095E50000B4B413 /* LaunchScreen.storyboard */; };
 		9AB1BF642095E50000B4B413 /* Bergjes2018Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB1BF632095E50000B4B413 /* Bergjes2018Tests.swift */; };
 		9AB1BF6F2095E50000B4B413 /* Bergjes2018UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB1BF6E2095E50000B4B413 /* Bergjes2018UITests.swift */; };
+		9AB1BF7D2095E60B00B4B413 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9AB1BF7C2095E60B00B4B413 /* Podfile */; };
+		9AB579892095FB570056AB6C /* RugzakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB579882095FB570056AB6C /* RugzakViewController.swift */; };
+		C8F8647BFA213B2561BAC12B /* libPods-Bergjes2018.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81311F7421D0202F83295305 /* libPods-Bergjes2018.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +52,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		684415749BBBC46CF7245397 /* Pods-Bergjes2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bergjes2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bergjes2018/Pods-Bergjes2018.debug.xcconfig"; sourceTree = "<group>"; };
+		81311F7421D0202F83295305 /* libPods-Bergjes2018.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bergjes2018.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A1771EC2095FF29005B83BA /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		9A1771EF2095FFA0005B83BA /* GameLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLocation.swift; sourceTree = "<group>"; };
+		9A1771F12096023E005B83BA /* DistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
+		9A1771F320960C09005B83BA /* RugzakTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RugzakTableViewCell.swift; sourceTree = "<group>"; };
+		9A72BB8E209DBFE6006F417D /* Location Start.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Start.gpx"; sourceTree = "<group>"; };
+		9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "All Game Locations.gpx"; sourceTree = "<group>"; };
+		9A72BB90209DBFE7006F417D /* Location Boom.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Boom.gpx"; sourceTree = "<group>"; };
+		9A72BB94209DCB69006F417D /* Location Kloofrand.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Kloofrand.gpx"; sourceTree = "<group>"; };
+		9A72BB97209DEBEB006F417D /* Location Moeras.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Moeras.gpx"; sourceTree = "<group>"; };
+		9A72BB98209DEBEB006F417D /* Location Kloofbodem.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Kloofbodem.gpx"; sourceTree = "<group>"; };
+		9A72BB99209DEBEB006F417D /* Location Rivier.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Rivier.gpx"; sourceTree = "<group>"; };
+		9A72BB9A209DEBEB006F417D /* Location Hut.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Hut.gpx"; sourceTree = "<group>"; };
+		9A72BB9B209DEBEB006F417D /* Location Koopman.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Koopman.gpx"; sourceTree = "<group>"; };
+		9A72BB9C209DEBEB006F417D /* Location Berg.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Berg.gpx"; sourceTree = "<group>"; };
+		9A72BBA3209DF843006F417D /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		9AB1BF4B2095E4FE00B4B413 /* Bergjes2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bergjes2018.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AB1BF4E2095E4FF00B4B413 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AB1BF502095E4FF00B4B413 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +82,9 @@
 		9AB1BF6A2095E50000B4B413 /* Bergjes2018UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bergjes2018UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AB1BF6E2095E50000B4B413 /* Bergjes2018UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bergjes2018UITests.swift; sourceTree = "<group>"; };
 		9AB1BF702095E50000B4B413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AB1BF7C2095E60B00B4B413 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		9AB579882095FB570056AB6C /* RugzakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RugzakViewController.swift; sourceTree = "<group>"; };
+		EE8165650147B17319E3CAE8 /* Pods-Bergjes2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bergjes2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bergjes2018/Pods-Bergjes2018.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8F8647BFA213B2561BAC12B /* libPods-Bergjes2018.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,13 +113,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0184C3BBDA131EAD671DBF86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81311F7421D0202F83295305 /* libPods-Bergjes2018.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		534B1AF0768EB7FC7E1172F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				684415749BBBC46CF7245397 /* Pods-Bergjes2018.debug.xcconfig */,
+				EE8165650147B17319E3CAE8 /* Pods-Bergjes2018.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9A1771EE2095FF85005B83BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A1771EF2095FFA0005B83BA /* GameLocation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A72BB96209DEB23006F417D /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				9A72BB9C209DEBEB006F417D /* Location Berg.gpx */,
+				9A72BB9A209DEBEB006F417D /* Location Hut.gpx */,
+				9A72BB98209DEBEB006F417D /* Location Kloofbodem.gpx */,
+				9A72BB9B209DEBEB006F417D /* Location Koopman.gpx */,
+				9A72BB97209DEBEB006F417D /* Location Moeras.gpx */,
+				9A72BB99209DEBEB006F417D /* Location Rivier.gpx */,
+				9A72BB94209DCB69006F417D /* Location Kloofrand.gpx */,
+				9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */,
+				9A72BB90209DBFE7006F417D /* Location Boom.gpx */,
+				9A72BB8E209DBFE6006F417D /* Location Start.gpx */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
 		9AB1BF422095E4FE00B4B413 = {
 			isa = PBXGroup;
 			children = (
+				9A72BB96209DEB23006F417D /* Locations */,
+				9AB1BF7C2095E60B00B4B413 /* Podfile */,
 				9AB1BF4D2095E4FF00B4B413 /* Bergjes2018 */,
 				9AB1BF622095E50000B4B413 /* Bergjes2018Tests */,
 				9AB1BF6D2095E50000B4B413 /* Bergjes2018UITests */,
 				9AB1BF4C2095E4FE00B4B413 /* Products */,
+				534B1AF0768EB7FC7E1172F9 /* Pods */,
+				0184C3BBDA131EAD671DBF86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +182,18 @@
 		9AB1BF4D2095E4FF00B4B413 /* Bergjes2018 */ = {
 			isa = PBXGroup;
 			children = (
+				9A1771EE2095FF85005B83BA /* Model */,
 				9AB1BF4E2095E4FF00B4B413 /* AppDelegate.swift */,
 				9AB1BF502095E4FF00B4B413 /* ViewController.swift */,
 				9AB1BF522095E4FF00B4B413 /* Main.storyboard */,
 				9AB1BF552095E50000B4B413 /* Assets.xcassets */,
 				9AB1BF572095E50000B4B413 /* LaunchScreen.storyboard */,
 				9AB1BF5A2095E50000B4B413 /* Info.plist */,
+				9AB579882095FB570056AB6C /* RugzakViewController.swift */,
+				9A1771EC2095FF29005B83BA /* GameManager.swift */,
+				9A1771F12096023E005B83BA /* DistanceCalculator.swift */,
+				9A1771F320960C09005B83BA /* RugzakTableViewCell.swift */,
+				9A72BBA3209DF843006F417D /* Utility.swift */,
 			);
 			path = Bergjes2018;
 			sourceTree = "<group>";
@@ -132,9 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9AB1BF732095E50000B4B413 /* Build configuration list for PBXNativeTarget "Bergjes2018" */;
 			buildPhases = (
+				E88579F7523A92DC21D6CD6D /* [CP] Check Pods Manifest.lock */,
 				9AB1BF472095E4FE00B4B413 /* Sources */,
 				9AB1BF482095E4FE00B4B413 /* Frameworks */,
 				9AB1BF492095E4FE00B4B413 /* Resources */,
+				F678D29E88A96F4DFDFCC2F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,7 +323,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AB1BF592095E50000B4B413 /* LaunchScreen.storyboard in Resources */,
+				9A72BB9E209DEBEB006F417D /* Location Kloofbodem.gpx in Resources */,
 				9AB1BF562095E50000B4B413 /* Assets.xcassets in Resources */,
+				9A72BB93209DBFE7006F417D /* Location Boom.gpx in Resources */,
+				9A72BBA1209DEBEB006F417D /* Location Koopman.gpx in Resources */,
+				9A72BBA2209DEBEB006F417D /* Location Berg.gpx in Resources */,
+				9A72BB9D209DEBEB006F417D /* Location Moeras.gpx in Resources */,
+				9A72BB9F209DEBEB006F417D /* Location Rivier.gpx in Resources */,
+				9AB1BF7D2095E60B00B4B413 /* Podfile in Resources */,
+				9A72BBA0209DEBEB006F417D /* Location Hut.gpx in Resources */,
+				9A72BB95209DCB69006F417D /* Location Kloofrand.gpx in Resources */,
+				9A72BB91209DBFE7006F417D /* Location Start.gpx in Resources */,
+				9A72BB92209DBFE7006F417D /* All Game Locations.gpx in Resources */,
 				9AB1BF542095E4FF00B4B413 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,13 +355,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E88579F7523A92DC21D6CD6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bergjes2018-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F678D29E88A96F4DFDFCC2F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Bergjes2018/Pods-Bergjes2018-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bergjes2018/Pods-Bergjes2018-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9AB1BF472095E4FE00B4B413 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1771F22096023E005B83BA /* DistanceCalculator.swift in Sources */,
 				9AB1BF512095E4FF00B4B413 /* ViewController.swift in Sources */,
+				9A1771ED2095FF29005B83BA /* GameManager.swift in Sources */,
+				9A1771F02095FFA0005B83BA /* GameLocation.swift in Sources */,
+				9A72BBA4209DF843006F417D /* Utility.swift in Sources */,
 				9AB1BF4F2095E4FF00B4B413 /* AppDelegate.swift in Sources */,
+				9A1771F420960C09005B83BA /* RugzakTableViewCell.swift in Sources */,
+				9AB579892095FB570056AB6C /* RugzakViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +579,7 @@
 		};
 		9AB1BF742095E50000B4B413 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 684415749BBBC46CF7245397 /* Pods-Bergjes2018.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +598,7 @@
 		};
 		9AB1BF752095E50000B4B413 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE8165650147B17319E3CAE8 /* Pods-Bergjes2018.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

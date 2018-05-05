@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,122 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bergjes2018" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNr-PT-Hwu" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzr-Rh-gdK">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Rugzak" id="chI-e6-ar8">
+                                        <connections>
+                                            <segue destination="80l-rL-0iY" kind="popoverPresentation" popoverAnchorBarButtonItem="chI-e6-ar8" id="q9i-e3-IcG">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tzr-Rh-gdK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1Sd-3j-cXX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tzr-Rh-gdK" secondAttribute="trailing" id="1St-MG-BMz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UNr-PT-Hwu" secondAttribute="trailing" id="Bl2-3k-oLH"/>
+                            <constraint firstItem="tzr-Rh-gdK" firstAttribute="top" secondItem="UNr-PT-Hwu" secondAttribute="bottom" id="Cdi-kz-yfh"/>
+                            <constraint firstItem="UNr-PT-Hwu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pat-JA-cjR"/>
+                            <constraint firstItem="UNr-PT-Hwu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aGJ-RQ-Uu6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tzr-Rh-gdK" secondAttribute="bottom" id="zFa-Bh-GF4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="UNr-PT-Hwu" id="gK7-yy-TTB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="122.78860569715144"/>
+        </scene>
+        <!--Rugzak View Controller-->
+        <scene sceneID="80j-yg-kx3">
+            <objects>
+                <viewController storyboardIdentifier="RugzakView" id="80l-rL-0iY" customClass="RugzakViewController" customModule="Bergjes2018" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GPg-mM-9OE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mef-Hx-gbN">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Close" id="Nnz-6o-r06">
+                                        <connections>
+                                            <action selector="close:" destination="80l-rL-0iY" id="pmS-Cb-2V6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-G7-vyj">
+                                <rect key="frame" x="16" y="20" width="343" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rugzakCell" id="fE7-Yn-f54" customClass="RugzakTableViewCell" customModule="Bergjes2018" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fE7-Yn-f54" id="ici-Dn-ImD">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="843-Ub-Tsw">
+                                                    <rect key="frame" x="67" y="11" width="269" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wall" highlightedImage="Wall" translatesAutoresizingMaskIntoConstraints="NO" id="nZv-GG-Cin">
+                                                    <rect key="frame" x="15" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="ude-9i-oKM"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="843-Ub-Tsw" firstAttribute="centerY" secondItem="ici-Dn-ImD" secondAttribute="centerY" id="8ks-HX-KCt"/>
+                                                <constraint firstItem="nZv-GG-Cin" firstAttribute="top" secondItem="ici-Dn-ImD" secondAttribute="top" id="GQj-Lw-HNP"/>
+                                                <constraint firstItem="nZv-GG-Cin" firstAttribute="leading" secondItem="ici-Dn-ImD" secondAttribute="leading" constant="15" id="Vsy-U9-F3e"/>
+                                                <constraint firstAttribute="bottom" secondItem="nZv-GG-Cin" secondAttribute="bottom" constant="-0.5" id="kG6-A9-IEt"/>
+                                                <constraint firstItem="843-Ub-Tsw" firstAttribute="leading" secondItem="nZv-GG-Cin" secondAttribute="trailing" constant="8" id="p5G-0d-Bu1"/>
+                                                <constraint firstAttribute="trailing" secondItem="843-Ub-Tsw" secondAttribute="trailing" constant="7" id="zqS-BI-9In"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="rugzakCellImage" destination="nZv-GG-Cin" id="AgZ-wW-VyD"/>
+                                            <outlet property="rugzakCellLabel" destination="843-Ub-Tsw" id="nLG-0u-KWx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Q6B-e0-zwu"/>
+                    </view>
+                    <connections>
+                        <outlet property="rugzakContents" destination="TzX-G7-vyj" id="TD1-s1-ex7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="db5-v6-5kY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="123"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Wall" width="64" height="64"/>
+    </resources>
 </document>
