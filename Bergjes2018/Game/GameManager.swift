@@ -21,18 +21,26 @@ class GameManager {
     var itemDescriptions: [String: String] = [:]
     var locationDescriptions: [String: String] = [:]
     
-    var inventoryManager: InventoryManager
+    var distanceCalculator = DistanceCalculator()
+    var inventoryManager = InventoryManager()
+    var locationManager =  LocationManager()
     
     private init() {
-        inventoryManager = InventoryManager()
         readPropertyList()
         
-        // Strocamp set
+        // Initialize when needed
+        if (locationManager.locations.count == 0) {
+            NSLog("Initializing persisted location list")
+            let locationList = GameSetupStrocamp.loadLocations().mapValues({
+                (gameLocation: GameLocation) -> Location in
+                return Location(name: gameLocation.name, visible: false, visited: false)
+            })
+            locationManager.reinitialize(locations: Array(locationList.values))
+        }
+
         locations = GameSetupStrocamp.loadLocations()
         inventory = inventoryManager.loadInventory(cleanInventory: GameSetupStrocamp.loadItems())
     }
-    
-    var distanceCalculator = DistanceCalculator()
     
     func retrieveVisibleLocations(curentLocationId: String?) -> [GameLocation] {
         if (curentLocationId == nil) {

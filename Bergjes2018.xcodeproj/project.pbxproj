@@ -14,6 +14,10 @@
 		9A3C083D209F3E9900D1B14D /* ManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C083C209F3E9900D1B14D /* ManagementViewController.swift */; };
 		9A3C083F209F4E2300D1B14D /* RugzakItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C083E209F4E2300D1B14D /* RugzakItemViewController.swift */; };
 		9A3C0843209F5A9E00D1B14D /* GameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A3C0842209F5A9E00D1B14D /* GameData.plist */; };
+		9A3C0847209F9B4200D1B14D /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C0846209F9B4200D1B14D /* PersistenceManager.swift */; };
+		9A3C084A209F9B8200D1B14D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C0849209F9B8200D1B14D /* Item.swift */; };
+		9A3C084C209F9C2A00D1B14D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C084B209F9C2A00D1B14D /* Location.swift */; };
+		9A3C084E209F9F5800D1B14D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C084D209F9F5800D1B14D /* LocationManager.swift */; };
 		9A72BB91209DBFE7006F417D /* Location Start.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB8E209DBFE6006F417D /* Location Start.gpx */; };
 		9A72BB92209DBFE7006F417D /* All Game Locations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */; };
 		9A72BB93209DBFE7006F417D /* Location Boom.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB90209DBFE7006F417D /* Location Boom.gpx */; };
@@ -67,6 +71,10 @@
 		9A3C083C209F3E9900D1B14D /* ManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementViewController.swift; sourceTree = "<group>"; };
 		9A3C083E209F4E2300D1B14D /* RugzakItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RugzakItemViewController.swift; sourceTree = "<group>"; };
 		9A3C0842209F5A9E00D1B14D /* GameData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GameData.plist; sourceTree = "<group>"; };
+		9A3C0846209F9B4200D1B14D /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		9A3C0849209F9B8200D1B14D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9A3C084B209F9C2A00D1B14D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		9A3C084D209F9F5800D1B14D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		9A72BB8E209DBFE6006F417D /* Location Start.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Start.gpx"; sourceTree = "<group>"; };
 		9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "All Game Locations.gpx"; sourceTree = "<group>"; };
 		9A72BB90209DBFE7006F417D /* Location Boom.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Boom.gpx"; sourceTree = "<group>"; };
@@ -159,6 +167,16 @@
 			path = Management;
 			sourceTree = "<group>";
 		};
+		9A3C0848209F9B6000D1B14D /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9A3C0846209F9B4200D1B14D /* PersistenceManager.swift */,
+				9A3C0849209F9B8200D1B14D /* Item.swift */,
+				9A3C084B209F9C2A00D1B14D /* Location.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		9A72BB96209DEB23006F417D /* Locations */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +212,7 @@
 				9A1771F12096023E005B83BA /* DistanceCalculator.swift */,
 				9A72BBA7209EFEDB006F417D /* GameSetupStrocamp.swift */,
 				9A72BBAB209F193F006F417D /* InventoryManager.swift */,
+				9A3C084D209F9F5800D1B14D /* LocationManager.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -225,6 +244,7 @@
 		9AB1BF4D2095E4FF00B4B413 /* Bergjes2018 */ = {
 			isa = PBXGroup;
 			children = (
+				9A3C0848209F9B6000D1B14D /* Persistence */,
 				9A3C083B209F3E8800D1B14D /* Management */,
 				9A72BBAA209F190F006F417D /* Game */,
 				9A72BBA9209F02D6006F417D /* Rugzak */,
@@ -445,7 +465,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A72BBA8209EFEDB006F417D /* GameSetupStrocamp.swift in Sources */,
+				9A3C084E209F9F5800D1B14D /* LocationManager.swift in Sources */,
 				9A3C083D209F3E9900D1B14D /* ManagementViewController.swift in Sources */,
+				9A3C084C209F9C2A00D1B14D /* Location.swift in Sources */,
 				9A1771F22096023E005B83BA /* DistanceCalculator.swift in Sources */,
 				9AB1BF512095E4FF00B4B413 /* ViewController.swift in Sources */,
 				9A1771ED2095FF29005B83BA /* GameManager.swift in Sources */,
@@ -454,9 +476,11 @@
 				9AB1BF4F2095E4FF00B4B413 /* AppDelegate.swift in Sources */,
 				9A3C083F209F4E2300D1B14D /* RugzakItemViewController.swift in Sources */,
 				9A1771F420960C09005B83BA /* RugzakTableViewCell.swift in Sources */,
+				9A3C084A209F9B8200D1B14D /* Item.swift in Sources */,
 				9AB579892095FB570056AB6C /* RugzakViewController.swift in Sources */,
 				9A72BBAC209F193F006F417D /* InventoryManager.swift in Sources */,
 				9A72BBA6209EFE51006F417D /* GameItem.swift in Sources */,
+				9A3C0847209F9B4200D1B14D /* PersistenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
