@@ -16,35 +16,20 @@ class GameManager {
     var delegate: GameManagerDelegate?
     
     var locations: [String: GameLocation] = [:]
+    var inventory: [GameItem] = []
+    
+    var itemDescriptions: [String: String] = [:]
+    var locationDescriptions: [String: String] = [:]
+    
+    var inventoryManager: InventoryManager
     
     private init() {
+        inventoryManager = InventoryManager()
+        readPropertyList()
+        
         // Strocamp set
-        locations["start"] = GameLocation(name: "start",
-                                          latitude: 52.034280, longitude: 5.151333)
-        locations["boom"] = GameLocation(name: "boom",
-                                         latitude: 52.034017, longitude: 5.150460,
-                                         imageReference: "Boom")
-        locations["houthakkershut"] =  GameLocation(name: "houthakkershut",
-                                                    latitude: 52.033655, longitude: 5.150145,
-                                                    imageReference: "Houthakkershut")
-        locations["koopman"] = GameLocation(name: "koopman",
-                                            latitude: 52.032535, longitude: 5.150588,
-                                            imageReference: "Koopman")
-        locations["rivier"] = GameLocation(name: "rivier",
-                                           latitude: 52.032490, longitude: 5.149937,
-                                           imageReference: "Rivier")
-        locations["kloofrand"] = GameLocation(name: "kloofrand",
-                                              latitude: 52.032730, longitude: 5.149270,
-                                              imageReference: "KloofRand")
-        locations["kloofbodem"] = GameLocation(name: "kloofbodem",
-                                               latitude: 52.033210, longitude: 5.149109,
-                                               imageReference: "KloofBodem")
-        locations["moeras"] = GameLocation(name: "moeras",
-                                           latitude: 52.033866, longitude: 5.148644,
-                                           imageReference: "Moeras")
-        locations["berg"] = GameLocation(name: "berg",
-                                         latitude: 52.033870, longitude: 5.149835,
-                                         imageReference: "Berg")
+        locations = GameSetupStrocamp.loadLocations()
+        inventory = inventoryManager.loadInventory(cleanInventory: GameSetupStrocamp.loadItems())
     }
     
     var distanceCalculator = DistanceCalculator()
@@ -97,7 +82,57 @@ class GameManager {
         
         return UIColor.red;
     }
+    
+    func retrieveBackpackContents() -> [GameItem] {
+        return inventory
+    }
+    
+    func attemptCombine(itemsToCombine: [GameItem]) -> GameItem? {
+        if (itemsToCombine.count > 2) {
+            return nil
+        }
         
+        NSLog("Attempt to use \(itemsToCombine[0].name) with \(itemsToCombine[1].name)")
+        
+        if itemsToCombine.contains(where: { $0.name == "Motor" }) &&
+            itemsToCombine.contains(where: { $0.name == "Schroef" }) {
+            
+            removeItemFromInventory(itemName: itemsToCombine[0].name)
+            removeItemFromInventory(itemName: itemsToCombine[1].name)
+            addItemToInventory(itemName: "Schroefmotor")
+            
+            return inventory[inventory.index(where: {$0.name == "Schroefmotor"})!]
+        }
+        
+        return nil
+    }
+    
+    func attemptUse(itemToUse: GameItem) -> Bool {
+        return false;
+    }
+
+    private func addItemToInventory(itemName: String) {
+        let index = inventory.index(where: {$0.name == itemName})!
+        inventory[index].amount += 1
+        
+        inventoryManager.updateInventory(gameItems: inventory)
+    }
+    
+    private func removeItemFromInventory(itemName: String) -> Bool {
+        return removeItemFromInventory(itemName: itemName, amount: 1)
+    }
+
+    private func removeItemFromInventory(itemName: String, amount: Int) -> Bool{
+        let index = inventory.index(where: {$0.name == itemName})!
+        if (inventory[index].amount >= amount) {
+            inventory[index].amount -= amount
+            
+            inventoryManager.updateInventory(gameItems: inventory)
+            return true;
+        }
+        return false;
+    }
+
     func retrieveKnownLocations() -> Void {
         
     }
@@ -139,9 +174,47 @@ class GameManager {
         }
     }
     
+    func getDescriptionForItem(item: GameItem) -> String {
+        return itemDescriptions[item.name] ?? "Wat een raar ding"
+    }
+
+    func getDescriptionForLocation(location: GameLocation) -> String {
+        return locationDescriptions[location.name] ?? "Wat een raar ding"
+    }
+
     // Home version
     func retrieveLocationsDatabase() -> [String: GameLocation] {
         return locations
+    }
+    
+    func resetGame() {
+        NSLog("Reset all game data")
+        inventoryManager.updateInventory(gameItems: GameSetupStrocamp.loadItems())
+        inventory = inventoryManager.loadInventory(cleanInventory: GameSetupStrocamp.loadItems())
+    }
+    
+    func isCurrentLocation(location: GameLocation) -> Bool {
+        if (currentLocationIdentifier == nil) {
+            return false;
+        }
+        return currentLocationIdentifier == location.name
+    }
+    
+    private func readPropertyList() {
+        var format = PropertyListSerialization.PropertyListFormat.xml
+        var plistData:[String:AnyObject] = [:]
+        let plistPath:String? = Bundle.main.path(forResource: "GameData", ofType: "plist")!
+        let plistXML = FileManager.default.contents(atPath: plistPath!)!
+        
+        do{ //convert the data to a dictionary and handle errors.
+            plistData = try PropertyListSerialization.propertyList(from: plistXML, options: .mutableContainersAndLeaves,format: &format)as! [String:AnyObject]
+            
+            self.itemDescriptions = plistData["ItemDescriptions"] as! [String : String]
+            self.locationDescriptions = plistData["LocationDescriptions"] as! [String: String]
+        }
+        catch{ // error condition
+            print("Error reading plist: \(error), format: \(format)")
+        }
     }
 }
 

@@ -11,6 +11,9 @@
 		9A1771F02095FFA0005B83BA /* GameLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1771EF2095FFA0005B83BA /* GameLocation.swift */; };
 		9A1771F22096023E005B83BA /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1771F12096023E005B83BA /* DistanceCalculator.swift */; };
 		9A1771F420960C09005B83BA /* RugzakTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1771F320960C09005B83BA /* RugzakTableViewCell.swift */; };
+		9A3C083D209F3E9900D1B14D /* ManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C083C209F3E9900D1B14D /* ManagementViewController.swift */; };
+		9A3C083F209F4E2300D1B14D /* RugzakItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C083E209F4E2300D1B14D /* RugzakItemViewController.swift */; };
+		9A3C0843209F5A9E00D1B14D /* GameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A3C0842209F5A9E00D1B14D /* GameData.plist */; };
 		9A72BB91209DBFE7006F417D /* Location Start.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB8E209DBFE6006F417D /* Location Start.gpx */; };
 		9A72BB92209DBFE7006F417D /* All Game Locations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */; };
 		9A72BB93209DBFE7006F417D /* Location Boom.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB90209DBFE7006F417D /* Location Boom.gpx */; };
@@ -22,6 +25,9 @@
 		9A72BBA1209DEBEB006F417D /* Location Koopman.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB9B209DEBEB006F417D /* Location Koopman.gpx */; };
 		9A72BBA2209DEBEB006F417D /* Location Berg.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB9C209DEBEB006F417D /* Location Berg.gpx */; };
 		9A72BBA4209DF843006F417D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72BBA3209DF843006F417D /* Utility.swift */; };
+		9A72BBA6209EFE51006F417D /* GameItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72BBA5209EFE51006F417D /* GameItem.swift */; };
+		9A72BBA8209EFEDB006F417D /* GameSetupStrocamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72BBA7209EFEDB006F417D /* GameSetupStrocamp.swift */; };
+		9A72BBAC209F193F006F417D /* InventoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72BBAB209F193F006F417D /* InventoryManager.swift */; };
 		9AB1BF4F2095E4FF00B4B413 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB1BF4E2095E4FF00B4B413 /* AppDelegate.swift */; };
 		9AB1BF512095E4FF00B4B413 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB1BF502095E4FF00B4B413 /* ViewController.swift */; };
 		9AB1BF542095E4FF00B4B413 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AB1BF522095E4FF00B4B413 /* Main.storyboard */; };
@@ -58,6 +64,9 @@
 		9A1771EF2095FFA0005B83BA /* GameLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLocation.swift; sourceTree = "<group>"; };
 		9A1771F12096023E005B83BA /* DistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
 		9A1771F320960C09005B83BA /* RugzakTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RugzakTableViewCell.swift; sourceTree = "<group>"; };
+		9A3C083C209F3E9900D1B14D /* ManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementViewController.swift; sourceTree = "<group>"; };
+		9A3C083E209F4E2300D1B14D /* RugzakItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RugzakItemViewController.swift; sourceTree = "<group>"; };
+		9A3C0842209F5A9E00D1B14D /* GameData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GameData.plist; sourceTree = "<group>"; };
 		9A72BB8E209DBFE6006F417D /* Location Start.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Start.gpx"; sourceTree = "<group>"; };
 		9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "All Game Locations.gpx"; sourceTree = "<group>"; };
 		9A72BB90209DBFE7006F417D /* Location Boom.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Boom.gpx"; sourceTree = "<group>"; };
@@ -69,6 +78,9 @@
 		9A72BB9B209DEBEB006F417D /* Location Koopman.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Koopman.gpx"; sourceTree = "<group>"; };
 		9A72BB9C209DEBEB006F417D /* Location Berg.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Berg.gpx"; sourceTree = "<group>"; };
 		9A72BBA3209DF843006F417D /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		9A72BBA5209EFE51006F417D /* GameItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItem.swift; sourceTree = "<group>"; };
+		9A72BBA7209EFEDB006F417D /* GameSetupStrocamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupStrocamp.swift; sourceTree = "<group>"; };
+		9A72BBAB209F193F006F417D /* InventoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryManager.swift; sourceTree = "<group>"; };
 		9AB1BF4B2095E4FE00B4B413 /* Bergjes2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bergjes2018.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AB1BF4E2095E4FF00B4B413 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AB1BF502095E4FF00B4B413 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +94,7 @@
 		9AB1BF6A2095E50000B4B413 /* Bergjes2018UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bergjes2018UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AB1BF6E2095E50000B4B413 /* Bergjes2018UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bergjes2018UITests.swift; sourceTree = "<group>"; };
 		9AB1BF702095E50000B4B413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9AB1BF7C2095E60B00B4B413 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		9AB1BF7C2095E60B00B4B413 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9AB579882095FB570056AB6C /* RugzakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RugzakViewController.swift; sourceTree = "<group>"; };
 		EE8165650147B17319E3CAE8 /* Pods-Bergjes2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bergjes2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bergjes2018/Pods-Bergjes2018.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,8 +146,17 @@
 			isa = PBXGroup;
 			children = (
 				9A1771EF2095FFA0005B83BA /* GameLocation.swift */,
+				9A72BBA5209EFE51006F417D /* GameItem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9A3C083B209F3E8800D1B14D /* Management */ = {
+			isa = PBXGroup;
+			children = (
+				9A3C083C209F3E9900D1B14D /* ManagementViewController.swift */,
+			);
+			path = Management;
 			sourceTree = "<group>";
 		};
 		9A72BB96209DEB23006F417D /* Locations */ = {
@@ -153,6 +174,28 @@
 				9A72BB8E209DBFE6006F417D /* Location Start.gpx */,
 			);
 			path = Locations;
+			sourceTree = "<group>";
+		};
+		9A72BBA9209F02D6006F417D /* Rugzak */ = {
+			isa = PBXGroup;
+			children = (
+				9AB579882095FB570056AB6C /* RugzakViewController.swift */,
+				9A1771F320960C09005B83BA /* RugzakTableViewCell.swift */,
+				9A3C083E209F4E2300D1B14D /* RugzakItemViewController.swift */,
+			);
+			path = Rugzak;
+			sourceTree = "<group>";
+		};
+		9A72BBAA209F190F006F417D /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				9A3C0842209F5A9E00D1B14D /* GameData.plist */,
+				9A1771EC2095FF29005B83BA /* GameManager.swift */,
+				9A1771F12096023E005B83BA /* DistanceCalculator.swift */,
+				9A72BBA7209EFEDB006F417D /* GameSetupStrocamp.swift */,
+				9A72BBAB209F193F006F417D /* InventoryManager.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		9AB1BF422095E4FE00B4B413 = {
@@ -182,6 +225,9 @@
 		9AB1BF4D2095E4FF00B4B413 /* Bergjes2018 */ = {
 			isa = PBXGroup;
 			children = (
+				9A3C083B209F3E8800D1B14D /* Management */,
+				9A72BBAA209F190F006F417D /* Game */,
+				9A72BBA9209F02D6006F417D /* Rugzak */,
 				9A1771EE2095FF85005B83BA /* Model */,
 				9AB1BF4E2095E4FF00B4B413 /* AppDelegate.swift */,
 				9AB1BF502095E4FF00B4B413 /* ViewController.swift */,
@@ -189,10 +235,6 @@
 				9AB1BF552095E50000B4B413 /* Assets.xcassets */,
 				9AB1BF572095E50000B4B413 /* LaunchScreen.storyboard */,
 				9AB1BF5A2095E50000B4B413 /* Info.plist */,
-				9AB579882095FB570056AB6C /* RugzakViewController.swift */,
-				9A1771EC2095FF29005B83BA /* GameManager.swift */,
-				9A1771F12096023E005B83BA /* DistanceCalculator.swift */,
-				9A1771F320960C09005B83BA /* RugzakTableViewCell.swift */,
 				9A72BBA3209DF843006F417D /* Utility.swift */,
 			);
 			path = Bergjes2018;
@@ -328,6 +370,7 @@
 				9A72BB93209DBFE7006F417D /* Location Boom.gpx in Resources */,
 				9A72BBA1209DEBEB006F417D /* Location Koopman.gpx in Resources */,
 				9A72BBA2209DEBEB006F417D /* Location Berg.gpx in Resources */,
+				9A3C0843209F5A9E00D1B14D /* GameData.plist in Resources */,
 				9A72BB9D209DEBEB006F417D /* Location Moeras.gpx in Resources */,
 				9A72BB9F209DEBEB006F417D /* Location Rivier.gpx in Resources */,
 				9AB1BF7D2095E60B00B4B413 /* Podfile in Resources */,
@@ -381,8 +424,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bergjes2018/Pods-Bergjes2018-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -401,14 +444,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A72BBA8209EFEDB006F417D /* GameSetupStrocamp.swift in Sources */,
+				9A3C083D209F3E9900D1B14D /* ManagementViewController.swift in Sources */,
 				9A1771F22096023E005B83BA /* DistanceCalculator.swift in Sources */,
 				9AB1BF512095E4FF00B4B413 /* ViewController.swift in Sources */,
 				9A1771ED2095FF29005B83BA /* GameManager.swift in Sources */,
 				9A1771F02095FFA0005B83BA /* GameLocation.swift in Sources */,
 				9A72BBA4209DF843006F417D /* Utility.swift in Sources */,
 				9AB1BF4F2095E4FF00B4B413 /* AppDelegate.swift in Sources */,
+				9A3C083F209F4E2300D1B14D /* RugzakItemViewController.swift in Sources */,
 				9A1771F420960C09005B83BA /* RugzakTableViewCell.swift in Sources */,
 				9AB579892095FB570056AB6C /* RugzakViewController.swift in Sources */,
+				9A72BBAC209F193F006F417D /* InventoryManager.swift in Sources */,
+				9A72BBA6209EFE51006F417D /* GameItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

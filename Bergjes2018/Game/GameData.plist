@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LocationDescriptions</key>
+	<dict>
+		<key>berg</key>
+		<string>Na een uitdagende klim bereik je eindelijk de top van de berg. Je kijkt om je heen en ziet de restanten van de grote boom, het houthakkershutje, de kolkende rivier, de fel rode dakpannen van de koopman, de eindeloze diepte van de kloof en de dampen van het moeras. Het fantastische uitzicht zorgt er bijna voor dat je de grote schatkist bijna over het hoofd ziet. Eindelijk heb je gevonden waar je naar zocht. Je steekt je zakmes in het slot en opent de deksel. Zou je de schat als eerste gevonden hebben of waren er andere kapers op de kust?</string>
+		<key>moeras</key>
+		<string>Het stinkt naar rotte vis en het stilstaande water trekt hordes muggen aan. Het een zakdoek voor je neus en mond trek je lijdzaam door de drek tot je plotseling stuit op een half gezonken vissersbootje. Een kikker springt verschrikt weg als je aan boord stapt. Je vind hier een klein metalen kistje met maar liefst 5 gouden munten, een meevaller. Op de plek waar ooit de buitenboordmotor zat zit niks meer dan een gapend gat in de kleine achtersteven. Het meer achter de boot is zo weids en diep dat je hier niet verder kunt.</string>
+		<key>kloofbodem</key>
+		<string>Na een gevaarlijke afdaling bereik je zwetend de bodem van de kloof. Het is hier windstil en door de brandende zon bloedheet. De flikkering die je boven zag werd niet veroorzaakt door gouden munten maar door een schroot oud ijzer wat ooit een boot was geweest. Blijkbaar liep er in een ver verleden een flinke rivier door de kloof. Misschien heb je nog iets aan een van de onderdelen. Je kijkt omhoog en ziet nu al op tegen de klim omhoog.</string>
+		<key>kloofrand</key>
+		<string>Achter een rij hoge bomen stort de aarde zich in een diepe rotsachtige kloof. De overkant is een kleine 5 meter ver en haal zelf jij springend niet. De kloof strekt zich aan beide kanten zo ver uit als je kunt kijken. De felle zon reflecteert op iets in het mulle zand. Hierdoor ontdek je al snel een gouden munt. Even zoeken levert nog twee munten op. Diep in de kloof ligt iets wat het zonlicht weerkaatst. Nog meer gouden munten?</string>
+		<key>rivier</key>
+		<string>Het kolkende water maakt witte schuimkoppen langs de puntige rotsen in de rivier. De sterke stroming maakt dat het onmogelijk is de overkant zwemmende te bereiken. Een laaghangende takken van een overhellende boom raken zo af en toe de golven in het midden van de rivier. Stroomopwaarts lonken de toppen van een schitterende berg terwijl stroomafwaarts lijkt uit te monden in een drassig moeraslandschap.</string>
+		<key>koopman</key>
+		<string>Aan een zanderig karrepad ligt een verrassend degelijk huisje met fel rode dakpannen. Bij het open van de deur verraad een belletje aan de bewoner dat je er bent. Vanachter de toonbank verschijnt een bebaarde mystieke koopman. Wellicht verkoopt hij iets van waarde maar laat je niet misleiden.</string>
+		<key>houthakkershut</key>
+		<string>Verscholen in het dichte bos ligt een vervallen huisje met een kleine zolder. De vergane deur geeft je simpel toegang tot het kleine vertrek. De resten kaphout en een verrotte schommelstoel verraden dat dit het werkdomein was van een houthakker. Zijn gereedschap heeft helaas de tand des tijds niet overleeft. In de beschutting van wat ooit de zoldertrap was geweest was vind je een oude maar stevige ladder.</string>
+		<key>boom</key>
+		<string>Tussen de laaggroei torent een opvallende grote dikke eik uit. Hij oogt stevig en het bovenste topje zou een fantastisch uitzicht bieden. Via kleine twijgjes aan de onderkant van de boom kan je een klein stukje omhoog klimmen. Je ziet in de verte een vervallen hutje met een bemost dak. Aan de andere kant zie je een moderner, enigszins mystiek huisje met fel rode dakpannen. Verder klimmen is helaas geen optie.</string>
+	</dict>
+	<key>ItemDescriptions</key>
+	<dict>
+		<key>Motorboot</key>
+		<string>Who’s Mcgiver? The A-team? Bekijk deze heuse boot maar eens!</string>
+		<key>Schroefmotor</key>
+		<string>Een knap stukje techniek. Her en der wat roestig maar hij pruttelt nog prima.</string>
+		<key>Schroevendraaier</key>
+		<string>Lang niet gebruikt maar daarom niet minder effectief. Schroeft wat er geschroefd moet worden.</string>
+		<key>Zweep</key>
+		<string>Slaan, grijpen en klimmen. Als je weet hoe je hem moet gebruiken is dit oprecht een multitool.</string>
+		<key>Schroef</key>
+		<string>Drie roestige metalen bladen vormen samen deze bootschroef</string>
+		<key>Motor</key>
+		<string>De vette olie heeft ervoor gezorgt dat het water de tweetaktmotor amper heeft aangetast. </string>
+		<key>Kano</key>
+		<string>Indianen zouden hier een moord voor begaan. Een waterdichte en oerdegelijke kano.</string>
+		<key>Ladder</key>
+		<string>Zwaar, hout en 4m lang. Een oud maar stevig model.</string>
+		<key>Kapmes</key>
+		<string>Vlijmscherp, en oersterk. In jouw handen kan hij zelfs de dichtst begroeide bossen aan.</string>
+		<key>Smeerolie</key>
+		<string>Sterk geurende smeerolie. Maakt los wat al jaren vast zit.</string>
+		<key>Duikbril</key>
+		<string>Twee ronde dikke glazen geklemd in een dik rubber masker. De schoonheidsprijs zal je er in ieder geval niet mee winnen.</string>
+		<key>Lemmet</key>
+		<string>Ruim 25 cm gehard en vlijmscherp metaal. Pas op je vingers!</string>
+		<key>Touw</key>
+		<string>Bijna 3 meter lang, niet al te dik maar leerachtig oersterk touw.</string>
+		<key>Twijg</key>
+		<string>Een ronde tak van net geen 10 cm lang. Netjes afgezaagd, sterk hout maar wat moet je ermee?</string>
+		<key>Munt</key>
+		<string>Een blinkende gouden munt. Hoewel je de inscripties niet kunt lezen verwacht je dat dit best best wat waard is.</string>
+		<key>Zakmes</key>
+		<string>Al jaren jouw steun en toeverlaat in donkere tijden. Sommige onderdelen zijn inmiddels vastgeroest en onbruikbaar maar het mes is nog altijd vlijmscherp.</string>
+	</dict>
+</dict>
+</plist>

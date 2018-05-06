@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,9 +28,13 @@
                                 <items>
                                     <barButtonItem title="Rugzak" id="chI-e6-ar8">
                                         <connections>
-                                            <segue destination="80l-rL-0iY" kind="popoverPresentation" popoverAnchorBarButtonItem="chI-e6-ar8" id="q9i-e3-IcG">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <action selector="openBackpack:" destination="BYZ-38-t0r" id="Om9-o7-XyF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="21z-Hb-IKh"/>
+                                    <barButtonItem title="Beheer" id="ofT-4N-xsu">
+                                        <connections>
+                                            <action selector="clickManagement:" destination="BYZ-38-t0r" id="cB5-zn-9Gj"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -53,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="122.78860569715144"/>
+            <point key="canvasLocation" x="10" y="-206"/>
         </scene>
         <!--Rugzak View Controller-->
         <scene sceneID="80j-yg-kx3">
@@ -67,9 +72,19 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Close" id="Nnz-6o-r06">
+                                    <barButtonItem title="Sluit" id="Nnz-6o-r06">
                                         <connections>
                                             <action selector="close:" destination="80l-rL-0iY" id="pmS-Cb-2V6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Combineer" id="mRQ-q1-e8c" userLabel="Combineer">
+                                        <connections>
+                                            <action selector="clickCombine:" destination="80l-rL-0iY" id="7BF-7O-e1g"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem enabled="NO" title="Gebruik" id="VE7-2u-G8H">
+                                        <connections>
+                                            <action selector="clickUse:" destination="80l-rL-0iY" id="qKf-WE-rXQ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -120,12 +135,133 @@
                         <viewLayoutGuide key="safeArea" id="Q6B-e0-zwu"/>
                     </view>
                     <connections>
+                        <outlet property="combineButton" destination="mRQ-q1-e8c" id="nbk-NJ-o6d"/>
                         <outlet property="rugzakContents" destination="TzX-G7-vyj" id="TD1-s1-ex7"/>
+                        <outlet property="useButton" destination="VE7-2u-G8H" id="Mmd-5X-CPZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="db5-v6-5kY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="123"/>
+            <point key="canvasLocation" x="9" y="522"/>
+        </scene>
+        <!--Rugzak Item View Controller-->
+        <scene sceneID="p9F-Uq-gMl">
+            <objects>
+                <viewController storyboardIdentifier="RugzakItemView" id="5yt-5U-9Jp" customClass="RugzakItemViewController" customModule="Bergjes2018" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8rR-Ev-2Je">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ucn-ZY-LNr">
+                                <rect key="frame" x="20" y="40" width="335" height="607"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxj-t4-OOY">
+                                        <rect key="frame" x="0.0" y="563" width="335" height="44"/>
+                                        <items>
+                                            <barButtonItem title="Sluit" id="KXy-DA-3fh">
+                                                <connections>
+                                                    <action selector="close:" destination="5yt-5U-9Jp" id="fVQ-XQ-Q0K"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ro-um-fxH">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="563"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lwy-iK-QaG">
+                                                <rect key="frame" x="20" y="20" width="294" height="294"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Lwy-iK-QaG" secondAttribute="height" multiplier="1:1" id="IxI-Uz-fAu"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0O-HG-bTs">
+                                                <rect key="frame" x="20" y="322" width="294" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Lwy-iK-QaG" firstAttribute="top" secondItem="9Ro-um-fxH" secondAttribute="top" constant="20" id="57u-qd-t9z"/>
+                                            <constraint firstItem="Lwy-iK-QaG" firstAttribute="leading" secondItem="9Ro-um-fxH" secondAttribute="leading" constant="20" id="62O-Tz-9gT"/>
+                                            <constraint firstItem="V0O-HG-bTs" firstAttribute="top" secondItem="Lwy-iK-QaG" secondAttribute="bottom" constant="8" id="6l3-yY-2xa"/>
+                                            <constraint firstItem="Lwy-iK-QaG" firstAttribute="centerX" secondItem="9Ro-um-fxH" secondAttribute="centerX" id="9vQ-Bn-HmE"/>
+                                            <constraint firstAttribute="trailing" secondItem="V0O-HG-bTs" secondAttribute="trailing" constant="20" id="ASb-T7-dSu"/>
+                                            <constraint firstItem="V0O-HG-bTs" firstAttribute="leading" secondItem="9Ro-um-fxH" secondAttribute="leading" constant="20" id="E97-xn-Ma4"/>
+                                            <constraint firstAttribute="bottom" secondItem="Lwy-iK-QaG" secondAttribute="bottom" constant="408" id="asz-Ap-Vzq"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lwy-iK-QaG" secondAttribute="trailing" constant="20" id="ovS-XQ-aEZ"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hxj-t4-OOY" secondAttribute="bottom" id="6py-eO-wri"/>
+                                    <constraint firstItem="hxj-t4-OOY" firstAttribute="top" secondItem="9Ro-um-fxH" secondAttribute="bottom" id="8oM-bn-kR8"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Ro-um-fxH" secondAttribute="trailing" id="KyS-pA-hNn"/>
+                                    <constraint firstItem="hxj-t4-OOY" firstAttribute="leading" secondItem="Ucn-ZY-LNr" secondAttribute="leading" id="aZ7-Jj-7wV"/>
+                                    <constraint firstAttribute="trailing" secondItem="hxj-t4-OOY" secondAttribute="trailing" id="gki-eI-yDf"/>
+                                    <constraint firstItem="9Ro-um-fxH" firstAttribute="leading" secondItem="Ucn-ZY-LNr" secondAttribute="leading" id="s7M-Un-AQy"/>
+                                    <constraint firstItem="9Ro-um-fxH" firstAttribute="top" secondItem="Ucn-ZY-LNr" secondAttribute="top" id="yhu-E5-FEJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ucn-ZY-LNr" firstAttribute="top" secondItem="w8U-2J-D9l" secondAttribute="top" constant="20" id="FAa-RA-NQZ"/>
+                            <constraint firstItem="w8U-2J-D9l" firstAttribute="bottom" secondItem="Ucn-ZY-LNr" secondAttribute="bottom" constant="20" id="J4V-0r-j07"/>
+                            <constraint firstItem="w8U-2J-D9l" firstAttribute="trailing" secondItem="Ucn-ZY-LNr" secondAttribute="trailing" constant="20" id="Zrm-X9-gs3"/>
+                            <constraint firstItem="Ucn-ZY-LNr" firstAttribute="leading" secondItem="w8U-2J-D9l" secondAttribute="leading" constant="20" id="ueo-ja-55f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w8U-2J-D9l"/>
+                    </view>
+                    <connections>
+                        <outlet property="itemDescription" destination="V0O-HG-bTs" id="Anr-Ae-4Kr"/>
+                        <outlet property="itemImage" destination="Lwy-iK-QaG" id="JYb-Vi-2kg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xj2-qc-EnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1189.5999999999999" y="519.49025487256381"/>
+        </scene>
+        <!--Management View Controller-->
+        <scene sceneID="mGq-LE-ZL8">
+            <objects>
+                <viewController storyboardIdentifier="ManagementView" id="Fpi-sI-WnJ" customClass="ManagementViewController" customModule="Bergjes2018" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ALv-ai-VNY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLu-dh-y1U">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Sluit" id="2pe-bO-T18">
+                                        <connections>
+                                            <action selector="close:" destination="Fpi-sI-WnJ" id="xba-Ra-cow"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcg-Rh-qH8">
+                                <rect key="frame" x="134" y="76" width="107" height="30"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Reset inventory"/>
+                                <connections>
+                                    <action selector="clickReset:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="7WY-dR-KXR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jcg-Rh-qH8" firstAttribute="centerX" secondItem="bsb-Lx-x7E" secondAttribute="centerX" id="2Gm-5d-5BZ"/>
+                            <constraint firstItem="Jcg-Rh-qH8" firstAttribute="top" secondItem="bsb-Lx-x7E" secondAttribute="top" constant="56" id="jrY-vZ-Y2h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bsb-Lx-x7E"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKR-No-auz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="-206"/>
         </scene>
     </scenes>
     <resources>

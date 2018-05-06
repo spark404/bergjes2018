@@ -20,6 +20,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     
+    @IBAction func openBackpack(_ sender: Any) {
+        let backbackViewController = storyboard?.instantiateViewController(withIdentifier: "RugzakView") as! RugzakViewController
+        backbackViewController.gameManager = self.gameManager
+        self.present(backbackViewController, animated: true)
+
+    }
+    
+    @IBAction func clickManagement(_ sender: Any) {
+        showManagementPasswordDialog()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,7 +46,6 @@ class ViewController: UIViewController {
         let start: GameLocation = self.gameManager.retrieveLocationsDatabase()["start"]!
         
         let camera = GMSCameraPosition.camera(withLatitude: start.latitude, longitude: start.longitude, zoom: 16.2348)
-        //let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.camera = camera
         mapView.delegate = self
         mapView.isMyLocationEnabled = true
@@ -44,50 +54,11 @@ class ViewController: UIViewController {
         gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self,
                                          selector: #selector(updateLocationState), userInfo: nil, repeats: true)
         
-//        for (name, location) in self.gameManager.retrieveLocationsDatabase() {
-//            // Creates a marker in the center of the map.
-//            let marker = GMSMarker()
-//            marker.position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-//            marker.title = name
-//            // marker.snippet = "Veel plezier..."
-//            marker.map = mapView
-//
-//            monitorRegionAtLocation(location: location)
-//        }
-        
-        for (region) in locationManager.monitoredRegions {
-            NSLog("Monitoring region \(region.identifier): entry \(region.notifyOnEntry), exit \(region.notifyOnExit)")
-            let clRegion: CLCircularRegion = region as! CLCircularRegion
-            NSLog("  lat: \(clRegion.center.latitude) lon: \(clRegion.center.longitude) radius \(clRegion.radius)");
-            self.locationManager.requestState(for: region)
-        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    func monitorRegionAtLocation(location: GameLocation ) {
-        if CLLocationManager.authorizationStatus() == .authorizedAlways {
-            if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-                let maxDistance = 5.0
-                let center = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-                let identifier = location.name
-                
-                let region = CLCircularRegion(center: center,
-                                              radius: maxDistance, identifier: identifier)
-                region.notifyOnEntry = true
-                region.notifyOnExit = true
-                
-                locationManager.startMonitoring(for: region)
-            } else {
-                NSLog("Region monitoring is not available")
-            }
-        } else {
-            NSLog("Location authorization state isn't helpful")
-        }
-        
     }
     
     @objc func updateLocationState() {
@@ -97,6 +68,63 @@ class ViewController: UIViewController {
         }
     }
     
+    func showManagementPasswordDialog() {
+        //Creating UIAlertController and
+        //Setting title and message for the alert dialog
+        let alertController = UIAlertController(title: "Beheer", message: "Enter passcode", preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
+            
+            //getting the input values from user
+            let password = alertController.textFields?[0].text
+            
+            if (password == "1294") {
+                self.showManagementViewController()
+            } else {
+                NSLog("Wrong password")
+            }
+        }
+        
+        //the cancel action doing nothing
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        //adding textfields to our dialog box
+        alertController.addTextField { (textField) in
+            textField.isSecureTextEntry = true
+            textField.placeholder = "Enter Passcode"
+        }
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showManagementViewController() {
+        let managementViewController = storyboard?.instantiateViewController(withIdentifier: "ManagementView") as! ManagementViewController
+        managementViewController.gameManager = self.gameManager
+        self.present(managementViewController, animated: true)
+
+    }
+    
+    func showLocationDetails(location: GameLocation) {
+        self.definesPresentationContext = true
+        self.providesPresentationContextTransitionStyle = true
+        self.overlayBlurredBackgroundView()
+        
+        let itemViewController = storyboard?.instantiateViewController(withIdentifier: "RugzakItemView") as! RugzakItemViewController
+        itemViewController.delegate = self
+        itemViewController.modalPresentationStyle = .overFullScreen
+        
+        itemViewController.location = location
+        itemViewController.itemText = gameManager.getDescriptionForLocation(location: location)
+        
+        self.present(itemViewController, animated: true)
+    }
+
 }
 
 extension ViewController: GMSMapViewDelegate {
@@ -104,27 +132,31 @@ extension ViewController: GMSMapViewDelegate {
         NSLog("Lat %03.6f, Lon %03.6f, Zoom %03.6f",
               position.target.latitude, position.target.longitude, position.zoom)
     }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        if let locationId = marker.title {
+            if let location = gameManager.locations[locationId] {
+                if (gameManager.isCurrentLocation(location: location)) {
+                    showLocationDetails(location: location)
+                } else {
+                    return false
+                }
+                
+            }
+        }
+        return true
+    }
 }
 
 extension ViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        NSLog("Entered region \(region.identifier)")
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        NSLog("Left region \(region.identifier)")
-    }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if (!locations.isEmpty) {
             NSLog("didUpdateLocations called with lat \(locations[0].coordinate.latitude), lon \(locations[0].coordinate.longitude), acc \(locations[0].horizontalAccuracy)")
             position = locations[0]
         }
     }
-    
-    func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
-        NSLog("Determined state for \(region.identifier) : \(state.rawValue)")
-    }
+
 }
 
 extension ViewController: GameManagerDelegate {
@@ -149,9 +181,30 @@ extension ViewController: GameManagerDelegate {
             }
             marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
             marker.map = mapView
+
             mapMarkers.append(marker)
         }
     }
+}
+
+extension ViewController: RugzakItemViewControllerDelegate {
+    func overlayBlurredBackgroundView() {
+        let blurredBackgroundView = UIVisualEffectView()
+        
+        
+        blurredBackgroundView.frame = view.frame
+        blurredBackgroundView.effect = UIBlurEffect(style: .dark)
+        
+        view.addSubview(blurredBackgroundView)
+    }
     
-    
+    func removeBlurredBackgroundView() {
+        
+        for subview in view.subviews {
+            if subview.isKind(of: UIVisualEffectView.self) {
+                subview.removeFromSuperview()
+            }
+        }
+    }
+
 }
