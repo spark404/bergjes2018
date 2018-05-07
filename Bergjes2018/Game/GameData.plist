@@ -2,6 +2,45 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ItemUsage</key>
+	<array>
+		<dict>
+			<key>description</key>
+			<string>Om een beter overzicht te krijgen zet je de ladder tegen het hutje aan. Door de enorme bomen in de omgeving valt dit enorm tegen. Net voordat je weer wilt afdalen zie je in de nok van het hutje één gouden munt tegen. Wie weet brengt deze nog geluk.</string>
+			<key>item</key>
+			<string>Ladder</string>
+			<key>matchLocation</key>
+			<string>houthakkershut</string>
+			<key>grantItem</key>
+			<string>Munt</string>
+			<key>removeItem</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>Met gemak snij je een flinke twijg los van de boom. Alle oneffenheden schaaf je eraf. Wie weet wanneer je dit kunt gebruiken.</string>
+			<key>removeItem</key>
+			<false/>
+			<key>item</key>
+			<string>Zakmes</string>
+			<key>matchLocation</key>
+			<string>boom</string>
+			<key>grantItem</key>
+			<string>Twijg</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>Je zet de ladder tegen een hoge dikke tak. Omhoog klimmen is nu een eitje. Je hebt prima uitzicht over de omgeving en ziet in de verte de grillige contouren van een flinke rivier.</string>
+			<key>item</key>
+			<string>Ladder</string>
+			<key>matchLocation</key>
+			<string>boom</string>
+			<key>unlockLocation</key>
+			<string>rivier</string>
+			<key>removeItem</key>
+			<false/>
+		</dict>
+	</array>
 	<key>LocationDescriptions</key>
 	<dict>
 		<key>berg</key>

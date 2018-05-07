@@ -23,7 +23,14 @@ class ViewController: UIViewController {
     @IBAction func openBackpack(_ sender: Any) {
         let backbackViewController = storyboard?.instantiateViewController(withIdentifier: "RugzakView") as! RugzakViewController
         backbackViewController.gameManager = self.gameManager
-        self.present(backbackViewController, animated: true)
+        self.present(backbackViewController, animated: true, completion: {
+            
+            // FIXME There should be an easier way tor force an update
+            if let playerPostion = self.position  {
+                let currentLocation = GameLocation(name: "player", latitude: playerPostion.coordinate.latitude, longitude: playerPostion.coordinate.longitude)
+                self.gameManager.updateCurrentLocation(playerPosition: currentLocation, force: true)
+            }
+        })
 
     }
     
@@ -62,8 +69,8 @@ class ViewController: UIViewController {
     }
     
     @objc func updateLocationState() {
-        if (position != nil) {
-            let currentLocation = GameLocation(name: "player", latitude: position!.coordinate.latitude, longitude: position!.coordinate.longitude)
+        if let playerPostion = position  {
+            let currentLocation = GameLocation(name: "player", latitude: playerPostion.coordinate.latitude, longitude: playerPostion.coordinate.longitude)
             gameManager.updateCurrentLocation(playerPosition: currentLocation)
         }
     }
@@ -106,7 +113,15 @@ class ViewController: UIViewController {
     func showManagementViewController() {
         let managementViewController = storyboard?.instantiateViewController(withIdentifier: "ManagementView") as! ManagementViewController
         managementViewController.gameManager = self.gameManager
-        self.present(managementViewController, animated: true)
+        self.present(managementViewController, animated: true, completion: {
+            
+            // FIXME There should be an easier way tor force an update
+            if let playerPostion = self.position  {
+                let currentLocation = GameLocation(name: "player", latitude: playerPostion.coordinate.latitude, longitude: playerPostion.coordinate.longitude)
+                self.gameManager.updateCurrentLocation(playerPosition: currentLocation, force: true)
+            }
+
+        })
 
     }
     
@@ -122,7 +137,9 @@ class ViewController: UIViewController {
         itemViewController.location = location
         itemViewController.itemText = gameManager.getDescriptionForLocation(location: location)
         
-        self.present(itemViewController, animated: true)
+        self.present(itemViewController, animated: true, completion: {
+            self.gameManager.registerVisit(location: location)
+        })
     }
 
 }

@@ -29,7 +29,13 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
         if let selectedRows = rugzakContents.indexPathsForSelectedRows {
             if (selectedRows.count == 1 ) {
                 NSLog("Attempt to use \(items[selectedRows[0].row].name)")
-                let result = gameManager?.attemptUse(itemToUse: items[selectedRows[0].row])
+                if let result = gameManager?.attemptUse(itemToUse: items[selectedRows[0].row]) {
+                    // It worked
+                    showActionResult(message: result)
+                } else {
+                    showActionResult(message: "Dit item kan je hier helaas niet gebruiken")
+                }
+                
             }
         }
     }
@@ -44,7 +50,12 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
                     var itemsToCombine: [GameItem] = []
                     itemsToCombine.append(items[selectedRows[0].row])
                     itemsToCombine.append(items[selectedRows[1].row])
-                    let result = gameManager?.attemptCombine(itemsToCombine: itemsToCombine)
+                    if let result = gameManager?.attemptCombine(itemsToCombine: itemsToCombine) {
+                        // It worked
+                        showActionResult(message: result)
+                    } else {
+                        showActionResult(message: "Deze items kun je helaas niet combineren.")
+                    }
                 }
             }
             
@@ -118,6 +129,18 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
         self.present(itemViewController, animated: true)
 
     }
+    
+    func showActionResult(message: String) {
+        let refreshAlert = UIAlertController(title: "Resultaat", message: message, preferredStyle: .alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            // OK
+            self.items = self.gameManager!.retrieveBackpackContents().filter({ $0.amount > 0 })
+            self.rugzakContents.reloadData()
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+    }
 }
 
 extension RugzakViewController: UITableViewDataSource {
@@ -132,7 +155,12 @@ extension RugzakViewController: UITableViewDataSource {
         let itemImage = Utility.resizeImage(image: UIImage(named: item.imageReference)!,
                                             targetSize: CGSize(width: 50.0, height: 50.0))
         
-        cell.rugzakCellLabel.text = "\(item.name)"
+        if item.amount > 1, item.name == "Munt" {
+            cell.rugzakCellLabel.text = "\(item.amount) \(item.name)en"
+        } else {
+            cell.rugzakCellLabel.text = "\(item.name)"
+        }
+        
         cell.rugzakCellImage.image = itemImage
         cell.rugzakCellImage.highlightedImage = itemImage
 

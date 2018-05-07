@@ -57,7 +57,7 @@ class GameSetupStrocamp {
     static func loadItems() -> [GameItem] {
         var items: [GameItem] = []
         items.append(GameItem(name: "Zakmes", imageReference: "01. Zakmes", amount: 1))
-        items.append(GameItem(name: "Munt", imageReference: "02. Munt"))
+        items.append(GameItem(name: "Munt", imageReference: "02. Munt", amount: 1))
         items.append(GameItem(name: "Twijg", imageReference: "03. Twijg"))
         items.append(GameItem(name: "Touw", imageReference: "04. Touw"))
         items.append(GameItem(name: "Lemmet", imageReference: "05. Lemmet"))
