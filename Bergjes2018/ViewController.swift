@@ -13,7 +13,7 @@ import GooglePlaces
 class ViewController: UIViewController {
     let locationManager = CLLocationManager()
 
-    var gameManager = GameManager.shared
+    var gameManager = GameManager()
     var gameTimer: Timer!;
     var position: CLLocation?;
     
@@ -136,10 +136,11 @@ class ViewController: UIViewController {
         itemViewController.itemText = gameManager.getDescriptionForLocation(location: location)
         
         self.present(itemViewController, animated: true, completion: {
-            self.gameManager.registerVisit(location: location)
+            self.gameManager.registerVisit(locationId: location.name)
         })
     }
 
+    // MARK: - Request location permission
     func enableBasicLocationServices() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -152,17 +153,26 @@ class ViewController: UIViewController {
 
         case .restricted, .denied:
             // Disable location features
-            // disableMyLocationBasedFeatures()
+            disableGameLocationBasedFeatures()
             break
 
         case .authorizedWhenInUse, .authorizedAlways:
             // Enable location features
-
-            locationManager.startUpdatingLocation()
+            enableGameLocationBasedFeatures()
             break
         }
     }
-}
+    
+    func enableGameLocationBasedFeatures() {
+        NSLog("Enabling location services")
+        locationManager.startUpdatingLocation()
+    }
+    
+    func disableGameLocationBasedFeatures() {
+        NSLog("Disabling location services")
+        locationManager.stopUpdatingLocation()
+    }
+    
 }
 
 extension ViewController: GMSMapViewDelegate {
@@ -196,6 +206,12 @@ extension ViewController: CLLocationManagerDelegate {
             position = locations[0]
         }
     }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status != .denied && status != .restricted {
+            enableGameLocationBasedFeatures()
+        }
+    }
 
 }
 
@@ -216,9 +232,8 @@ extension ViewController: GameManagerDelegate {
             if (location.imageReference != nil) {
                 marker.icon = Utility.resizeImage(image: UIImage(named: location.imageReference!)!,
                                           targetSize: CGSize(width: 50.0, height: 50.0))
-            } else {
-                marker.icon = GMSMarker.markerImage(with: gameManager.getColorForLocation(location: location))
             }
+            
             marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
             marker.map = mapView
 

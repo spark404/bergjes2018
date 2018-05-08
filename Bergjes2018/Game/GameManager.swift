@@ -10,9 +10,8 @@ import Foundation
 import UIKit
 
 class GameManager {
-    static let shared = GameManager()
-    
-    var currentLocationIdentifier: String?
+
+    var currentLocationId: String?
     var delegate: GameManagerDelegate?
     
     var locations: [String: GameLocation] = [:]
@@ -26,7 +25,7 @@ class GameManager {
     var inventoryManager = InventoryManager()
     var locationManager =  LocationManager()
     
-    private init() {
+    init() {
         readPropertyList()
         
         // Initialize when needed
@@ -37,13 +36,15 @@ class GameManager {
                 return Location(name: gameLocation.name, visible: false, visited: false)
             })
             locationManager.reinitialize(locations: Array(locationList.values))
+            locationManager.setVisible(locationId: "start", visible: true)
+            locationManager.setVisible(locationId: "boom", visible: true)
         }
 
         locations = GameSetupStrocamp.loadLocations()
         inventory = inventoryManager.loadInventory(cleanInventory: GameSetupStrocamp.loadItems())
     }
     
-    func retrieveVisibleLocations(currentLocationId: String?) -> [GameLocation] {
+    func retrieveVisibleLocations() -> [GameLocation] {
         var visibleLocations: [GameLocation] = [];
         
         if let identifier = currentLocationId,
@@ -53,11 +54,11 @@ class GameManager {
                 // Append self
                 visibleLocations.append(currentLocation)
                 
-                for gameLocation in retrieveLocationsDatabase().values {
-                    if (isLocationVisibleFrom(fromLocation: currentLocation, location: gameLocation)) {
-                        visibleLocations.append(gameLocation)
-                    }
-                }
+                retrieveLocationsDatabase()
+                    .filter({$0.key != identifier}) // Filter self
+                    .filter({isLocationVisibleFrom(fromLocation: currentLocation, toLocationId: $0.key)})
+                    .filter({locationManager.isVisible(locationId: $0.key)})
+                    .forEach({visibleLocations.append($0.value)})
             }
         }
         
@@ -68,60 +69,46 @@ class GameManager {
         return visibleLocations
     }
     
-    func isLocationVisibleFrom(fromLocation: GameLocation, location: GameLocation) -> Bool {
-        NSLog("Visibility check from \(fromLocation.name) to \(location.name)")
-        if (location.name == "start") {
-            return true // Start is always visible
-        }
-        
-        if (!locationManager.isVisible(locationId: location.name)) {
-            NSLog("\(location.name) isn't discovered yet")
-            return false; // Location is not discovered yet
-        }
-        
-        switch fromLocation.name {
-        case "start":
-            return ["boom"].contains(location.name)
-        case "boom":
-            return ["koopman", "houthakkershut", "rivier"].contains(location.name)
-        case "koopman":
-            return ["boom", "houthakkershut"].contains(location.name)
-        case "houthakkershut":
-            return ["boom", "koopman"].contains(location.name)
-        case "rivier":
-            return ["boom", "kloofrand", "moeras"].contains(location.name)
-        case "kloofrand":
-            return ["rivier", "kloofbodem"].contains(location.name)
-        case "kloofbodem":
-            return ["kloofrand"].contains(location.name)
-        case "moeras":
-            return ["rivier"].contains(location.name)
-        case "berg":
-            return true
-        default:
-            return false;
-        }
+    private func isLocationVisibleFrom(fromLocation: GameLocation, toLocationId: String) -> Bool {
+        return getVisibleLocationIdsFrom(fromLocation: fromLocation).contains(toLocationId)
     }
     
-    func getColorForLocation(location: GameLocation) -> UIColor {
-        if (location.name == currentLocationIdentifier) {
-            return UIColor.blue;
+    private func getVisibleLocationIdsFrom(fromLocation: GameLocation) -> [String] {
+        switch fromLocation.name {
+        case "start":
+            return ["boom"]
+        case "boom":
+            return ["koopman", "houthakkershut", "rivier"]
+        case "koopman":
+            return ["boom", "houthakkershut"]
+        case "houthakkershut":
+            return ["boom", "koopman"]
+        case "rivier":
+            return ["boom", "kloofrand", "moeras", "berg"]
+        case "kloofrand":
+            return ["rivier", "kloofbodem"]
+        case "kloofbodem":
+            return ["kloofrand"]
+        case "moeras":
+            return ["rivier"]
+        case "berg":
+            return Array(locations.keys)
+        default:
+            return ["start"];
         }
-        
-        return UIColor.red;
     }
     
     // This function is called when play clicked on a location
     // perform any actions there that should be done once the player
     // visits a location and has read the description.
-    func registerVisit(location: GameLocation) {
-        if (locationManager.isVisited(locationId: location.name)) {
-            NSLog("Already visited \(location.name), not triggering actions")
+    func registerVisit(locationId: String) {
+        if (locationManager.isVisited(locationId: locationId)) {
+            NSLog("Already visited \(locationId), not triggering actions")
         }
         
-        locationManager.setVisited(locationId: location.name, visible: true)
+        locationManager.setVisited(locationId: locationId, visible: true)
         
-        switch location.name {
+        switch locationId {
         case "boom":
             locationManager.setVisible(locationId: "koopman", visible: true)
             locationManager.setVisible(locationId: "houthakkershut", visible: true)
@@ -131,7 +118,7 @@ class GameManager {
             break
         }
         
-        delegate?.updateVisibleLocations(locations: retrieveVisibleLocations(currentLocationId: currentLocationIdentifier))
+        delegate?.updateVisibleLocations(locations: retrieveVisibleLocations())
     }
     
     func retrieveBackpackContents() -> [GameItem] {
@@ -164,7 +151,7 @@ class GameManager {
         for itemAction in itemUsage.filter({$0["item"] as! String == itemToUse.name  }) {
             
             // Check if we can perform the action by checking the location
-            if let locationId = itemAction["matchLocation"] as? String , currentLocationIdentifier != locationId {
+            if let locationId = itemAction["matchLocation"] as? String , currentLocationId != locationId {
                 // Not possible to use item here
                 continue
             }
@@ -177,7 +164,7 @@ class GameManager {
             // Perform the action
             if let visibleLocationId = itemAction["unlockLocation"] as? String {
                 locationManager.setVisible(locationId: visibleLocationId, visible: true)
-                delegate?.updateVisibleLocations(locations: retrieveVisibleLocations(currentLocationId: currentLocationIdentifier))
+                delegate?.updateVisibleLocations(locations: retrieveVisibleLocations())
             }
 
             // Set the remove flag if needed
@@ -251,10 +238,10 @@ class GameManager {
             // NSLog("Distance to \(location) is \(distance)m")
         }
         
-        if (positionIdentifier != currentLocationIdentifier || force) {
-            currentLocationIdentifier = positionIdentifier
-            NSLog("Location changed to \(currentLocationIdentifier ?? "nowhere")")
-            delegate?.updateVisibleLocations(locations: retrieveVisibleLocations(currentLocationId: currentLocationIdentifier))
+        if (positionIdentifier != currentLocationId || force) {
+            currentLocationId = positionIdentifier
+            NSLog("Location changed to \(currentLocationId ?? "nowhere")")
+            delegate?.updateVisibleLocations(locations: retrieveVisibleLocations())
         }
     }
     
@@ -286,14 +273,14 @@ class GameManager {
         
         locations = GameSetupStrocamp.loadLocations()
         
-        delegate?.updateVisibleLocations(locations: retrieveVisibleLocations(currentLocationId: currentLocationIdentifier))
+        delegate?.updateVisibleLocations(locations: retrieveVisibleLocations())
     }
     
     func isCurrentLocation(location: GameLocation) -> Bool {
-        if (currentLocationIdentifier == nil) {
+        if (currentLocationId == nil) {
             return false;
         }
-        return currentLocationIdentifier == location.name
+        return currentLocationId == location.name
     }
     
     private func readPropertyList() {
