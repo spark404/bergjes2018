@@ -145,6 +145,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: GMSMapViewDelegate {
+
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         NSLog("Lat %03.6f, Lon %03.6f, Zoom %03.6f",
               position.target.latitude, position.target.longitude, position.zoom)
@@ -205,6 +206,7 @@ extension ViewController: GameManagerDelegate {
 }
 
 extension ViewController: RugzakItemViewControllerDelegate {
+
     func overlayBlurredBackgroundView() {
         let blurredBackgroundView = UIVisualEffectView()
         
