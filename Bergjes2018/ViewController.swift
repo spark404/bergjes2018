@@ -11,7 +11,8 @@ import GoogleMaps
 import GooglePlaces
 
 class ViewController: UIViewController {
-    var locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
+
     var gameManager = GameManager.shared
     var gameTimer: Timer!;
     var position: CLLocation?;
@@ -43,11 +44,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Start requesting location updates
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.delegate = self
-        self.locationManager.startUpdatingLocation()
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
+        enableBasicLocationServices()
+
         self.gameManager.delegate = self
 
         let start: GameLocation = self.gameManager.retrieveLocationsDatabase()["start"]!
@@ -142,6 +140,29 @@ class ViewController: UIViewController {
         })
     }
 
+    func enableBasicLocationServices() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            // Request when-in-use authorization initially
+            locationManager.requestWhenInUseAuthorization()
+            break
+
+        case .restricted, .denied:
+            // Disable location features
+            // disableMyLocationBasedFeatures()
+            break
+
+        case .authorizedWhenInUse, .authorizedAlways:
+            // Enable location features
+
+            locationManager.startUpdatingLocation()
+            break
+        }
+    }
+}
 }
 
 extension ViewController: GMSMapViewDelegate {
@@ -164,6 +185,7 @@ extension ViewController: GMSMapViewDelegate {
         }
         return true
     }
+
 }
 
 extension ViewController: CLLocationManagerDelegate {
