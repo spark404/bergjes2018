@@ -9,4 +9,4 @@ before_install:
  - pod repo update
 
 script:
-    - xcodebuild clean build -sdk iphonesimulator -workspace Bergjes2018.xcworkspace -scheme Bergjes2018Tests CODE_SIGNING_REQUIRED=NO
+    - xcodebuild clean build -sdk iphonesimulator -workspace Bergjes2018.xcworkspace -scheme Bergjes2018 CODE_SIGNING_REQUIRED=NO
