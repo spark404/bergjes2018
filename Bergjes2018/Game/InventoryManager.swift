@@ -21,7 +21,8 @@ class InventoryManager {
     func loadInventory(cleanInventory: [GameItem]) -> [GameItem] {
         var completedInventory: [GameItem] = []
         for gameItem in cleanInventory {
-            if let index = inventory.index(where: { $0.name == gameItem.name}) {
+            if let index = inventory.index(where: { $0.name == gameItem.name}),
+                inventory[index].amount != gameItem.amount {
                 gameItem.amount = inventory[index].amount
                 NSLog("Updating amount of \(gameItem.name) to \(gameItem.amount) in game inventory")
             }
@@ -34,8 +35,10 @@ class InventoryManager {
     func updateInventory(gameItems: [GameItem]) {
         for gameItem in gameItems {
             if let index = inventory.index(where: { $0.name == gameItem.name}) {
-                inventory[index].amount = gameItem.amount;
-                NSLog("Updating amount of \(gameItem.name) to \(gameItem.amount) in static inventory")
+                if inventory[index].amount != gameItem.amount {
+                    inventory[index].amount = gameItem.amount;
+                    NSLog("Updating amount of \(gameItem.name) to \(gameItem.amount) in static inventory")
+                }
             } else {
                 let item = Item(name: gameItem.name, amount: gameItem.amount)
                 inventory.append(item)

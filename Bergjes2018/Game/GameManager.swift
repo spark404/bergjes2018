@@ -20,6 +20,7 @@ class GameManager {
     var itemDescriptions: [String: String] = [:]
     var locationDescriptions: [String: String] = [:]
     var itemUsage: [[String: Any]] = []
+    var itemCombinations: [String: [String: Any]] = [:]
     
     var distanceCalculator = DistanceCalculator()
     var inventoryManager = InventoryManager()
@@ -111,18 +112,41 @@ class GameManager {
             return nil
         }
         
-        NSLog("Attempt to use \(itemsToCombine[0].name) with \(itemsToCombine[1].name)")
+        let combinableItem1 = itemsToCombine[0].name
+        let combinableItem2 = itemsToCombine[1].name
+        NSLog("Attempt to use \(combinableItem1) with \(combinableItem2)")
         
-        if itemsToCombine.contains(where: { $0.name == "Motor" }) &&
-            itemsToCombine.contains(where: { $0.name == "Schroef" }) {
+        let result = itemCombinations
+            .filter { (arg) -> Bool in
+                let (_, value) = arg
+                let itemName = value["item1"] as! String
+                NSLog("Checking if \(combinableItem1) matches \(itemName)")
+                return itemsToCombine.contains {$0.name == itemName }
+            }
+            .filter { (arg) -> Bool in
+                let (_, value) = arg
+                let itemName = value["item2"] as! String
+                NSLog("Checking if \(combinableItem2) matches \(itemName)")
+                return itemsToCombine.contains {$0.name == itemName as! String }
+            }
+            .first
+        
+        if let foundCombination = result {
+            NSLog("\(combinableItem1) with \(combinableItem2) is a valid combination \(foundCombination.key)")
             
-            removeItemFromInventory(itemName: itemsToCombine[0].name)
-            removeItemFromInventory(itemName: itemsToCombine[1].name)
-            addItemToInventory(itemName: "Schroefmotor")
+            addItemToInventory(itemName: foundCombination.value["grantItem"] as! String)
             
-            return "FIXME Uitleg nodig"
+            if foundCombination.value["removeItem1"] as! Bool {
+                removeItemFromInventory(itemName: foundCombination.value["item1"] as! String)
+            }
+            
+            if foundCombination.value["removeItem2"] as! Bool {
+                removeItemFromInventory(itemName: foundCombination.value["item2"] as! String)
+            }
+
+            return foundCombination.value["description"] as! String
         }
-        
+
         return nil
     }
     
@@ -139,11 +163,13 @@ class GameManager {
             
             // Perform the action
             if let grantedItem = itemAction["grantItem"] as? String {
+                NSLog("Granting item \(grantedItem)")
                 addItemToInventory(itemName: grantedItem)
             }
             
             // Perform the action
             if let visibleLocationId = itemAction["unlockLocation"] as? String {
+                NSLog("Unlocking location \(visibleLocationId)")
                 locationManager.setVisible(locationId: visibleLocationId, visible: true)
                 delegate?.updateVisibleLocations(locations: retrieveVisibleLocations())
             }
@@ -305,6 +331,7 @@ class GameManager {
             self.itemDescriptions = plistData["ItemDescriptions"] as! [String : String]
             self.locationDescriptions = plistData["LocationDescriptions"] as! [String: String]
             self.itemUsage = plistData["ItemUsage"] as! [[String: Any]]
+            self.itemCombinations = plistData["ItemCombinations"] as! [String: [String: Any]]
         }
         catch{ // error condition
             print("Error reading plist: \(error), format: \(format)")

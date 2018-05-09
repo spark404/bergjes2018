@@ -34,6 +34,16 @@ class ManagementViewController: UIViewController {
         present(refreshAlert, animated: true, completion: nil)
     }
     
+    @IBAction func grantAllItems(_ sender: Any) {
+        if let manager = gameManager {
+            manager.inventory
+                .filter { $0.amount == 0}
+                .forEach{ $0.amount = 1 }
+            manager.inventoryManager.updateInventory(gameItems: manager.inventory)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         // Empty
     }

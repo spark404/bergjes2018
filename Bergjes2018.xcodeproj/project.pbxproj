@@ -19,6 +19,7 @@
 		9A3C084C209F9C2A00D1B14D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C084B209F9C2A00D1B14D /* Location.swift */; };
 		9A3C084E209F9F5800D1B14D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C084D209F9F5800D1B14D /* LocationManager.swift */; };
 		9A3C085020A2271900D1B14D /* GameManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C084F20A2271900D1B14D /* GameManagerTests.swift */; };
+		9A3C085220A38D0800D1B14D /* ItemCombinationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C085120A38D0800D1B14D /* ItemCombinationTests.swift */; };
 		9A72BB91209DBFE7006F417D /* Location Start.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB8E209DBFE6006F417D /* Location Start.gpx */; };
 		9A72BB92209DBFE7006F417D /* All Game Locations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */; };
 		9A72BB93209DBFE7006F417D /* Location Boom.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB90209DBFE7006F417D /* Location Boom.gpx */; };
@@ -77,6 +78,7 @@
 		9A3C084B209F9C2A00D1B14D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		9A3C084D209F9F5800D1B14D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		9A3C084F20A2271900D1B14D /* GameManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerTests.swift; sourceTree = "<group>"; };
+		9A3C085120A38D0800D1B14D /* ItemCombinationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCombinationTests.swift; sourceTree = "<group>"; };
 		9A72BB8E209DBFE6006F417D /* Location Start.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Start.gpx"; sourceTree = "<group>"; };
 		9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "All Game Locations.gpx"; sourceTree = "<group>"; };
 		9A72BB90209DBFE7006F417D /* Location Boom.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Boom.gpx"; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				9AB1BF632095E50000B4B413 /* Bergjes2018Tests.swift */,
 				9AB1BF652095E50000B4B413 /* Info.plist */,
 				9A3C084F20A2271900D1B14D /* GameManagerTests.swift */,
+				9A3C085120A38D0800D1B14D /* ItemCombinationTests.swift */,
 			);
 			path = Bergjes2018Tests;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 			files = (
 				9AB1BF642095E50000B4B413 /* Bergjes2018Tests.swift in Sources */,
 				9A3C085020A2271900D1B14D /* GameManagerTests.swift in Sources */,
+				9A3C085220A38D0800D1B14D /* ItemCombinationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

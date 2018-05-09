@@ -89,12 +89,5 @@ class GameManagerTests: XCTestCase {
         XCTAssertTrue(result.contains(where: {$0.name == "Zakmes"}))
         XCTAssertTrue(result.contains(where: {$0.name == "Munt"}))
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+        
 }

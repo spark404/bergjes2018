@@ -243,17 +243,26 @@
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcg-Rh-qH8">
-                                <rect key="frame" x="134" y="76" width="107" height="30"/>
+                                <rect key="frame" x="147" y="76" width="81" height="30"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="Reset inventory"/>
+                                <state key="normal" title="Reset game"/>
                                 <connections>
                                     <action selector="clickReset:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="7WY-dR-KXR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jx-Qo-BGk">
+                                <rect key="frame" x="136.5" y="114" width="101" height="30"/>
+                                <state key="normal" title="Grant All Items"/>
+                                <connections>
+                                    <action selector="grantAllItems:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="6mx-J0-Cbk"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Jcg-Rh-qH8" firstAttribute="centerX" secondItem="bsb-Lx-x7E" secondAttribute="centerX" id="2Gm-5d-5BZ"/>
+                            <constraint firstItem="6Jx-Qo-BGk" firstAttribute="top" secondItem="Jcg-Rh-qH8" secondAttribute="bottom" constant="8" id="PZ6-TJ-WsN"/>
+                            <constraint firstItem="6Jx-Qo-BGk" firstAttribute="centerX" secondItem="bsb-Lx-x7E" secondAttribute="centerX" id="TSN-SA-OEP"/>
                             <constraint firstItem="Jcg-Rh-qH8" firstAttribute="top" secondItem="bsb-Lx-x7E" secondAttribute="top" constant="56" id="jrY-vZ-Y2h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bsb-Lx-x7E"/>
