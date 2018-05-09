@@ -29,7 +29,7 @@ class GameManager {
         readPropertyList()
         
         // Initialize when needed
-        if (locationManager.locations.count == 0) {
+        if (locationManager.locations.isEmpty) {
             NSLog("Initializing persisted location list")
             let locationList = GameSetupStrocamp.loadLocations().mapValues({
                 (gameLocation: GameLocation) -> Location in
@@ -38,6 +38,13 @@ class GameManager {
             locationManager.reinitialize(locations: Array(locationList.values))
             locationManager.setVisible(locationId: "start", visible: true)
             locationManager.setVisible(locationId: "boom", visible: true)
+        }
+        
+        if inventoryManager.inventory.isEmpty {
+            NSLog("Initializing persisted location list")
+            inventory = inventoryManager.loadInventory(cleanInventory: GameSetupStrocamp.loadItems())
+            self.addItemToInventory(itemName: "Zakmes")
+            self.addItemToInventory(itemName: "Munt")
         }
 
         locations = GameSetupStrocamp.loadLocations()
@@ -72,36 +79,6 @@ class GameManager {
         return visibleLocations
     }
     
-    private func isLocationVisibleFrom(fromLocation: GameLocation, toLocationId: String) -> Bool {
-        return getVisibleLocationIdsFrom(fromLocation: fromLocation).contains(toLocationId)
-    }
-    
-    // This defines the basic routing
-    private func getVisibleLocationIdsFrom(fromLocation: GameLocation) -> [String] {
-        switch fromLocation.name {
-        case "start":
-            return ["boom"]
-        case "boom":
-            return ["start", "koopman", "houthakkershut", "rivier"]
-        case "koopman":
-            return ["boom", "houthakkershut"]
-        case "houthakkershut":
-            return ["boom", "koopman"]
-        case "rivier":
-            return ["boom", "kloofrand", "moeras", "berg"]
-        case "kloofrand":
-            return ["rivier", "kloofbodem"]
-        case "kloofbodem":
-            return ["kloofrand"]
-        case "moeras":
-            return ["rivier"]
-        case "berg":
-            return Array(locations.keys)
-        default:
-            return ["start"];
-        }
-    }
-    
     // This function is called when play clicked on a location
     // perform any actions there that should be done once the player
     // visits a location and has read the description.
@@ -126,7 +103,7 @@ class GameManager {
     }
     
     func retrieveBackpackContents() -> [GameItem] {
-        return inventory
+        return inventory.filter { $0.amount > 0}
     }
     
     func attemptCombine(itemsToCombine: [GameItem]) -> String? {
@@ -164,22 +141,53 @@ class GameManager {
             if let grantedItem = itemAction["grantItem"] as? String {
                 addItemToInventory(itemName: grantedItem)
             }
-
+            
             // Perform the action
             if let visibleLocationId = itemAction["unlockLocation"] as? String {
                 locationManager.setVisible(locationId: visibleLocationId, visible: true)
                 delegate?.updateVisibleLocations(locations: retrieveVisibleLocations())
             }
-
+            
             // Set the remove flag if needed
             if let shouldRemoveItem = itemAction["removeItem"] as? Bool, shouldRemoveItem {
-                    removeItemFromInventory(itemName: itemToUse.name)
+                removeItemFromInventory(itemName: itemToUse.name)
             }
             
             return (itemAction["description"] as! String)
         }
         
         return nil;
+    }
+
+    
+    private func isLocationVisibleFrom(fromLocation: GameLocation, toLocationId: String) -> Bool {
+        return getVisibleLocationIdsFrom(fromLocation: fromLocation).contains(toLocationId)
+    }
+    
+    // This defines the basic routing
+    private func getVisibleLocationIdsFrom(fromLocation: GameLocation) -> [String] {
+        switch fromLocation.name {
+        case "start":
+            return ["boom"]
+        case "boom":
+            return ["start", "koopman", "houthakkershut", "rivier"]
+        case "koopman":
+            return ["boom", "houthakkershut"]
+        case "houthakkershut":
+            return ["boom", "koopman"]
+        case "rivier":
+            return ["boom", "kloofrand", "moeras", "berg"]
+        case "kloofrand":
+            return ["rivier", "kloofbodem"]
+        case "kloofbodem":
+            return ["kloofrand"]
+        case "moeras":
+            return ["rivier"]
+        case "berg":
+            return Array(locations.keys)
+        default:
+            return ["start"];
+        }
     }
 
     private func addItemToInventory(itemName: String) {
@@ -204,11 +212,7 @@ class GameManager {
         return false;
     }
 
-    func retrieveKnownLocations() -> Void {
-        
-    }
-    
-    func getDistanceToLocation(locationId: String, position: GameLocation) -> Int {
+    private func getDistanceToLocation(locationId: String, position: GameLocation) -> Int {
         if let location = retrieveLocationsDatabase()[locationId] {
             let distance = distanceCalculator.distance(lat1: position.latitude, lon1: position.longitude,
                                                        lat2: location.latitude, lon2: location.longitude,
@@ -250,11 +254,11 @@ class GameManager {
     }
     
     func getDescriptionForItem(item: GameItem) -> String {
-        return itemDescriptions[item.name] ?? "Wat een raar ding"
+        return itemDescriptions[item.name] ?? "Wat een raar ding..."
     }
 
     func getDescriptionForLocation(location: GameLocation) -> String {
-        return locationDescriptions[location.name] ?? "Wat een raar ding"
+        return locationDescriptions[location.name] ?? "Here be dragons..."
     }
 
     // Home version
@@ -266,7 +270,9 @@ class GameManager {
         NSLog("Reset all game data")
         inventoryManager.updateInventory(gameItems: GameSetupStrocamp.loadItems())
         inventory = inventoryManager.loadInventory(cleanInventory: GameSetupStrocamp.loadItems())
-        
+        self.addItemToInventory(itemName: "Zakmes")
+        self.addItemToInventory(itemName: "Munt")
+
         let locationList = GameSetupStrocamp.loadLocations().mapValues({
             (gameLocation: GameLocation) -> Location in
             return Location(name: gameLocation.name, visible: false, visited: false)

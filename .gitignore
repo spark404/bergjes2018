@@ -69,3 +69,7 @@ fastlane/test_output
 
 # AppCode
 .idea
+
+# Mystuff
+temp
+sonarqube-generic-coverage.xml

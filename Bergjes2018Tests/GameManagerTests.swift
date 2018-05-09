@@ -70,6 +70,26 @@ class GameManagerTests: XCTestCase {
         XCTAssertTrue(result.contains(where: {$0.name == "boom"}))
     }
     
+    func testStartInventory() {
+        let gameManager = GameManager()
+        
+        let result = gameManager.retrieveBackpackContents();
+        XCTAssertEqual(result.count, 2, "Expected 2 items in the backpack")
+        XCTAssertTrue(result.contains(where: {$0.name == "Zakmes"}))
+        XCTAssertTrue(result.contains(where: {$0.name == "Munt"}))
+    }
+
+    func testStartInventoryAfterReset() {
+        let gameManager = GameManager()
+        
+        gameManager.resetGame()
+        
+        let result = gameManager.retrieveBackpackContents();
+        XCTAssertEqual(result.count, 2, "Expected 2 items in the backpack")
+        XCTAssertTrue(result.contains(where: {$0.name == "Zakmes"}))
+        XCTAssertTrue(result.contains(where: {$0.name == "Munt"}))
+    }
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
