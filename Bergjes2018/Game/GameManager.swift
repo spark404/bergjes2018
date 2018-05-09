@@ -58,7 +58,10 @@ class GameManager {
                     .filter({$0.key != identifier}) // Filter self
                     .filter({isLocationVisibleFrom(fromLocation: currentLocation, toLocationId: $0.key)})
                     .filter({locationManager.isVisible(locationId: $0.key)})
-                    .forEach({visibleLocations.append($0.value)})
+                    .forEach {
+                        NSLog("Adding \($0.value.name) to visible locations")
+                        visibleLocations.append($0.value)
+                    }
             }
         }
         
@@ -73,12 +76,13 @@ class GameManager {
         return getVisibleLocationIdsFrom(fromLocation: fromLocation).contains(toLocationId)
     }
     
+    // This defines the basic routing
     private func getVisibleLocationIdsFrom(fromLocation: GameLocation) -> [String] {
         switch fromLocation.name {
         case "start":
             return ["boom"]
         case "boom":
-            return ["koopman", "houthakkershut", "rivier"]
+            return ["start", "koopman", "houthakkershut", "rivier"]
         case "koopman":
             return ["boom", "houthakkershut"]
         case "houthakkershut":

@@ -14,5 +14,5 @@ before_install:
  - gem install xcpretty
 
 script:
-    - xcodebuild  -scheme Bergjes2018 -sdk iphonesimulator11.3 -workspace Bergjes2018.xcworkspace  -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.3' CODE_SIGNING_REQUIRED=NO test | xcpretty
+    - set -o pipefail && xcodebuild  -scheme Bergjes2018 -sdk iphonesimulator11.3 -workspace Bergjes2018.xcworkspace  -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.3' CODE_SIGNING_REQUIRED=NO test | xcpretty
     - sonar-scanner
