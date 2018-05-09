@@ -41,5 +41,19 @@ class PersistenceManager {
         return (NSKeyedUnarchiver.unarchiveObject(withFile: Location.ArchiveURL.path) as? [Location])
     }
     
+    static func storeActions(actions: [Action]) {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(actions, toFile: Action.ArchiveURL.path)
+        
+        if isSuccessfulSave {
+            NSLog("Actions successfully saved.")
+        } else {
+            NSLog("Failed to save Actions...")
+        }
+    }
+    
+    static func loadActions() -> [Action]? {
+        return (NSKeyedUnarchiver.unarchiveObject(withFile: Action.ArchiveURL.path) as? [Action])
+    }
+
 
 }

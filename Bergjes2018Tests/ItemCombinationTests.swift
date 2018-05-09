@@ -27,6 +27,13 @@ class ItemCombinationTests: XCTestCase {
         } catch {
             // Emtpy
         }
+        
+        do {
+            try fileManager.removeItem(at: Action.ArchiveURL)
+        } catch {
+            // Emtpy
+        }
+
 
     }
     
@@ -35,7 +42,7 @@ class ItemCombinationTests: XCTestCase {
         super.tearDown()
     }
     
-    func testCombinationTwijgAndZakmes() {
+    func testCombinationTwijgAndTouw() {
         let gameManager = GameManager()
         
         gameManager.inventory.first(where: { $0.name == "Twijg"})!.amount += 1
@@ -49,6 +56,23 @@ class ItemCombinationTests: XCTestCase {
         let result = gameManager.retrieveBackpackContents();
         XCTAssertEqual(result.count, 3, "Expected 3 items in the backpack")
         XCTAssertTrue(result.contains(where: {$0.name == "Zweep"}))
+    }
+
+    func testCombinationZakmesAndSmeerolie() {
+        let gameManager = GameManager()
+        
+        gameManager.inventory.first(where: { $0.name == "Smeerolie"})!.amount += 1
+        gameManager.inventoryManager.updateInventory(gameItems: gameManager.inventory)
+        
+        let combineResult = gameManager.attemptCombine(itemsToCombine: gameManager.inventory.filter { $0.name == "Zakmes" || $0.name == "Smeerolie" })
+        
+        XCTAssertNotNil(combineResult, "Zakmes and Smeerolie should be a valid combination")
+        
+        let result = gameManager.retrieveBackpackContents();
+        XCTAssertEqual(result.count, 4, "Expected 4 items in the backpack")
+        XCTAssertTrue(result.contains(where: {$0.name == "Schroevendraaier"}))
+        XCTAssertTrue(result.contains(where: {$0.name == "Smeerolie"}))
+        XCTAssertTrue(result.contains(where: {$0.name == "Zakmes"}))
     }
 
 }

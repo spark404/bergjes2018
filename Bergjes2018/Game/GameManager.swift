@@ -19,12 +19,14 @@ class GameManager {
     
     var itemDescriptions: [String: String] = [:]
     var locationDescriptions: [String: String] = [:]
-    var itemUsage: [[String: Any]] = []
+    var itemUsage: [String : [String: Any]] = [:]
     var itemCombinations: [String: [String: Any]] = [:]
+    var merchantPrices: [String: Int] = [:]
     
     var distanceCalculator = DistanceCalculator()
     var inventoryManager = InventoryManager()
     var locationManager =  LocationManager()
+    var actionManager = ActionManager()
     
     init() {
         readPropertyList()
@@ -127,59 +129,70 @@ class GameManager {
                 let (_, value) = arg
                 let itemName = value["item2"] as! String
                 NSLog("Checking if \(combinableItem2) matches \(itemName)")
-                return itemsToCombine.contains {$0.name == itemName as! String }
+                return itemsToCombine.contains {$0.name == itemName }
             }
             .first
         
         if let foundCombination = result {
+            if (!actionManager.isActionExecutable(actionId: foundCombination.key)) {
+                NSLog("\(combinableItem1) with \(combinableItem2) is a valid combination \(foundCombination.key) but was already executed")
+                return nil
+            }
+            
             NSLog("\(combinableItem1) with \(combinableItem2) is a valid combination \(foundCombination.key)")
             
             addItemToInventory(itemName: foundCombination.value["grantItem"] as! String)
             
             if foundCombination.value["removeItem1"] as! Bool {
-                removeItemFromInventory(itemName: foundCombination.value["item1"] as! String)
+                _ = removeItemFromInventory(itemName: foundCombination.value["item1"] as! String)
             }
             
             if foundCombination.value["removeItem2"] as! Bool {
-                removeItemFromInventory(itemName: foundCombination.value["item2"] as! String)
+                _ = removeItemFromInventory(itemName: foundCombination.value["item2"] as! String)
             }
 
-            return foundCombination.value["description"] as! String
+            actionManager.registerActionExecution(actionId: foundCombination.key)
+            return (foundCombination.value["description"] as! String)
         }
 
         return nil
     }
     
     func attemptUse(itemToUse: GameItem) -> String? {
-        var removeItem: Bool = false
-        
-        for itemAction in itemUsage.filter({$0["item"] as! String == itemToUse.name  }) {
+        NSLog("Attempt to use \(itemToUse) at \(currentLocationId ?? "unknown location")")
+        for itemAction in itemUsage.filter({$0.value["item"] as! String == itemToUse.name  }) {
             
             // Check if we can perform the action by checking the location
-            if let locationId = itemAction["matchLocation"] as? String , currentLocationId != locationId {
+            if let locationId = itemAction.value["matchLocation"] as? String , currentLocationId != locationId {
                 // Not possible to use item here
                 continue
             }
             
+            NSLog("Found action \(itemAction.key)")
+            
+            let repeatable: Bool = itemAction.value["repeatable"] as? Bool ?? false
+            
+            if (!actionManager.isActionExecutable(actionId: itemAction.key) && !repeatable) {
+                NSLog("\(itemAction.key) is a valid usage but was already executed")
+                return nil
+            }
+
             // Perform the action
-            if let grantedItem = itemAction["grantItem"] as? String {
+            if let grantedItem = itemAction.value["grantItem"] as? String {
                 NSLog("Granting item \(grantedItem)")
                 addItemToInventory(itemName: grantedItem)
             }
             
             // Perform the action
-            if let visibleLocationId = itemAction["unlockLocation"] as? String {
+            if let visibleLocationId = itemAction.value["unlockLocation"] as? String {
                 NSLog("Unlocking location \(visibleLocationId)")
                 locationManager.setVisible(locationId: visibleLocationId, visible: true)
                 delegate?.updateVisibleLocations(locations: retrieveVisibleLocations())
             }
             
-            // Set the remove flag if needed
-            if let shouldRemoveItem = itemAction["removeItem"] as? Bool, shouldRemoveItem {
-                removeItemFromInventory(itemName: itemToUse.name)
-            }
+            actionManager.registerActionExecution(actionId: itemAction.key)
             
-            return (itemAction["description"] as! String)
+            return (itemAction.value["description"] as! String)
         }
         
         return nil;
@@ -330,8 +343,9 @@ class GameManager {
             
             self.itemDescriptions = plistData["ItemDescriptions"] as! [String : String]
             self.locationDescriptions = plistData["LocationDescriptions"] as! [String: String]
-            self.itemUsage = plistData["ItemUsage"] as! [[String: Any]]
+            self.itemUsage = plistData["ItemUsage"] as! [String: [String: Any]]
             self.itemCombinations = plistData["ItemCombinations"] as! [String: [String: Any]]
+            self.merchantPrices = plistData["MerchantPrices"] as! [String: Int]
         }
         catch{ // error condition
             print("Error reading plist: \(error), format: \(format)")

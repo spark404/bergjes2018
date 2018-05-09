@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MerchantPrices</key>
+	<dict>
+		<key>Smeerolie</key>
+		<integer>5</integer>
+		<key>Duikbril</key>
+		<integer>1</integer>
+		<key>Lemmet</key>
+		<integer>2</integer>
+		<key>Touw</key>
+		<integer>1</integer>
+	</dict>
 	<key>ItemCombinations</key>
 	<dict>
 		<key>Zakmes-Smeerolie</key>
@@ -19,69 +30,70 @@
 			<key>description</key>
 			<string>De smeerolie brengt weer beweging in de roestige onderdelen van het zakmes. Je ontdekt dat er zelfs een schroevendraaier in verscholen zit.</string>
 		</dict>
-        <key>Twijg-Touw</key>
-        <dict>
-            <key>item1</key>
-            <string>Twijg</string>
-            <key>item2</key>
-            <string>Touw</string>
-            <key>grantItem</key>
-            <string>Zweep</string>
-            <key>removeItem1</key>
-            <true/>
-            <key>removeItem2</key>
-            <true/>
-            <key>description</key>
-            <string>Het begin van het touw wikkel je strak om het twijgje waarna je een stevige knoop maakt. Het twijgje fungeert als handvat van deze primitieve zweep.</string>
-        </dict>
-        <key>Twijg-Lemmet</key>
-        <dict>
-            <key>item1</key>
-            <string>Twijg</string>
-            <key>item2</key>
-            <string>Lemmet</string>
-            <key>grantItem</key>
-            <string>Kapmes</string>
-            <key>removeItem1</key>
-            <true/>
-            <key>removeItem2</key>
-            <true/>
-            <key>description</key>
-            <string>Met behulp van je zakmes maak je een inkeping in het hout te grote van de onderkant van het lemmet. Voorzichtig klem je het lemmet in de inkeping en schraap je de schors van de hout tot deze precies in je hand past.</string>
-        </dict>
-        <key>Kano-Schroefmotor</key>
-        <dict>
-            <key>item1</key>
-            <string>Kano</string>
-            <key>item2</key>
-            <string>Schroefmotor</string>
-            <key>grantItem</key>
-            <string>Motorboot</string>
-            <key>removeItem1</key>
-            <true/>
-            <key>removeItem2</key>
-            <true/>
-            <key>description</key>
-            <string>Met behulp van de schroevendraaier weet je de schroefmotor vast te maken aan de kano. Nu kan je misschien wel tegen de stroming in varen.</string>
-        </dict>
-        <key>Motor-Schroef</key>
-        <dict>
-            <key>item1</key>
-            <string>Motor</string>
-            <key>item2</key>
-            <string>Schroef</string>
-            <key>grantItem</key>
-            <string>Schroefmotor</string>
-            <key>removeItem1</key>
-            <true/>
-            <key>removeItem2</key>
-            <true/>
-            <key>description</key>
-            <string>Met behulp van de schroevendraaier weet je de schroefmotor vast te maken aan de kano. Nu kan je misschien wel tegen de stroming in varen.</string>
-        </dict>
+		<key>Twijg-Touw</key>
+		<dict>
+			<key>item1</key>
+			<string>Twijg</string>
+			<key>item2</key>
+			<string>Touw</string>
+			<key>grantItem</key>
+			<string>Zweep</string>
+			<key>removeItem1</key>
+			<true/>
+			<key>removeItem2</key>
+			<true/>
+			<key>description</key>
+			<string>Het begin van het touw wikkel je strak om het twijgje waarna je een stevige knoop maakt. Het twijgje fungeert als handvat van deze primitieve zweep.</string>
+		</dict>
+		<key>Twijg-Lemmet</key>
+		<dict>
+			<key>item1</key>
+			<string>Twijg</string>
+			<key>item2</key>
+			<string>Lemmet</string>
+			<key>grantItem</key>
+			<string>Kapmes</string>
+			<key>removeItem1</key>
+			<true/>
+			<key>removeItem2</key>
+			<true/>
+			<key>description</key>
+			<string>Met behulp van je zakmes maak je een inkeping in het hout te grote van de onderkant van het lemmet. Voorzichtig klem je het lemmet in de inkeping en schraap je de schors van de hout tot deze precies in je hand past.</string>
+		</dict>
+		<key>Kano-Schroefmotor</key>
+		<dict>
+			<key>item1</key>
+			<string>Kano</string>
+			<key>item2</key>
+			<string>Schroefmotor</string>
+			<key>grantItem</key>
+			<string>Motorboot</string>
+			<key>removeItem1</key>
+			<true/>
+			<key>removeItem2</key>
+			<true/>
+			<key>description</key>
+			<string>Met behulp van de schroevendraaier weet je de schroefmotor vast te maken aan de kano. Nu kan je misschien wel tegen de stroming in varen.</string>
+		</dict>
+		<key>Motor-Schroef</key>
+		<dict>
+			<key>item1</key>
+			<string>Motor</string>
+			<key>item2</key>
+			<string>Schroef</string>
+			<key>grantItem</key>
+			<string>Schroefmotor</string>
+			<key>removeItem1</key>
+			<true/>
+			<key>removeItem2</key>
+			<true/>
+			<key>description</key>
+			<string>Met behulp van de schroevendraaier weet je de schroefmotor vast te maken aan de kano. Nu kan je misschien wel tegen de stroming in varen.</string>
+		</dict>
 	</dict>
 	<key>ItemUsage</key>
-	<array>
+	<dict>
+		<key>Ladder-houthakkershut</key>
 		<dict>
 			<key>description</key>
 			<string>Om een beter overzicht te krijgen zet je de ladder tegen het hutje aan. Door de enorme bomen in de omgeving valt dit enorm tegen. Net voordat je weer wilt afdalen zie je in de nok van het hutje één gouden munt tegen. Wie weet brengt deze nog geluk.</string>
@@ -91,21 +103,21 @@
 			<string>houthakkershut</string>
 			<key>grantItem</key>
 			<string>Munt</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
+		<key>Zakmes-boom</key>
 		<dict>
 			<key>description</key>
 			<string>Met gemak snij je een flinke twijg los van de boom. Alle oneffenheden schaaf je eraf. Wie weet wanneer je dit kunt gebruiken.</string>
-			<key>removeItem</key>
-			<false/>
 			<key>item</key>
 			<string>Zakmes</string>
 			<key>matchLocation</key>
 			<string>boom</string>
 			<key>grantItem</key>
 			<string>Twijg</string>
+			<key>repeatable</key>
+			<true/>
 		</dict>
+		<key>Ladder-boom</key>
 		<dict>
 			<key>description</key>
 			<string>Je zet de ladder tegen een hoge dikke tak. Omhoog klimmen is nu een eitje. Je hebt prima uitzicht over de omgeving en ziet in de verte de grillige contouren van een flinke rivier.</string>
@@ -115,9 +127,8 @@
 			<string>boom</string>
 			<key>unlockLocation</key>
 			<string>rivier</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
+		<key>Touw-boom</key>
 		<dict>
 			<key>description</key>
 			<string>Met een soepele worp gooi je het touw over een hoge dikke tak. Met speels gemak klim je naar boven wat je een overzicht verschaft op de omgeving. In de verte zie je een kronkelende lijn zonder bomen wat duidt op een flinke rivier.</string>
@@ -127,9 +138,8 @@
 			<string>boom</string>
 			<key>unlockLocation</key>
 			<string>rivier</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
+		<key>Duikbril-moeras</key>
 		<dict>
 			<key>description</key>
 			<string>Met het blote oog zie je niks door het troebele water. Met de duikbril op zie je aanmerkelijk meer en je struint de bodem af. Dicht bij de vergane boot vind je de tweetaktmotor. Deze heeft nog niet zo lang in het water gelegen.</string>
@@ -139,9 +149,8 @@
 			<string>moeras</string>
 			<key>grantItem</key>
 			<string>Motor</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
+		<key>Kapmes-boom</key>
 		<dict>
 			<key>description</key>
 			<string>Na flink hak werk komt de boom met een zucht naar beneden. Het echte werk moet echter nog beginnen. Met zwitserse precisie snijd je de bovenlaag van de boom en hol je hem helemaal uit. Vele zweetdruppels, splinters en blaren verder aanschouw je het resultaat. Een haast zeewaardige kano!</string>
@@ -151,9 +160,8 @@
 			<string>boom</string>
 			<key>grantItem</key>
 			<string>Kano</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
+		<key>Kano-rivier</key>
 		<dict>
 			<key>description</key>
 			<string>Voorzichtig laat je de kano te water. Gelukkig blijft hij drijven! Door de sterke stroming kan je alleen stroomafwaarts. Na verloop van tijd wordt de stroming minder en minder en dobber je langzaam verder. De rivier loopt steeds breder uit en mondt uit in een groot stinkend moeras.</string>
@@ -163,9 +171,8 @@
 			<string>rivier</string>
 			<key>unlockLocation</key>
 			<string>moeras</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
+		<key>Zweep-boom</key>
 		<dict>
 			<key>description</key>
 			<string>Met een soepele worp gooi je het touw over een hoge dikke tak. Met speels gemak klim je naar boven wat je een overzicht verschaft op de omgeving. In de verte zie je een kronkelende lijn zonder bomen wat duidt op een flinke rivier.</string>
@@ -175,9 +182,8 @@
 			<string>boom</string>
 			<key>unlockLocation</key>
 			<string>rivier</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
+		<key>Zweep-rivier</key>
 		<dict>
 			<key>description</key>
 			<string>Een ferme klap doet de zweep door de lucht suizen. Door de snelheid wikkelt de punt zich razendsnel meermaals om de dikke tak die over de rivier hangt. Je neemt een korte aanloop en slingert soepel over de rivier. Na een korte wandeling door het bos arriveer je bij de rand van een diepe afgrond.</string>
@@ -187,9 +193,8 @@
 			<string>rivier</string>
 			<key>unlockLocation</key>
 			<string>kloofrand</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
+		<key>Zweep-kloofrand</key>
 		<dict>
 			<key>description</key>
 			<string>Je zoekt een dikke boom aan de rand van de kloof en knoopt de zweep stevig vast. Langzaam leun je over de rand en steeds sneller daal je af naar de bodem van de kloof.</string>
@@ -199,9 +204,8 @@
 			<string>kloofrand</string>
 			<key>unlockLocation</key>
 			<string>kloofbodem</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
+		<key>Zweep-kloofbodem</key>
 		<dict>
 			<key>description</key>
 			<string>Je zoekt een dikke boom aan de rand van de kloof en knoopt de zweep stevig vast. Langzaam leun je over de rand en steeds sneller daal je af naar de bodem van de kloof.</string>
@@ -211,9 +215,8 @@
 			<string>kloofbodem</string>
 			<key>grantItem</key>
 			<string>Schroef</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
+		<key>Motorboot-rivier</key>
 		<dict>
 			<key>description</key>
 			<string>Het bootje ligt verrassend stabiel in het water. Behendig manoeuvreer je de boot stroomopwaarts. Slalommend tussen de rotsblokken bedwing je de steeds woester wordende rivier waarna je het eindstation onderaan een steile waterval bereikt.</string>
@@ -223,9 +226,8 @@
 			<string>rivier</string>
 			<key>unlockLocation</key>
 			<string>berg</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
+		<key>Motorboot-moeras</key>
 		<dict>
 			<key>description</key>
 			<string>Het bootje ligt verrassend stabiel in het water. Behendig manoeuvreer je de boot stroomopwaarts. Slalommend tussen de rotsblokken bedwing je de steeds woester wordende rivier waarna je het eindstation onderaan een steile waterval bereikt.</string>
@@ -235,10 +237,8 @@
 			<string>moeras</string>
 			<key>unlockLocation</key>
 			<string>berg</string>
-			<key>removeItem</key>
-			<false/>
 		</dict>
-	</array>
+	</dict>
 	<key>LocationDescriptions</key>
 	<dict>
 		<key>berg</key>

@@ -28,6 +28,13 @@ class GameManagerTests: XCTestCase {
         } catch {
             // Emtpy
         }
+        
+        do {
+            try fileManager.removeItem(at: Action.ArchiveURL)
+        } catch {
+            // Emtpy
+        }
+
     }
     
     override func tearDown() {
