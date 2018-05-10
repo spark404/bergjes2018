@@ -98,6 +98,10 @@ class GameManager {
             locationManager.setVisible(locationId: "houthakkershut", visible: true)
         case "houthakkershut":
             addItemToInventory(itemName: "Ladder")
+        case "kloofrand":
+            addItemToInventory(itemName: "Munt", amount: 3)
+        case "moeras":
+            addItemToInventory(itemName: "Munt", amount: 4)
         default:
             break
         }
@@ -159,7 +163,7 @@ class GameManager {
     }
     
     func attemptUse(itemToUse: GameItem) -> String? {
-        NSLog("Attempt to use \(itemToUse) at \(currentLocationId ?? "unknown location")")
+        NSLog("Attempt to use \(itemToUse.name) at \(currentLocationId ?? "unknown location")")
         for itemAction in itemUsage.filter({$0.value["item"] as! String == itemToUse.name  }) {
             
             // Check if we can perform the action by checking the location
@@ -229,18 +233,22 @@ class GameManager {
         }
     }
 
-    private func addItemToInventory(itemName: String) {
+    func addItemToInventory(itemName: String) {
+        addItemToInventory(itemName: itemName, amount: 1)
+    }
+
+    func addItemToInventory(itemName: String, amount: Int) {
         let index = inventory.index(where: {$0.name == itemName})!
-        inventory[index].amount += 1
+        inventory[index].amount += amount
         
         inventoryManager.updateInventory(gameItems: inventory)
     }
-    
-    private func removeItemFromInventory(itemName: String) -> Bool {
+
+    func removeItemFromInventory(itemName: String) -> Bool {
         return removeItemFromInventory(itemName: itemName, amount: 1)
     }
 
-    private func removeItemFromInventory(itemName: String, amount: Int) -> Bool{
+    func removeItemFromInventory(itemName: String, amount: Int) -> Bool{
         let index = inventory.index(where: {$0.name == itemName})!
         if (inventory[index].amount >= amount) {
             inventory[index].amount -= amount

@@ -85,6 +85,7 @@
 		9A3C085320A39B1A00D1B14D /* ItemUsageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemUsageTests.swift; sourceTree = "<group>"; };
 		9A3C085520A39DDD00D1B14D /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		9A3C085720A39F6100D1B14D /* ActionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManager.swift; sourceTree = "<group>"; };
+		9A3C085920A460FC00D1B14D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9A72BB8E209DBFE6006F417D /* Location Start.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Start.gpx"; sourceTree = "<group>"; };
 		9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "All Game Locations.gpx"; sourceTree = "<group>"; };
 		9A72BB90209DBFE7006F417D /* Location Boom.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Boom.gpx"; sourceTree = "<group>"; };
@@ -232,6 +233,7 @@
 		9AB1BF422095E4FE00B4B413 = {
 			isa = PBXGroup;
 			children = (
+				9A3C085920A460FC00D1B14D /* README.md */,
 				9A72BB96209DEB23006F417D /* Locations */,
 				9AB1BF7C2095E60B00B4B413 /* Podfile */,
 				9AB1BF4D2095E4FF00B4B413 /* Bergjes2018 */,

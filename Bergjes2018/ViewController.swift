@@ -55,6 +55,8 @@ class ViewController: UIViewController {
         mapView.delegate = self
         mapView.isMyLocationEnabled = true
         mapView.mapType = .hybrid
+        mapView.setMinZoom(16.0, maxZoom: 18.0)
+        // TODO mapView.bounds
         
         gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self,
                                          selector: #selector(updateLocationState), userInfo: nil, repeats: true)

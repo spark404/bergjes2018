@@ -29,3 +29,11 @@ class GameLocation {
     }
 
 }
+
+extension GameLocation: Equatable {
+    static func == (lhs: GameLocation, rhs: GameLocation) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
+    
+}

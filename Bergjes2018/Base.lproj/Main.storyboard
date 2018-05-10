@@ -257,16 +257,66 @@
                                     <action selector="grantAllItems:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="6mx-J0-Cbk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merchant :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-23-y1q">
+                                <rect key="frame" x="29" y="179" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFm-qN-9Vz">
+                                <rect key="frame" x="29" y="208" width="66" height="30"/>
+                                <state key="normal" title="Sell Touw"/>
+                                <connections>
+                                    <action selector="sellTouw:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="9Oy-0O-XD4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAA-HP-oyr">
+                                <rect key="frame" x="29" y="246" width="85" height="30"/>
+                                <state key="normal" title="Sell Lemmet"/>
+                                <connections>
+                                    <action selector="sellLemmet:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="P3h-sa-8c0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oi2-py-yjB">
+                                <rect key="frame" x="29" y="284" width="81" height="30"/>
+                                <state key="normal" title="Sell Duikbril"/>
+                                <connections>
+                                    <action selector="sellDuikbril:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="MGR-me-OTN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBp-o9-r5u">
+                                <rect key="frame" x="29" y="322" width="97" height="30"/>
+                                <state key="normal" title="Sell Smeerolie"/>
+                                <connections>
+                                    <action selector="sellSmeerolie:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="8K5-91-Hyy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Jcg-Rh-qH8" firstAttribute="centerX" secondItem="bsb-Lx-x7E" secondAttribute="centerX" id="2Gm-5d-5BZ"/>
+                            <constraint firstItem="aYN-23-y1q" firstAttribute="leading" secondItem="bsb-Lx-x7E" secondAttribute="leading" constant="29" id="8mu-KD-TAK"/>
+                            <constraint firstItem="EFm-qN-9Vz" firstAttribute="top" secondItem="aYN-23-y1q" secondAttribute="bottom" constant="8" id="BdB-ri-cgK"/>
+                            <constraint firstItem="Oi2-py-yjB" firstAttribute="top" secondItem="QAA-HP-oyr" secondAttribute="bottom" constant="8" id="J9b-6U-9YW"/>
                             <constraint firstItem="6Jx-Qo-BGk" firstAttribute="top" secondItem="Jcg-Rh-qH8" secondAttribute="bottom" constant="8" id="PZ6-TJ-WsN"/>
                             <constraint firstItem="6Jx-Qo-BGk" firstAttribute="centerX" secondItem="bsb-Lx-x7E" secondAttribute="centerX" id="TSN-SA-OEP"/>
+                            <constraint firstItem="QAA-HP-oyr" firstAttribute="top" secondItem="EFm-qN-9Vz" secondAttribute="bottom" constant="8" id="Tzb-Ps-hpv"/>
+                            <constraint firstItem="HBp-o9-r5u" firstAttribute="leading" secondItem="Oi2-py-yjB" secondAttribute="leading" id="cNQ-nJ-Ood"/>
+                            <constraint firstItem="Oi2-py-yjB" firstAttribute="leading" secondItem="QAA-HP-oyr" secondAttribute="leading" id="fKg-2f-DiH"/>
+                            <constraint firstItem="HBp-o9-r5u" firstAttribute="top" secondItem="Oi2-py-yjB" secondAttribute="bottom" constant="8" id="hjC-8u-lXO"/>
                             <constraint firstItem="Jcg-Rh-qH8" firstAttribute="top" secondItem="bsb-Lx-x7E" secondAttribute="top" constant="56" id="jrY-vZ-Y2h"/>
+                            <constraint firstItem="QAA-HP-oyr" firstAttribute="leading" secondItem="EFm-qN-9Vz" secondAttribute="leading" id="m6U-CX-PnP"/>
+                            <constraint firstItem="EFm-qN-9Vz" firstAttribute="leading" secondItem="aYN-23-y1q" secondAttribute="leading" id="qT3-fi-nGy"/>
+                            <constraint firstItem="aYN-23-y1q" firstAttribute="top" secondItem="6Jx-Qo-BGk" secondAttribute="bottom" constant="35" id="w8y-l7-xFS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bsb-Lx-x7E"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonSellDuikbril" destination="Oi2-py-yjB" id="u0a-xN-61J"/>
+                        <outlet property="buttonSellLemmet" destination="QAA-HP-oyr" id="9eg-bA-1OG"/>
+                        <outlet property="buttonSellSmeerolie" destination="HBp-o9-r5u" id="aa1-Ea-qae"/>
+                        <outlet property="buttonSellTouw" destination="EFm-qN-9Vz" id="Yua-tf-cvw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKR-No-auz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
