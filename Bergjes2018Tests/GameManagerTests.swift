@@ -144,7 +144,7 @@ class GameManagerTests: XCTestCase {
         
         // Buy Lemmet from koopman
         gameManager.addItemToInventory(itemName: "Lemmet")
-        gameManager.removeItemFromInventory(itemName: "Munt", amount: 2)
+        _ = gameManager.removeItemFromInventory(itemName: "Munt", amount: 2)
         assertInventoryContains(inventory: gameManager.inventory, itemId: "Lemmet", amount: 1)
         assertInventoryContains(inventory: gameManager.inventory, itemId: "Munt", amount: 0)
         
@@ -154,6 +154,18 @@ class GameManagerTests: XCTestCase {
         assertInventoryContains(inventory: gameManager.inventory, itemId: "Twijg", amount: 1)
         assertInventoryContains(inventory: gameManager.inventory, itemId: "Kapmes", amount: 1)
 
+        // Use Kapmes
+        XCTAssertNotNil(gameManager.attemptUse(itemToUse: gameManager.inventory.first(where: {$0.name == "Kapmes"})!), "Should be possible to use Kapmes")
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Kapmes", amount: 1)
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Kano", amount: 1)
+        
+        // Use Kano
+        gameManager.currentLocationId = "rivier";
+        gameManager.registerVisit(locationId: gameManager.currentLocationId!)
+        XCTAssertNotNil(gameManager.attemptUse(itemToUse: gameManager.inventory.first(where: {$0.name == "Kano"})!), "Should be possible to use Kano")
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Kano", amount: 1)
+        visibleLocations = getGameLocationsAsList(allLocations: locations, ids: ["boom", "rivier", "moeras"])
+        assertVisibleLocations(actual: gameManager.retrieveVisibleLocations(), expected: visibleLocations)
     }
     
     func assertInventoryContains(inventory: [GameItem], itemId: String, amount: Int, file: StaticString = #file, line: UInt = #line) {
