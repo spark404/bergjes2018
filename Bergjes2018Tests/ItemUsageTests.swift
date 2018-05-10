@@ -45,6 +45,9 @@ class ItemUsageTests: XCTestCase {
         let gameManager = GameManager()
         
         gameManager.currentLocationId = "houthakkershut"
+        gameManager.locationManager.setVisible(locationId: "houthakkershut", visible: true)
+        gameManager.locationManager.setVisited(locationId: "houthakkershut", visible: true)
+
         gameManager.inventory.first(where: { $0.name == "Ladder"})!.amount += 1
         gameManager.inventoryManager.updateInventory(gameItems: gameManager.inventory)
 
@@ -62,6 +65,9 @@ class ItemUsageTests: XCTestCase {
         let gameManager = GameManager()
         
         gameManager.currentLocationId = "houthakkershut"
+        gameManager.locationManager.setVisible(locationId: "houthakkershut", visible: true)
+        gameManager.locationManager.setVisited(locationId: "houthakkershut", visible: true)
+        
         gameManager.inventory.first(where: { $0.name == "Ladder"})!.amount += 1
         gameManager.inventoryManager.updateInventory(gameItems: gameManager.inventory)
         
@@ -81,6 +87,8 @@ class ItemUsageTests: XCTestCase {
         let gameManager = GameManager()
         
         gameManager.currentLocationId = "boom"
+        gameManager.locationManager.setVisited(locationId: "boom", visible: true)
+
         var useResult = gameManager.attemptUse(itemToUse: gameManager.inventory.first { $0.name == "Zakmes" }!)
         XCTAssertNotNil(useResult, "Zakmes at Boom should be a valid usage")
 
@@ -90,7 +98,7 @@ class ItemUsageTests: XCTestCase {
         let result = gameManager.retrieveBackpackContents();
         XCTAssertEqual(result.count, 3, "Expected 3 items in the backpack")
         XCTAssertTrue(result.contains(where: {$0.name == "Twijg"}))
-        XCTAssertEqual(result.first(where: {$0.name == "Twijg"})!.amount, 2)
+        XCTAssertEqual(result.first(where: {$0.name == "Twijg"})?.amount, 2)
     }
 
 }

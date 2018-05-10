@@ -124,7 +124,12 @@ class GameManagerTests: XCTestCase {
         XCTAssertNotNil(gameManager.attemptUse(itemToUse: gameManager.inventory.first(where: {$0.name == "Ladder"})!), "Should be possible to use Ladder")
         assertInventoryContains(inventory: gameManager.inventory, itemId: "Ladder", amount: 1)
         assertInventoryContains(inventory: gameManager.inventory, itemId: "Munt", amount: 2)
-        
+
+        // Try to use Ladder at houthakkershut again
+        XCTAssertNil(gameManager.attemptUse(itemToUse: gameManager.inventory.first(where: {$0.name == "Ladder"})!), "Shouldn't be possible to use Ladder again")
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Ladder", amount: 1)
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Munt", amount: 2)
+
         // Use Ladder at boom
         gameManager.currentLocationId = "boom";
         XCTAssertNotNil(gameManager.attemptUse(itemToUse: gameManager.inventory.first(where: {$0.name == "Ladder"})!), "Should be possible to use Ladder")
@@ -136,6 +141,18 @@ class GameManagerTests: XCTestCase {
         XCTAssertNotNil(gameManager.attemptUse(itemToUse: gameManager.inventory.first(where: {$0.name == "Zakmes"})!), "Should be possible to use Zakmes")
         XCTAssertNotNil(gameManager.attemptUse(itemToUse: gameManager.inventory.first(where: {$0.name == "Zakmes"})!), "Should be possible to use Zakmes")
         assertInventoryContains(inventory: gameManager.inventory, itemId: "Twijg", amount: 2)
+        
+        // Buy Lemmet from koopman
+        gameManager.addItemToInventory(itemName: "Lemmet")
+        gameManager.removeItemFromInventory(itemName: "Munt", amount: 2)
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Lemmet", amount: 1)
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Munt", amount: 0)
+        
+        // Combine Lemmet and Twijg
+        XCTAssertNotNil(gameManager.attemptCombine(itemsToCombine: getGameItemsAsList(allItems: gameManager.inventory, ids: ["Lemmet", "Twijg"])))
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Lemmet", amount: 0)
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Twijg", amount: 1)
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Kapmes", amount: 1)
 
     }
     
@@ -161,5 +178,12 @@ class GameManagerTests: XCTestCase {
             .map({return $0.value})
             .sorted(by: {$0.name < $1.name}) as [GameLocation]
     }
-        
+
+    func getGameItemsAsList(allItems: [GameItem], ids: [String]) -> [GameItem] {
+        return allItems
+            .filter({ids.contains($0.name)})
+            .map({return $0})
+            .sorted(by: {$0.name < $1.name}) as [GameItem]
+    }
+
 }
