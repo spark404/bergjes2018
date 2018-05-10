@@ -2,6 +2,153 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ErrorMessages</key>
+	<dict>
+		<key>Zakmes-koopman</key>
+		<dict>
+			<key>identifier1</key>
+			<string>Zakmes</string>
+			<key>identifier2</key>
+			<string>koopman</string>
+			<key>errorMessage</key>
+			<string>Probeer je nou het zakmes dat je al jaren hebt te verkopen? Geen goed idee. Je komt vast nog in een situatie dat je deze dit stuk gereedschap hard nodig hebt.</string>
+		</dict>
+        <key>Touw-koopman</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Touw</string>
+            <key>identifier2</key>
+            <string>koopman</string>
+            <key>errorMessage</key>
+            <string>Een mooi stuk touw, dat moet de koopman toegeven. Je zult het zelf echter harder nodig hebben.</string>
+        </dict>
+        <key>Duikbril-koopman</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Duikbril</string>
+            <key>identifier2</key>
+            <string>koopman</string>
+            <key>errorMessage</key>
+            <string>De koopman lacht zich rot, het is toch geen carnaval rare westerling?</string>
+        </dict>
+        <key>Kapmes-koopman</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Kapmes</string>
+            <key>identifier2</key>
+            <string>koopman</string>
+            <key>errorMessage</key>
+            <string>Stoer hoor zo’n kapmes. Helaas is de koopman niet onder de indruk. Als je nog een keer je mes trekt dreigt hij zijn prijzen te verhogen.</string>
+        </dict>
+        <key>Zweep-koopman</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Zweep</string>
+            <key>identifier2</key>
+            <string>koopman</string>
+            <key>errorMessage</key>
+            <string>Indiana Jones die zijn zweep verkoopt? Dat is alles de Dukes of Hazard die de General Lee verkopen, no way dus.</string>
+        </dict>
+        <key>Schroef-koopman</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Schroef</string>
+            <key>identifier2</key>
+            <string>koopman</string>
+            <key>errorMessage</key>
+            <string>Koopman: "Zie jij hier water? Nee dus, wat moet ik nou met bootonderdelen?"</string>
+        </dict>
+        <key>Motor-koopman</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Motor</string>
+            <key>identifier2</key>
+            <string>koopman</string>
+            <key>errorMessage</key>
+            <string>Koopman: "Zie jij hier water? Nee dus, wat moet ik nou met bootonderdelen?"</string>
+        </dict>
+        <key>Motorboot-koopman</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Motorboot</string>
+            <key>identifier2</key>
+            <string>koopman</string>
+            <key>errorMessage</key>
+            <string>Koopman: "Zie jij hier water? Nee dus, wat moet ik nou met een boot?"</string>
+        </dict>
+        <key>Kano-koopman</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Kano</string>
+            <key>identifier2</key>
+            <string>koopman</string>
+            <key>errorMessage</key>
+            <string>Koopman: "Zie jij hier water? Nee dus, wat moet ik nou met een kano?"</string>
+        </dict>
+        <key>Ladder-koopman</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Ladder</string>
+            <key>identifier2</key>
+            <string>koopman</string>
+            <key>errorMessage</key>
+            <string>Via de ladder sluip je op het dak. Toch betrapt de koopman je en citeert hij onmiskenbaar uit de grootste hit van Peter Koelewijn.</string>
+        </dict>
+        <key>Ladder-rivier</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Ladder</string>
+            <key>identifier2</key>
+            <string>rivier</string>
+            <key>errorMessage</key>
+            <string>Je probeert de ladder over de rivier te leggen. Je komt alleen net 1,5 meter te kort. Je zult een andere manier moeten vinden.</string>
+        </dict>
+        <key>Ladder-kloofrand</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Ladder</string>
+            <key>identifier2</key>
+            <string>kloofrand</string>
+            <key>errorMessage</key>
+            <string>De kloof is veel te diep. Hier is helaas geen ladder tegen opgewassen.</string>
+        </dict>
+        <key>Ladder-kloofbodem</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Ladder</string>
+            <key>identifier2</key>
+            <string>kloofbodem</string>
+            <key>errorMessage</key>
+            <string>De kloof is veel te diep. Hier is helaas geen ladder tegen opgewassen.</string>
+        </dict>
+        <key>Duikbril-rivier</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Duikbril</string>
+            <key>identifier2</key>
+            <string>rivier</string>
+            <key>errorMessage</key>
+            <string>Het zicht er fascinerend uit onder water. Grote vissen, kleine vissen en allerlei kiezels en takjes. Helaas zie je niks dat je kunt gebruiken.</string>
+        </dict>
+        <key>Kano-moeras</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Duikbril</string>
+            <key>identifier2</key>
+            <string>rivier</string>
+            <key>errorMessage</key>
+            <string>Je dobbert wat rond.</string>
+        </dict>
+        <key>Motorboot-moeras</key>
+        <dict>
+            <key>identifier1</key>
+            <string>Motorboot</string>
+            <key>identifier2</key>
+            <string>moeras</string>
+            <key>errorMessage</key>
+            <string>De schroef loopt vast in de vegetatie, gelukkig heb je een zakmes om je los te snijden. Dit lijkt niet voor herhaling vatbaar.</string>
+        </dict>
+	</dict>
 	<key>MerchantPrices</key>
 	<dict>
 		<key>Smeerolie</key>
@@ -88,7 +235,7 @@
 			<key>removeItem2</key>
 			<true/>
 			<key>description</key>
-			<string>Met behulp van de schroevendraaier weet je de schroefmotor vast te maken aan de kano. Nu kan je misschien wel tegen de stroming in varen.</string>
+			<string>Gelukkig zijn de schroef en motor van dezelfde makelaardij. Ze lijken voor elkaar gemaakt en zonder problemen bevestig je de schroef op de motor.</string>
 		</dict>
 	</dict>
 	<key>ItemUsage</key>

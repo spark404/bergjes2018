@@ -22,6 +22,7 @@ class GameManager {
     var itemUsage: [String : [String: Any]] = [:]
     var itemCombinations: [String: [String: Any]] = [:]
     var merchantPrices: [String: Int] = [:]
+    var errorMessages: [String: [String: Any]] = [:]
     
     var distanceCalculator = DistanceCalculator()
     var inventoryManager = InventoryManager()
@@ -202,6 +203,36 @@ class GameManager {
         return nil;
     }
 
+    // Returns an error message from the list or de default error message
+    // Parameters:
+    //   identifier1: GameLocation identifier or GameAction identifier
+    //   identifier2: GameLocation identifier or GameAction identifier
+    // Returns:
+    //   String: error message
+    func getErrorMessageForAttempt(identifier1: String, identifier2: String) -> String {
+        let result = errorMessages
+            .filter { (arg) -> Bool in
+                let (_, value) = arg
+                return {value["identifier1"] as! String == identifier1 || value["identifier2"] as! String == identifier1}()
+            }
+            .filter { (arg) -> Bool in
+                let (_, value) = arg
+                return {value["identifier1"] as! String == identifier2 || value["identifier2"] as! String == identifier2}()
+            }
+            .first
+
+        if let foundCombination = result {
+            return foundCombination.value["errorMessage"] as! String
+        }
+        
+        if locations.keys.contains(where: {$0 == identifier1 || $0 == identifier2}) {
+            // Its a use attempt at a location
+            return "Dit item kan je hier helaas niet gebruiken."
+        } else {
+            // Its a combination attempt
+            return "Deze items kan je helaas niet combineren."
+        }
+    }
     
     private func isLocationVisibleFrom(fromLocation: GameLocation, toLocationId: String) -> Bool {
         return getVisibleLocationIdsFrom(fromLocation: fromLocation).contains(toLocationId)
@@ -354,6 +385,7 @@ class GameManager {
             self.itemUsage = plistData["ItemUsage"] as! [String: [String: Any]]
             self.itemCombinations = plistData["ItemCombinations"] as! [String: [String: Any]]
             self.merchantPrices = plistData["MerchantPrices"] as! [String: Int]
+            self.errorMessages = plistData["ErrorMessages"] as! [String: [String: Any]]
         }
         catch{ // error condition
             print("Error reading plist: \(error), format: \(format)")

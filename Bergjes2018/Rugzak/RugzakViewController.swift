@@ -21,7 +21,7 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
     
     @IBAction func close(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: {()->Void in
-            NSLog("done");
+            // Empty
         });
     }
     
@@ -33,7 +33,7 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
                     // It worked
                     showActionResult(message: result)
                 } else {
-                    showActionResult(message: "Dit item kan je hier helaas niet gebruiken")
+                    showErrorResult(id1: items[selectedRows[0].row].name, id2: gameManager!.currentLocationId!)
                 }
                 
             }
@@ -54,7 +54,7 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
                         // It worked
                         showActionResult(message: result)
                     } else {
-                        showActionResult(message: "Deze items kun je helaas niet combineren.")
+                        showErrorResult(id1: itemsToCombine[0].name, id2: itemsToCombine[1].name)
                     }
                 }
             }
@@ -131,7 +131,7 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
     }
     
     func showActionResult(message: String) {
-        let refreshAlert = UIAlertController(title: "Resultaat", message: message, preferredStyle: .alert)
+        let refreshAlert = UIAlertController(title: "Tadaa!", message: message, preferredStyle: .alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             // OK
@@ -140,6 +140,19 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
         }))
         
         present(refreshAlert, animated: true, completion: nil)
+    }
+
+    func showErrorResult(id1: String, id2: String) {
+        let message = gameManager!.getErrorMessageForAttempt(identifier1: id1, identifier2: id2)
+        let alert = UIAlertController(title: "Helaas", message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            // OK
+            self.items = self.gameManager!.retrieveBackpackContents().filter({ $0.amount > 0 })
+            self.rugzakContents.reloadData()
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 
