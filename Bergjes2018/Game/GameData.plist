@@ -133,9 +133,9 @@
         <key>Kano-moeras</key>
         <dict>
             <key>identifier1</key>
-            <string>Duikbril</string>
+            <string>Kano</string>
             <key>identifier2</key>
-            <string>rivier</string>
+            <string>moeras</string>
             <key>errorMessage</key>
             <string>Je dobbert wat rond.</string>
         </dict>
@@ -243,7 +243,7 @@
 		<key>Ladder-houthakkershut</key>
 		<dict>
 			<key>description</key>
-			<string>Om een beter overzicht te krijgen zet je de ladder tegen het hutje aan. Door de enorme bomen in de omgeving valt dit enorm tegen. Net voordat je weer wilt afdalen zie je in de nok van het hutje één gouden munt tegen. Wie weet brengt deze nog geluk.</string>
+			<string>Om een beter overzicht te krijgen zet je de ladder tegen het hutje aan. Door de enorme bomen in de omgeving valt dit enorm tegen. Net voordat je weer wilt afdalen zie je in de nok van het hutje één gouden munt tegen. Wie weet brengt deze nog geluk!</string>
 			<key>item</key>
 			<string>Ladder</string>
 			<key>matchLocation</key>
@@ -254,7 +254,7 @@
 		<key>Zakmes-boom</key>
 		<dict>
 			<key>description</key>
-			<string>Met gemak snij je een flinke twijg los van de boom. Alle oneffenheden schaaf je eraf. Wie weet wanneer je dit kunt gebruiken.</string>
+			<string>Met gemak snij je een flinke tak los van de boom. Alle oneffenheden schaaf je eraf. Wie weet wanneer je dit kunt gebruiken...</string>
 			<key>item</key>
 			<string>Zakmes</string>
 			<key>matchLocation</key>
@@ -267,7 +267,7 @@
 		<key>Ladder-boom</key>
 		<dict>
 			<key>description</key>
-			<string>Je zet de ladder tegen een hoge dikke tak. Omhoog klimmen is nu een eitje. Je hebt prima uitzicht over de omgeving en ziet in de verte de grillige contouren van een flinke rivier.</string>
+			<string>Je zet de ladder tegen een stevige tak. Omhoog klimmen is nu een eitje. Je hebt prima uitzicht over de omgeving en ziet in de verte de grillige contouren van de rivier.</string>
 			<key>item</key>
 			<string>Ladder</string>
 			<key>matchLocation</key>
@@ -278,7 +278,7 @@
 		<key>Touw-boom</key>
 		<dict>
 			<key>description</key>
-			<string>Met een soepele worp gooi je het touw over een hoge dikke tak. Met speels gemak klim je naar boven wat je een overzicht verschaft op de omgeving. In de verte zie je een kronkelende lijn zonder bomen wat duidt op een flinke rivier.</string>
+			<string>Met een soepele worp gooi je het touw over een overhangende tak. Nu is het simpel om naar boven te klimmen. In de verte zie je de kronkelende lijn van een rivier.</string>
 			<key>item</key>
 			<string>Touw</string>
 			<key>matchLocation</key>
@@ -289,7 +289,7 @@
 		<key>Duikbril-moeras</key>
 		<dict>
 			<key>description</key>
-			<string>Met het blote oog zie je niks door het troebele water. Met de duikbril op zie je aanmerkelijk meer en je struint de bodem af. Dicht bij de vergane boot vind je de tweetaktmotor. Deze heeft nog niet zo lang in het water gelegen.</string>
+			<string>Met het blote oog zie je niks door het troebele water. Met de duikbril op zie je aanmerkelijk meer. Dicht bij de vergane boot vind je een tweetaktmotor. Deze heeft nog niet zo lang in het water gelegen.</string>
 			<key>item</key>
 			<string>Duikbril</string>
 			<key>matchLocation</key>
@@ -300,7 +300,7 @@
 		<key>Kapmes-boom</key>
 		<dict>
 			<key>description</key>
-			<string>Na flink hak werk komt de boom met een zucht naar beneden. Het echte werk moet echter nog beginnen. Met zwitserse precisie snijd je de bovenlaag van de boom en hol je hem helemaal uit. Vele zweetdruppels, splinters en blaren verder aanschouw je het resultaat. Een haast zeewaardige kano!</string>
+			<string>Na flink hak werk komt de boom krakend naar beneden. Het echte werk moet echter nog beginnen. Vele zweetdruppels, splinters en blaren verder aanschouw je het resultaat. Een haast zeewaardige kano!</string>
 			<key>item</key>
 			<string>Kapmes</string>
 			<key>matchLocation</key>
@@ -311,7 +311,7 @@
 		<key>Kano-rivier</key>
 		<dict>
 			<key>description</key>
-			<string>Voorzichtig laat je de kano te water. Gelukkig blijft hij drijven! Door de sterke stroming kan je alleen stroomafwaarts. Na verloop van tijd wordt de stroming minder en minder en dobber je langzaam verder. De rivier loopt steeds breder uit en mondt uit in een groot stinkend moeras.</string>
+			<string>Voorzichtig laat je de kano te water. Gelukkig blijft hij drijven! Door de sterke stroming kan je alleen stroomafwaarts. Na verloop van tijd wordt de stroming minder en minder en dobber je langzaam verder. Recht het stinkend moeras in...</string>
 			<key>item</key>
 			<string>Kano</string>
 			<key>matchLocation</key>
@@ -322,7 +322,7 @@
 		<key>Zweep-boom</key>
 		<dict>
 			<key>description</key>
-			<string>Met een soepele worp gooi je het touw over een hoge dikke tak. Met speels gemak klim je naar boven wat je een overzicht verschaft op de omgeving. In de verte zie je een kronkelende lijn zonder bomen wat duidt op een flinke rivier.</string>
+			<string>Met een klap sla je de zweep om een overhangende tak. Nu is het simpel om naar boven te klimmen. In de verte zie je de kronkelende lijn van een rivier.</string>
 			<key>item</key>
 			<string>Zweep</string>
 			<key>matchLocation</key>
@@ -333,7 +333,7 @@
 		<key>Zweep-rivier</key>
 		<dict>
 			<key>description</key>
-			<string>Een ferme klap doet de zweep door de lucht suizen. Door de snelheid wikkelt de punt zich razendsnel meermaals om de dikke tak die over de rivier hangt. Je neemt een korte aanloop en slingert soepel over de rivier. Na een korte wandeling door het bos arriveer je bij de rand van een diepe afgrond.</string>
+			<string>Met een ferme klap wikkelt de zweep zich veilig om een boomtak. Je neemt een korte aanloop en slingert over de rivier alsof je dit vaker doet. Na een korte wandeling door het bos arriveer je bij de rand van een diepe afgrond.</string>
 			<key>item</key>
 			<string>Zweep</string>
 			<key>matchLocation</key>
@@ -355,7 +355,7 @@
 		<key>Zweep-kloofbodem</key>
 		<dict>
 			<key>description</key>
-			<string>Je zoekt een dikke boom aan de rand van de kloof en knoopt de zweep stevig vast. Langzaam leun je over de rand en steeds sneller daal je af naar de bodem van de kloof.</string>
+			<string>Je zoekt een dikke boom aan de rand van de kloof en knoopt de zweep stevig vast. Als een ware professional daal je af naar de bodem van de kloof.</string>
 			<key>item</key>
 			<string>Schroevendraaier</string>
 			<key>matchLocation</key>
@@ -363,10 +363,21 @@
 			<key>grantItem</key>
 			<string>Schroef</string>
 		</dict>
+        <key>Schroevendraaier-kloofbodem</key>
+        <dict>
+            <key>description</key>
+            <string>Het kost wat kracht maar na flink wrikkend en sjorren krijg je de oude schroef los van de boot. Helaas was de schroef het enige onderdeel dat bestand was tegen de natuurelementen.</string>
+            <key>item</key>
+            <string>Schroevendraaier</string>
+            <key>matchLocation</key>
+            <string>kloofbodem</string>
+            <key>grantItem</key>
+            <string>Schroef</string>
+        </dict>
 		<key>Motorboot-rivier</key>
 		<dict>
 			<key>description</key>
-			<string>Het bootje ligt verrassend stabiel in het water. Behendig manoeuvreer je de boot stroomopwaarts. Slalommend tussen de rotsblokken bedwing je de steeds woester wordende rivier waarna je het eindstation onderaan een steile waterval bereikt.</string>
+			<string>De boot ligt verrassend stabiel in het water. Slalommend tussen de rotsblokken kom je bij een steile waterval. Je kunt niet verder dus dat wordt klimmen!</string>
 			<key>item</key>
 			<string>Motorboot</string>
 			<key>matchLocation</key>
@@ -377,7 +388,7 @@
 		<key>Motorboot-moeras</key>
 		<dict>
 			<key>description</key>
-			<string>Het bootje ligt verrassend stabiel in het water. Behendig manoeuvreer je de boot stroomopwaarts. Slalommend tussen de rotsblokken bedwing je de steeds woester wordende rivier waarna je het eindstation onderaan een steile waterval bereikt.</string>
+			<string>De boot ligt verrassend stabiel in het water. Slalommend tussen de rotsblokken kom je bij een steile waterval. Je kunt niet verder dus dat wordt klimmen!</string>
 			<key>item</key>
 			<string>Motorboot</string>
 			<key>matchLocation</key>
@@ -389,26 +400,26 @@
 	<key>LocationDescriptions</key>
 	<dict>
 		<key>berg</key>
-		<string>Na een uitdagende klim bereik je eindelijk de top van de berg. Je kijkt om je heen en ziet de restanten van de grote boom, het houthakkershutje, de kolkende rivier, de fel rode dakpannen van de koopman, de eindeloze diepte van de kloof en de dampen van het moeras. Het fantastische uitzicht zorgt er bijna voor dat je de grote schatkist bijna over het hoofd ziet. Eindelijk heb je gevonden waar je naar zocht. Je steekt je zakmes in het slot en opent de deksel. Zou je de schat als eerste gevonden hebben of waren er andere kapers op de kust?</string>
+		<string>Na een uitdagende klim bereik je eindelijk de top van de berg. Je kijkt om je heen en ziet de restanten van de grote boom, de houthakkershut, de kolkende rivier, de fel rode dakpannen van de koopman, de diepe kloof en de damp die boven het moeras hangt. Het uitzicht zorgt er bijna voor dat je de schatkist recht voor je voeten over het hoofd ziet. Eindelijk heb je gevonden waar je naar zocht!</string>
 		<key>moeras</key>
-		<string>Het stinkt naar rotte vis en het stilstaande water trekt hordes muggen aan. Het een zakdoek voor je neus en mond trek je lijdzaam door de drek tot je plotseling stuit op een half gezonken vissersbootje. Een kikker springt verschrikt weg als je aan boord stapt. Je vind hier een klein metalen kistje met maar liefst 5 gouden munten, een meevaller. Op de plek waar ooit de buitenboordmotor zat zit niks meer dan een gapend gat in de kleine achtersteven. Het meer achter de boot is zo weids en diep dat je hier niet verder kunt.</string>
+		<string>De geur van rotte vis en stilstaand water trekt hordes muggen aan. Met een zakdoek voor je neus ploeg je lijdzaam door het troebele water. Dan stuit je opeens op een half gezonken blauw vissersbootje. Een kikker springt verschrikt weg als je aan boord stapt. Je vind hier een metalen kistje met maar liefst 5 gouden munten, een meevaller. Op de plek waar ooit de buitenboordmotor zat, zit nu een gapend gat.</string>
 		<key>kloofbodem</key>
-		<string>Na een gevaarlijke afdaling bereik je zwetend de bodem van de kloof. Het is hier windstil en door de brandende zon bloedheet. De flikkering die je boven zag werd niet veroorzaakt door gouden munten maar door een schroot oud ijzer wat ooit een boot was geweest. Blijkbaar liep er in een ver verleden een flinke rivier door de kloof. Misschien heb je nog iets aan een van de onderdelen. Je kijkt omhoog en ziet nu al op tegen de klim omhoog.</string>
+		<string>Na een gevaarlijke afdaling bereik je zwetend de bodem van de kloof. Het is hier windstil en bloedheet. De flikkering die je boven zag werd niet veroorzaakt door gouden munten maar door de metalen resten van een rode vissersboot. Blijkbaar liep er in het verleden een flinke rivier door de kloof. Misschien zijn er toch nog onderdelen af te schroeven?</string>
 		<key>kloofrand</key>
-		<string>Achter een rij hoge bomen stort de aarde zich in een diepe rotsachtige kloof. De overkant is een kleine 5 meter ver en haal zelf jij springend niet. De kloof strekt zich aan beide kanten zo ver uit als je kunt kijken. De felle zon reflecteert op iets in het mulle zand. Hierdoor ontdek je al snel een gouden munt. Even zoeken levert nog twee munten op. Diep in de kloof ligt iets wat het zonlicht weerkaatst. Nog meer gouden munten?</string>
+		<string>Achter een rij hoge bomen ligt een diepe kloof. De overkant is een kleine 5 meter ver. Te ver om te springen! De kloof strekt zich aan beide kanten zo ver uit als je kunt kijken. Maar de felle zon reflecteert op iets in het mulle zand: een gouden munt. Even zoeken levert nog twee munten op. Diep in de kloof ligt nog iets wat het zonlicht weerkaatst. Meer gouden munten?</string>
 		<key>rivier</key>
-		<string>Het kolkende water maakt witte schuimkoppen langs de puntige rotsen in de rivier. De sterke stroming maakt dat het onmogelijk is de overkant zwemmende te bereiken. Een laaghangende takken van een overhellende boom raken zo af en toe de golven in het midden van de rivier. Stroomopwaarts lonken de toppen van een schitterende berg terwijl stroomafwaarts lijkt uit te monden in een drassig moeraslandschap.</string>
+		<string>Het kolkende water maakt witte schuimkoppen langs de rotsen in de rivier. Door de sterke stroming is naar de overkant zwemmen geen optie. De laaghangende takken van een overhellende boom raken zo af en toe de golven in het midden van de rivier. Stroomopwaarts lonken de toppen van een schitterende berg en stroomafwaarts zie je een drassig moeraslandschap.</string>
 		<key>koopman</key>
-		<string>Aan een zanderig karrepad ligt een verrassend degelijk huisje met fel rode dakpannen. Bij het open van de deur verraad een belletje aan de bewoner dat je er bent. Vanachter de toonbank verschijnt een bebaarde mystieke koopman. Wellicht verkoopt hij iets van waarde maar laat je niet misleiden.</string>
+		<string>Aan een zanderig karrepad ligt een verrassend degelijk huisje met fel rode dakpannen. Bij het open van de deur klinkt een belletje. Vanachter de toonbank verschijnt een bebaarde koopman. Wellicht verkoopt hij iets van waarde maar laat je niet misleiden...</string>
 		<key>houthakkershut</key>
-		<string>Verscholen in het dichte bos ligt een vervallen huisje met een kleine zolder. De vergane deur geeft je simpel toegang tot het kleine vertrek. De resten kaphout en een verrotte schommelstoel verraden dat dit het werkdomein was van een houthakker. Zijn gereedschap heeft helaas de tand des tijds niet overleeft. In de beschutting van wat ooit de zoldertrap was geweest was vind je een oude maar stevige ladder.</string>
+		<string>Verscholen in het bos ligt een vervallen huisje met een kleine zolder. De vergane deur geeft je simpel toegang. De resten kaphout en een verrotte schommelstoel verraden dat dit het werkdomein was van een houthakker. Zijn gereedschap heeft helaas de tand des tijds niet overleeft. In de beschutting van wat ooit de zoldertrap is geweest vind je een oude maar stevige ladder.</string>
 		<key>boom</key>
-		<string>Tussen de laaggroei torent een opvallende grote dikke eik uit. Hij oogt stevig en het bovenste topje zou een fantastisch uitzicht bieden. Via kleine twijgjes aan de onderkant van de boom kan je een klein stukje omhoog klimmen. Je ziet in de verte een vervallen hutje met een bemost dak. Aan de andere kant zie je een moderner, enigszins mystiek huisje met fel rode dakpannen. Verder klimmen is helaas geen optie.</string>
+		<string>Je ziet een opvallend grote eik staan tussen verder lage begroeiing. Het bovenste topje zou een fantastisch uitzicht bieden... Via takken  aan de onderkant van de boom kun je makkelijk een klein stuk omhoog klimmen. In de verte zie je een vervallen hut met een bemost dak. Aan de andere kant zie je een huisje met fel rode dakpannen. Verder klimmen is helaas geen optie op dit moment.</string>
 	</dict>
 	<key>ItemDescriptions</key>
 	<dict>
 		<key>Motorboot</key>
-		<string>Who’s Mcgiver? The A-team? Bekijk deze heuse boot maar eens!</string>
+		<string>Who’s McGyver? The A-team? Bekijk deze heuse boot maar eens!</string>
 		<key>Schroefmotor</key>
 		<string>Een knap stukje techniek. Her en der wat roestig maar hij pruttelt nog prima.</string>
 		<key>Schroevendraaier</key>
@@ -416,15 +427,15 @@
 		<key>Zweep</key>
 		<string>Slaan, grijpen en klimmen. Als je weet hoe je hem moet gebruiken is dit oprecht een multitool.</string>
 		<key>Schroef</key>
-		<string>Drie roestige metalen bladen vormen samen deze bootschroef</string>
+		<string>Drie roestige metalen bladen vormen samen deze bootschroef.</string>
 		<key>Motor</key>
-		<string>De vette olie heeft ervoor gezorgt dat het water de tweetaktmotor amper heeft aangetast. </string>
+		<string>De vette olie heeft ervoor gezorgt dat het water de tweetaktmotor amper heeft aangetast.</string>
 		<key>Kano</key>
-		<string>Indianen zouden hier een moord voor begaan. Een waterdichte en oerdegelijke kano.</string>
+		<string>Een waterdichte en degelijke kano. Wat kun je je nog meer wensen?</string>
 		<key>Ladder</key>
 		<string>Zwaar, hout en 4m lang. Een oud maar stevig model.</string>
 		<key>Kapmes</key>
-		<string>Vlijmscherp, en oersterk. In jouw handen kan hij zelfs de dichtst begroeide bossen aan.</string>
+		<string>Vlijmscherp en oersterk. In jouw handen kan hij zelfs de dichtst begroeide bossen aan.</string>
 		<key>Smeerolie</key>
 		<string>Sterk geurende smeerolie. Maakt los wat al jaren vast zit.</string>
 		<key>Duikbril</key>
@@ -432,13 +443,13 @@
 		<key>Lemmet</key>
 		<string>Ruim 25 cm gehard en vlijmscherp metaal. Pas op je vingers!</string>
 		<key>Touw</key>
-		<string>Bijna 3 meter lang, niet al te dik maar leerachtig oersterk touw.</string>
+		<string>Bijna 3 meter lang, niet al te dik maar leerachtig sterk touw.</string>
 		<key>Twijg</key>
-		<string>Een ronde tak van net geen 10 cm lang. Netjes afgezaagd, sterk hout maar wat moet je ermee?</string>
+		<string>Een tak van net geen 10 cm lang. Netjes afgezaagd, sterk hout maar wat moet je ermee?</string>
 		<key>Munt</key>
-		<string>Een blinkende gouden munt. Hoewel je de inscripties niet kunt lezen verwacht je dat dit best best wat waard is.</string>
+		<string>Een blinkende gouden munt. Hoewel je de inscripties niet kunt lezen verwacht je dat deze best wat waard is.</string>
 		<key>Zakmes</key>
-		<string>Al jaren jouw steun en toeverlaat in donkere tijden. Sommige onderdelen zijn inmiddels vastgeroest en onbruikbaar maar het mes is nog altijd vlijmscherp.</string>
+		<string>Al jaren jouw steun en toeverlaat in donkere tijden. Sommige onderdelen zitten al jaren vast maar het mes is nog altijd goed te gebruiken.</string>
 	</dict>
 </dict>
 </plist>

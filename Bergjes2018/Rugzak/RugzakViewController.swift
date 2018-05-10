@@ -10,12 +10,18 @@ import Foundation
 import UIKit
 import MobileCoreServices
 
-class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
+protocol BlurredViewControllerDelegate: class {
+    func removeBlurredBackgroundView()
+}
+
+class RugzakViewController: UIViewController {
     var gameManager: GameManager?
     var items: [GameItem] = []
+    var itemToUse: GameItem?
     
     @IBOutlet weak var rugzakContents: UITableView!
     
+    @IBOutlet weak var selectButton: UIBarButtonItem!
     @IBOutlet weak var combineButton: UIBarButtonItem!
     @IBOutlet weak var useButton: UIBarButtonItem!
     
@@ -25,47 +31,41 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
         });
     }
     
+    @IBAction func clickSelect(_ sender: Any) {
+        // Basic toggle
+        rugzakContents.allowsMultipleSelection = !rugzakContents.allowsMultipleSelection
+        
+        if (rugzakContents.allowsMultipleSelection) {
+            selectButton.tintColor = UIColor.red
+        } else {
+            deselectAll();
+            selectButton.tintColor = nil // Default
+            combineButton.isEnabled = false
+            useButton.isEnabled = false
+        }
+    }
+    
     @IBAction func clickUse(_ sender: Any) {
         if let selectedRows = rugzakContents.indexPathsForSelectedRows {
             if (selectedRows.count == 1 ) {
-                NSLog("Attempt to use \(items[selectedRows[0].row].name)")
-                if let result = gameManager?.attemptUse(itemToUse: items[selectedRows[0].row]) {
-                    // It worked
-                    showActionResult(message: result)
-                } else {
-                    showErrorResult(id1: items[selectedRows[0].row].name, id2: gameManager!.currentLocationId!)
-                }
-                
+                useItem(item: items[selectedRows[0].row])
             }
         }
     }
     
     @IBAction func clickCombine(_ sender: Any) {
-        // Multi function button
-        // Toggles between combine and select
-        
-        if (rugzakContents.allowsMultipleSelection) {
-            if let selectedRows = rugzakContents.indexPathsForSelectedRows {
-                if (selectedRows.count == 2 ) {
-                    var itemsToCombine: [GameItem] = []
-                    itemsToCombine.append(items[selectedRows[0].row])
-                    itemsToCombine.append(items[selectedRows[1].row])
-                    if let result = gameManager?.attemptCombine(itemsToCombine: itemsToCombine) {
-                        // It worked
-                        showActionResult(message: result)
-                    } else {
-                        showErrorResult(id1: itemsToCombine[0].name, id2: itemsToCombine[1].name)
-                    }
+        if let selectedRows = rugzakContents.indexPathsForSelectedRows {
+            if (selectedRows.count == 2 ) {
+                var itemsToCombine: [GameItem] = []
+                itemsToCombine.append(items[selectedRows[0].row])
+                itemsToCombine.append(items[selectedRows[1].row])
+                if let result = gameManager?.attemptCombine(itemsToCombine: itemsToCombine) {
+                    // It worked
+                    showActionResult(message: result)
+                } else {
+                    showErrorResult(id1: itemsToCombine[0].name, id2: itemsToCombine[1].name)
                 }
             }
-            
-            rugzakContents.allowsMultipleSelection = false
-            combineButton.isEnabled = true
-            combineButton.title = "Selecteer"
-        } else {
-            rugzakContents.allowsMultipleSelection = true
-            combineButton.isEnabled = false
-            combineButton.title = "Combineer"
         }
     }
     
@@ -78,10 +78,7 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
         rugzakContents.allowsMultipleSelection = false
         rugzakContents.allowsSelection = true
         
-        combineButton.title = "Selecteer"
-        combineButton.isEnabled = true
-        combineButton.tintColor = nil
-        
+        combineButton.isEnabled = false
         useButton.isEnabled = false
     }
     
@@ -95,22 +92,21 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
         }
     }
     
-    func overlayBlurredBackgroundView() {
-        
-        let blurredBackgroundView = UIVisualEffectView()
-        
-        blurredBackgroundView.frame = view.frame
-        blurredBackgroundView.effect = UIBlurEffect(style: .dark)
-        
-        view.addSubview(blurredBackgroundView)
+    private func deselectAll() {
+        if let visiblerows = rugzakContents.indexPathsForVisibleRows {
+            for row in visiblerows {
+                rugzakContents.cellForRow(at: row)!.accessoryType = .none
+            }
+        }
     }
     
-    func removeBlurredBackgroundView() {
-        
-        for subview in view.subviews {
-            if subview.isKind(of: UIVisualEffectView.self) {
-                subview.removeFromSuperview()
-            }
+    private func useItem(item: GameItem) {
+        NSLog("Attempt to use \(item.name)")
+        if let result = gameManager?.attemptUse(itemToUse: item) {
+            // It worked
+            showActionResult(message: result)
+        } else {
+            showErrorResult(id1: item.name, id2: gameManager!.currentLocationId)
         }
     }
     
@@ -120,16 +116,16 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
         self.overlayBlurredBackgroundView()
         
         let itemViewController = storyboard?.instantiateViewController(withIdentifier: "RugzakItemView") as! RugzakItemViewController
-        itemViewController.delegate = self
+        itemViewController.gameManager = self.gameManager
+        itemViewController.blurDelegate = self
         itemViewController.modalPresentationStyle = .overFullScreen
         
         itemViewController.item = item
         itemViewController.itemText = gameManager!.getDescriptionForItem(item: item)
         
         self.present(itemViewController, animated: true)
-
     }
-    
+        
     func showActionResult(message: String) {
         let refreshAlert = UIAlertController(title: "Tadaa!", message: message, preferredStyle: .alert)
         
@@ -142,7 +138,7 @@ class RugzakViewController: UIViewController, RugzakItemViewControllerDelegate {
         present(refreshAlert, animated: true, completion: nil)
     }
 
-    func showErrorResult(id1: String, id2: String) {
+    func showErrorResult(id1: String, id2: String?) {
         let message = gameManager!.getErrorMessageForAttempt(identifier1: id1, identifier2: id2)
         let alert = UIAlertController(title: "Helaas", message: message, preferredStyle: .alert)
         
@@ -211,4 +207,25 @@ extension RugzakViewController: UITableViewDataSource {
 extension RugzakViewController: UITableViewDelegate {
     
     
+}
+
+extension RugzakViewController: BlurredViewControllerDelegate {
+    func overlayBlurredBackgroundView() {
+        
+        let blurredBackgroundView = UIVisualEffectView()
+        
+        blurredBackgroundView.frame = view.frame
+        blurredBackgroundView.effect = UIBlurEffect(style: .dark)
+        
+        view.addSubview(blurredBackgroundView)
+    }
+    
+    func removeBlurredBackgroundView() {
+        
+        for subview in view.subviews {
+            if subview.isKind(of: UIVisualEffectView.self) {
+                subview.removeFromSuperview()
+            }
+        }
+    }
 }

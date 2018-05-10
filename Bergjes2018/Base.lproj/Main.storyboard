@@ -77,6 +77,11 @@
                                             <action selector="close:" destination="80l-rL-0iY" id="pmS-Cb-2V6"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Selecteer" id="RNy-eA-Qr0">
+                                        <connections>
+                                            <action selector="clickSelect:" destination="80l-rL-0iY" id="oOp-XF-zHQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Combineer" id="mRQ-q1-e8c" userLabel="Combineer">
                                         <connections>
                                             <action selector="clickCombine:" destination="80l-rL-0iY" id="7BF-7O-e1g"/>
@@ -137,6 +142,7 @@
                     <connections>
                         <outlet property="combineButton" destination="mRQ-q1-e8c" id="nbk-NJ-o6d"/>
                         <outlet property="rugzakContents" destination="TzX-G7-vyj" id="TD1-s1-ex7"/>
+                        <outlet property="selectButton" destination="RNy-eA-Qr0" id="BkL-uG-zZX"/>
                         <outlet property="useButton" destination="VE7-2u-G8H" id="Mmd-5X-CPZ"/>
                     </connections>
                 </viewController>
@@ -161,6 +167,12 @@
                                             <barButtonItem title="Sluit" id="KXy-DA-3fh">
                                                 <connections>
                                                     <action selector="close:" destination="5yt-5U-9Jp" id="fVQ-XQ-Q0K"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="flexibleSpace" id="93C-Jr-zil"/>
+                                            <barButtonItem title="Gebruik" id="Cue-y9-f9r">
+                                                <connections>
+                                                    <action selector="clickUse:" destination="5yt-5U-9Jp" id="BEu-83-q9f"/>
                                                 </connections>
                                             </barButtonItem>
                                         </items>
@@ -215,6 +227,7 @@
                         <viewLayoutGuide key="safeArea" id="w8U-2J-D9l"/>
                     </view>
                     <connections>
+                        <outlet property="buttonUse" destination="Cue-y9-f9r" id="t46-zy-yID"/>
                         <outlet property="itemDescription" destination="V0O-HG-bTs" id="Anr-Ae-4Kr"/>
                         <outlet property="itemImage" destination="Lwy-iK-QaG" id="JYb-Vi-2kg"/>
                     </connections>

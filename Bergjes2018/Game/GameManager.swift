@@ -53,6 +53,8 @@ class GameManager {
 
         locations = GameSetupStrocamp.loadLocations()
         inventory = inventoryManager.loadInventory(cleanInventory: GameSetupStrocamp.loadItems())
+        
+        currentLocationId = "startup" // Fake location to force update at the start
     }
     
     func retrieveVisibleLocations() -> [GameLocation] {
@@ -89,6 +91,7 @@ class GameManager {
     func registerVisit(locationId: String) {
         if (locationManager.isVisited(locationId: locationId)) {
             NSLog("Already visited \(locationId), not triggering actions")
+            return
         }
         
         locationManager.setVisited(locationId: locationId, visible: true)
@@ -173,6 +176,11 @@ class GameManager {
                 continue
             }
             
+            // TODO This might be counter intuitive later on?
+            if (!locationManager.isVisited(locationId: currentLocationId!)) {
+                continue
+            }
+            
             NSLog("Found action \(itemAction.key)")
             
             let repeatable: Bool = itemAction.value["repeatable"] as? Bool ?? false
@@ -209,7 +217,11 @@ class GameManager {
     //   identifier2: GameLocation identifier or GameAction identifier
     // Returns:
     //   String: error message
-    func getErrorMessageForAttempt(identifier1: String, identifier2: String) -> String {
+    func getErrorMessageForAttempt(identifier1: String, identifier2: String?) -> String {
+        if (identifier2 == nil) {
+            return "Dat gaat hier niet lukken..."
+        }
+        
         let result = errorMessages
             .filter { (arg) -> Bool in
                 let (_, value) = arg
@@ -217,7 +229,7 @@ class GameManager {
             }
             .filter { (arg) -> Bool in
                 let (_, value) = arg
-                return {value["identifier1"] as! String == identifier2 || value["identifier2"] as! String == identifier2}()
+                return {value["identifier1"] as! String == identifier2! || value["identifier2"] as! String == identifier2!}()
             }
             .first
 
@@ -225,12 +237,21 @@ class GameManager {
             return foundCombination.value["errorMessage"] as! String
         }
         
-        if locations.keys.contains(where: {$0 == identifier1 || $0 == identifier2}) {
-            // Its a use attempt at a location
-            return "Dit item kan je hier helaas niet gebruiken."
-        } else {
+        if isItem(identifier: identifier1),
+            isItem(identifier: identifier2) {
             // Its a combination attempt
             return "Deze items kan je helaas niet combineren."
+        } else {
+            // Its a use attempt at a location
+            return "Dit item kan je hier helaas niet gebruiken."
+        }
+    }
+    
+    private func isItem(identifier: String?) -> Bool {
+        if let itemId = identifier {
+            return self.inventory.contains {$0.name == itemId}
+        } else {
+            return false;
         }
     }
     
@@ -314,6 +335,7 @@ class GameManager {
     
     func updateCurrentLocation(playerPosition: GameLocation, force: Bool) {
         // NSLog("Player is at (lat: \(playerPosition.latitude), lon \(playerPosition.longitude))")
+        // NSLog("Gamesystem is at \"\(currentLocationId ?? "nowhere")\" ")
         
         var positionIdentifier: String?
         for (location) in retrieveLocationsDatabase().keys {
@@ -322,6 +344,12 @@ class GameManager {
                 positionIdentifier = location;
             }
             // NSLog("Distance to \(location) is \(distance)m")
+        }
+        
+        // Player is nowhere if the location is not visible
+        if let position = positionIdentifier,
+            !locationManager.isVisible(locationId: position) {
+            positionIdentifier = nil
         }
         
         if (positionIdentifier != currentLocationId || force) {
@@ -360,6 +388,8 @@ class GameManager {
         locationManager.setVisible(locationId: "boom", visible: true)
         
         locations = GameSetupStrocamp.loadLocations()
+        
+        actionManager.resetActions()
         
         delegate?.updateVisibleLocations(locations: retrieveVisibleLocations())
     }

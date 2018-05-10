@@ -23,5 +23,9 @@ class ActionManager {
         }
         PersistenceManager.storeActions(actions: actions)
     }
+    
+    func resetActions() {
+        PersistenceManager.storeActions(actions: [])
+    }
 
 }

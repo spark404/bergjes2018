@@ -131,7 +131,7 @@ class ViewController: UIViewController {
         self.overlayBlurredBackgroundView()
         
         let itemViewController = storyboard?.instantiateViewController(withIdentifier: "RugzakItemView") as! RugzakItemViewController
-        itemViewController.delegate = self
+        itemViewController.blurDelegate = self
         itemViewController.modalPresentationStyle = .overFullScreen
         
         itemViewController.location = location
@@ -244,8 +244,7 @@ extension ViewController: GameManagerDelegate {
     }
 }
 
-extension ViewController: RugzakItemViewControllerDelegate {
-
+extension ViewController: BlurredViewControllerDelegate {
     func overlayBlurredBackgroundView() {
         let blurredBackgroundView = UIVisualEffectView()
         
