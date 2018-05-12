@@ -16,7 +16,11 @@ class ManagementViewController: UIViewController {
     @IBOutlet weak var buttonSellDuikbril: UIButton!
     @IBOutlet weak var buttonSellSmeerolie: UIButton!
     
+    @IBOutlet weak var labelLattitude: UILabel!
+    @IBOutlet weak var labelLongitude: UILabel!
+    
     var gameManager: GameManager?
+    var locationUpdateTimer: Timer!
     
     @IBAction func close(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: {()->Void in
@@ -66,7 +70,42 @@ class ManagementViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        // Empty
+        updateAvailableItems()
+        
+        Timer.scheduledTimer(timeInterval: 1, target: self,
+                             selector: #selector(updateLocation), userInfo: nil, repeats: true)
+        
+    }
+    
+    @objc func updateLocation() {
+        let parentVc = self.presentingViewController as! ViewController
+        if let currentPosition = parentVc.position {
+            labelLattitude.text = "Latitude: \(currentPosition.coordinate.latitude)"
+            labelLongitude.text = "Longitude: \(currentPosition.coordinate.longitude)"
+        }
+    }
+
+    func updateAvailableItems() {
+        if let munt = gameManager?.inventory.first(where: {$0.name == "Munt"})
+        {
+            if let price = gameManager?.merchantPrices["Touw"] {
+                buttonSellTouw.isEnabled = munt.amount >= price
+            }
+            if let price = gameManager?.merchantPrices["Lemmet"] {
+                buttonSellLemmet.isEnabled = munt.amount >= price
+            }
+            if let price = gameManager?.merchantPrices["Duikbril"] {
+                buttonSellDuikbril.isEnabled = munt.amount >= price
+            }
+            if let price = gameManager?.merchantPrices["Smeerolie"] {
+                buttonSellSmeerolie.isEnabled = munt.amount >= price
+            }
+        } else {
+            buttonSellTouw.isEnabled = false
+            buttonSellSmeerolie.isEnabled = false
+            buttonSellDuikbril.isEnabled = false
+            buttonSellLemmet.isEnabled = false
+        }
     }
     
     func sellItem(itemId: String) {
@@ -80,7 +119,7 @@ class ManagementViewController: UIViewController {
                 showAlert(message: "\(price) Munten nodig voor een \(itemId), \(munt.amount) beschikbaar")
             }
         }
-
+        updateAvailableItems()
     }
     
     func showAlert(message: String) {

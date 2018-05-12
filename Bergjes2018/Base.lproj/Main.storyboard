@@ -304,6 +304,24 @@
                                     <action selector="sellSmeerolie:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="8K5-91-Hyy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I45-gs-XCE">
+                                <rect key="frame" x="29" y="412" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lattitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raI-qS-0mi">
+                                <rect key="frame" x="29" y="441" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzZ-uF-KCE">
+                                <rect key="frame" x="29" y="470" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -318,13 +336,19 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QAA-HP-oyr" secondAttribute="trailing" constant="20" symbolic="YES" id="bih-ar-Dgi"/>
                             <constraint firstItem="HBp-o9-r5u" firstAttribute="leading" secondItem="Oi2-py-yjB" secondAttribute="leading" id="cNQ-nJ-Ood"/>
                             <constraint firstItem="Oi2-py-yjB" firstAttribute="leading" secondItem="QAA-HP-oyr" secondAttribute="leading" id="fKg-2f-DiH"/>
+                            <constraint firstItem="KzZ-uF-KCE" firstAttribute="leading" secondItem="I45-gs-XCE" secondAttribute="leading" id="flY-l5-7mN"/>
                             <constraint firstItem="HBp-o9-r5u" firstAttribute="top" secondItem="Oi2-py-yjB" secondAttribute="bottom" constant="8" id="hjC-8u-lXO"/>
+                            <constraint firstItem="raI-qS-0mi" firstAttribute="top" secondItem="I45-gs-XCE" secondAttribute="bottom" constant="8" id="i94-im-qjT"/>
+                            <constraint firstItem="I45-gs-XCE" firstAttribute="top" secondItem="HBp-o9-r5u" secondAttribute="bottom" constant="60" id="j20-dD-Yrs"/>
                             <constraint firstItem="Jcg-Rh-qH8" firstAttribute="top" secondItem="bsb-Lx-x7E" secondAttribute="top" constant="56" id="jrY-vZ-Y2h"/>
                             <constraint firstItem="QAA-HP-oyr" firstAttribute="leading" secondItem="EFm-qN-9Vz" secondAttribute="leading" id="m6U-CX-PnP"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oi2-py-yjB" secondAttribute="trailing" constant="20" symbolic="YES" id="oub-ei-YE6"/>
+                            <constraint firstItem="KzZ-uF-KCE" firstAttribute="top" secondItem="raI-qS-0mi" secondAttribute="bottom" constant="8" id="pFI-rR-vn4"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HBp-o9-r5u" secondAttribute="trailing" constant="20" symbolic="YES" id="qDU-Kt-aiE"/>
                             <constraint firstItem="EFm-qN-9Vz" firstAttribute="leading" secondItem="aYN-23-y1q" secondAttribute="leading" id="qT3-fi-nGy"/>
+                            <constraint firstItem="raI-qS-0mi" firstAttribute="leading" secondItem="I45-gs-XCE" secondAttribute="leading" id="uUg-A9-012"/>
                             <constraint firstItem="aYN-23-y1q" firstAttribute="top" secondItem="6Jx-Qo-BGk" secondAttribute="bottom" constant="35" id="w8y-l7-xFS"/>
+                            <constraint firstItem="I45-gs-XCE" firstAttribute="leading" secondItem="bsb-Lx-x7E" secondAttribute="leading" constant="29" id="yQ1-9e-i2f"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EFm-qN-9Vz" secondAttribute="trailing" constant="20" symbolic="YES" id="z1n-xG-McL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bsb-Lx-x7E"/>
@@ -334,6 +358,8 @@
                         <outlet property="buttonSellLemmet" destination="QAA-HP-oyr" id="9eg-bA-1OG"/>
                         <outlet property="buttonSellSmeerolie" destination="HBp-o9-r5u" id="aa1-Ea-qae"/>
                         <outlet property="buttonSellTouw" destination="EFm-qN-9Vz" id="Yua-tf-cvw"/>
+                        <outlet property="labelLattitude" destination="raI-qS-0mi" id="qqk-lL-VpM"/>
+                        <outlet property="labelLongitude" destination="KzZ-uF-KCE" id="e8n-Ns-bC2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKR-No-auz" userLabel="First Responder" sceneMemberID="firstResponder"/>
