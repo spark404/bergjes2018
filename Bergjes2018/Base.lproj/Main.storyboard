@@ -256,7 +256,7 @@
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcg-Rh-qH8">
-                                <rect key="frame" x="147" y="76" width="81" height="30"/>
+                                <rect key="frame" x="147" y="50" width="81" height="30"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="Reset game"/>
                                 <connections>
@@ -264,96 +264,109 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jx-Qo-BGk">
-                                <rect key="frame" x="136.5" y="114" width="101" height="30"/>
+                                <rect key="frame" x="137" y="88" width="101" height="30"/>
                                 <state key="normal" title="Grant All Items"/>
                                 <connections>
                                     <action selector="grantAllItems:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="6mx-J0-Cbk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merchant :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-23-y1q">
-                                <rect key="frame" x="29" y="179" width="82" height="21"/>
+                                <rect key="frame" x="29" y="205" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFm-qN-9Vz">
-                                <rect key="frame" x="29" y="208" width="66" height="30"/>
+                                <rect key="frame" x="29" y="234" width="66" height="30"/>
                                 <state key="normal" title="Sell Touw"/>
                                 <connections>
                                     <action selector="sellTouw:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="9Oy-0O-XD4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAA-HP-oyr">
-                                <rect key="frame" x="29" y="246" width="85" height="30"/>
+                                <rect key="frame" x="29" y="272" width="85" height="30"/>
                                 <state key="normal" title="Sell Lemmet"/>
                                 <connections>
                                     <action selector="sellLemmet:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="P3h-sa-8c0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oi2-py-yjB">
-                                <rect key="frame" x="29" y="284" width="81" height="30"/>
+                                <rect key="frame" x="29" y="310" width="81" height="30"/>
                                 <state key="normal" title="Sell Duikbril"/>
                                 <connections>
                                     <action selector="sellDuikbril:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="MGR-me-OTN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBp-o9-r5u">
-                                <rect key="frame" x="29" y="322" width="97" height="30"/>
+                                <rect key="frame" x="29" y="348" width="97" height="30"/>
                                 <state key="normal" title="Sell Smeerolie"/>
                                 <connections>
                                     <action selector="sellSmeerolie:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="8K5-91-Hyy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I45-gs-XCE">
-                                <rect key="frame" x="29" y="412" width="123" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I45-gs-XCE">
+                                <rect key="frame" x="29" y="438" width="123" height="21"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lattitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raI-qS-0mi">
-                                <rect key="frame" x="29" y="441" width="69" height="21"/>
+                                <rect key="frame" x="29" y="467" width="69" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzZ-uF-KCE">
-                                <rect key="frame" x="29" y="470" width="77" height="21"/>
+                                <rect key="frame" x="29" y="496" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4I-hn-Rzg">
+                                <rect key="frame" x="119" y="126" width="137" height="30"/>
+                                <state key="normal" title="All Locations Visible"/>
+                                <connections>
+                                    <action selector="buttonAllVisible:" destination="Fpi-sI-WnJ" eventType="touchUpInside" id="2Gq-2h-oP7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Jcg-Rh-qH8" firstAttribute="centerX" secondItem="bsb-Lx-x7E" secondAttribute="centerX" id="2Gm-5d-5BZ"/>
+                            <constraint firstItem="d4I-hn-Rzg" firstAttribute="top" secondItem="6Jx-Qo-BGk" secondAttribute="bottom" constant="8" id="7mL-cC-5ZC"/>
                             <constraint firstItem="aYN-23-y1q" firstAttribute="leading" secondItem="bsb-Lx-x7E" secondAttribute="leading" constant="29" id="8mu-KD-TAK"/>
                             <constraint firstItem="EFm-qN-9Vz" firstAttribute="top" secondItem="aYN-23-y1q" secondAttribute="bottom" constant="8" id="BdB-ri-cgK"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aYN-23-y1q" secondAttribute="trailing" constant="20" symbolic="YES" id="DLl-2q-w35"/>
                             <constraint firstItem="Oi2-py-yjB" firstAttribute="top" secondItem="QAA-HP-oyr" secondAttribute="bottom" constant="8" id="J9b-6U-9YW"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="raI-qS-0mi" secondAttribute="trailing" constant="20" symbolic="YES" id="Nzo-GL-ZoW"/>
+                            <constraint firstItem="d4I-hn-Rzg" firstAttribute="centerX" secondItem="bsb-Lx-x7E" secondAttribute="centerX" id="PAx-M7-beE"/>
                             <constraint firstItem="6Jx-Qo-BGk" firstAttribute="top" secondItem="Jcg-Rh-qH8" secondAttribute="bottom" constant="8" id="PZ6-TJ-WsN"/>
                             <constraint firstItem="6Jx-Qo-BGk" firstAttribute="centerX" secondItem="bsb-Lx-x7E" secondAttribute="centerX" id="TSN-SA-OEP"/>
                             <constraint firstItem="QAA-HP-oyr" firstAttribute="top" secondItem="EFm-qN-9Vz" secondAttribute="bottom" constant="8" id="Tzb-Ps-hpv"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I45-gs-XCE" secondAttribute="trailing" constant="20" symbolic="YES" id="WvY-lq-HJN"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QAA-HP-oyr" secondAttribute="trailing" constant="20" symbolic="YES" id="bih-ar-Dgi"/>
                             <constraint firstItem="HBp-o9-r5u" firstAttribute="leading" secondItem="Oi2-py-yjB" secondAttribute="leading" id="cNQ-nJ-Ood"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KzZ-uF-KCE" secondAttribute="trailing" constant="20" symbolic="YES" id="e8L-RF-s3N"/>
                             <constraint firstItem="Oi2-py-yjB" firstAttribute="leading" secondItem="QAA-HP-oyr" secondAttribute="leading" id="fKg-2f-DiH"/>
                             <constraint firstItem="KzZ-uF-KCE" firstAttribute="leading" secondItem="I45-gs-XCE" secondAttribute="leading" id="flY-l5-7mN"/>
                             <constraint firstItem="HBp-o9-r5u" firstAttribute="top" secondItem="Oi2-py-yjB" secondAttribute="bottom" constant="8" id="hjC-8u-lXO"/>
                             <constraint firstItem="raI-qS-0mi" firstAttribute="top" secondItem="I45-gs-XCE" secondAttribute="bottom" constant="8" id="i94-im-qjT"/>
                             <constraint firstItem="I45-gs-XCE" firstAttribute="top" secondItem="HBp-o9-r5u" secondAttribute="bottom" constant="60" id="j20-dD-Yrs"/>
-                            <constraint firstItem="Jcg-Rh-qH8" firstAttribute="top" secondItem="bsb-Lx-x7E" secondAttribute="top" constant="56" id="jrY-vZ-Y2h"/>
+                            <constraint firstItem="Jcg-Rh-qH8" firstAttribute="top" secondItem="bsb-Lx-x7E" secondAttribute="top" constant="30" id="jrY-vZ-Y2h"/>
                             <constraint firstItem="QAA-HP-oyr" firstAttribute="leading" secondItem="EFm-qN-9Vz" secondAttribute="leading" id="m6U-CX-PnP"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oi2-py-yjB" secondAttribute="trailing" constant="20" symbolic="YES" id="oub-ei-YE6"/>
                             <constraint firstItem="KzZ-uF-KCE" firstAttribute="top" secondItem="raI-qS-0mi" secondAttribute="bottom" constant="8" id="pFI-rR-vn4"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HBp-o9-r5u" secondAttribute="trailing" constant="20" symbolic="YES" id="qDU-Kt-aiE"/>
                             <constraint firstItem="EFm-qN-9Vz" firstAttribute="leading" secondItem="aYN-23-y1q" secondAttribute="leading" id="qT3-fi-nGy"/>
                             <constraint firstItem="raI-qS-0mi" firstAttribute="leading" secondItem="I45-gs-XCE" secondAttribute="leading" id="uUg-A9-012"/>
-                            <constraint firstItem="aYN-23-y1q" firstAttribute="top" secondItem="6Jx-Qo-BGk" secondAttribute="bottom" constant="35" id="w8y-l7-xFS"/>
+                            <constraint firstItem="aYN-23-y1q" firstAttribute="top" secondItem="6Jx-Qo-BGk" secondAttribute="bottom" constant="87" id="w8y-l7-xFS"/>
                             <constraint firstItem="I45-gs-XCE" firstAttribute="leading" secondItem="bsb-Lx-x7E" secondAttribute="leading" constant="29" id="yQ1-9e-i2f"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EFm-qN-9Vz" secondAttribute="trailing" constant="20" symbolic="YES" id="z1n-xG-McL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bsb-Lx-x7E"/>
                     </view>
                     <connections>
+                        <outlet property="buttonAllVisible" destination="d4I-hn-Rzg" id="riB-18-PfG"/>
                         <outlet property="buttonSellDuikbril" destination="Oi2-py-yjB" id="u0a-xN-61J"/>
                         <outlet property="buttonSellLemmet" destination="QAA-HP-oyr" id="9eg-bA-1OG"/>
                         <outlet property="buttonSellSmeerolie" destination="HBp-o9-r5u" id="aa1-Ea-qae"/>

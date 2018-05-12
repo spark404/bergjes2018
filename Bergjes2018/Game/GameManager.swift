@@ -11,6 +11,9 @@ import UIKit
 
 class GameManager {
 
+    // For management
+    var forceAllVisible: Bool = false
+
     var currentLocationId: String?
     var delegate: GameManagerDelegate?
     
@@ -35,7 +38,7 @@ class GameManager {
         // Initialize when needed
         if (locationManager.locations.isEmpty) {
             NSLog("Initializing persisted location list")
-            let locationList = GameSetupStrocamp.loadLocations().mapValues({
+            let locationList = GameSetupBaarn.loadLocations().mapValues({
                 (gameLocation: GameLocation) -> Location in
                 return Location(name: gameLocation.name, visible: false, visited: false)
             })
@@ -46,13 +49,14 @@ class GameManager {
         
         if inventoryManager.inventory.isEmpty {
             NSLog("Initializing persisted location list")
-            inventory = inventoryManager.loadInventory(cleanInventory: GameSetupStrocamp.loadItems())
+            inventory = inventoryManager.loadInventory(cleanInventory: GameSetupBaarn.loadItems())
             self.addItemToInventory(itemName: "Zakmes")
             self.addItemToInventory(itemName: "Munt")
         }
 
-        locations = GameSetupStrocamp.loadLocations()
-        inventory = inventoryManager.loadInventory(cleanInventory: GameSetupStrocamp.loadItems())
+        // locations = GameSetupStrocamp.loadLocations()
+        locations = GameSetupBaarn.loadLocations()
+        inventory = inventoryManager.loadInventory(cleanInventory: GameSetupBaarn.loadItems())
         
         currentLocationId = "startup" // Fake location to force update at the start
     }
@@ -355,7 +359,13 @@ class GameManager {
         if (positionIdentifier != currentLocationId || force) {
             currentLocationId = positionIdentifier
             NSLog("Location changed to \(currentLocationId ?? "nowhere")")
-            delegate?.updateVisibleLocations(locations: retrieveVisibleLocations())
+            if (forceAllVisible) {
+                // Management Override
+                NSLog("Forced all visibility")
+                delegate?.updateVisibleLocations(locations: Array(retrieveLocationsDatabase().values))
+            } else {
+                delegate?.updateVisibleLocations(locations: retrieveVisibleLocations())
+            }
         }
     }
     
@@ -374,12 +384,12 @@ class GameManager {
     
     func resetGame() {
         NSLog("Reset all game data")
-        inventoryManager.updateInventory(gameItems: GameSetupStrocamp.loadItems())
-        inventory = inventoryManager.loadInventory(cleanInventory: GameSetupStrocamp.loadItems())
+        inventoryManager.updateInventory(gameItems: GameSetupBaarn.loadItems())
+        inventory = inventoryManager.loadInventory(cleanInventory: GameSetupBaarn.loadItems())
         self.addItemToInventory(itemName: "Zakmes")
         self.addItemToInventory(itemName: "Munt")
 
-        let locationList = GameSetupStrocamp.loadLocations().mapValues({
+        let locationList = GameSetupBaarn.loadLocations().mapValues({
             (gameLocation: GameLocation) -> Location in
             return Location(name: gameLocation.name, visible: false, visited: false)
         })
@@ -387,7 +397,7 @@ class GameManager {
         locationManager.setVisible(locationId: "start", visible: true)
         locationManager.setVisible(locationId: "boom", visible: true)
         
-        locations = GameSetupStrocamp.loadLocations()
+        locations = GameSetupBaarn.loadLocations()
         
         actionManager.resetActions()
         

@@ -15,6 +15,7 @@ class ManagementViewController: UIViewController {
     @IBOutlet weak var buttonSellLemmet: UIButton!
     @IBOutlet weak var buttonSellDuikbril: UIButton!
     @IBOutlet weak var buttonSellSmeerolie: UIButton!
+    @IBOutlet weak var buttonAllVisible: UIButton!
     
     @IBOutlet weak var labelLattitude: UILabel!
     @IBOutlet weak var labelLongitude: UILabel!
@@ -67,22 +68,36 @@ class ManagementViewController: UIViewController {
             manager.inventoryManager.updateInventory(gameItems: manager.inventory)
         }
     }
+    @IBAction func buttonAllVisible(_ sender: Any) {
+        gameManager!.forceAllVisible = !gameManager!.forceAllVisible
+        buttonAllVisible.tintColor = gameManager!.forceAllVisible ? .red : nil
+        
+        let managementLocation = GameLocation(name: "management", latitude: 0, longitude: 0)
+        gameManager!.updateCurrentLocation(playerPosition: managementLocation, force: true)
+    }
     
     
     override func viewDidLoad() {
         updateAvailableItems()
         
-        Timer.scheduledTimer(timeInterval: 1, target: self,
+        buttonAllVisible.tintColor = gameManager!.forceAllVisible ? .red : nil
+        
+        locationUpdateTimer = Timer.scheduledTimer(timeInterval: 1, target: self,
                              selector: #selector(updateLocation), userInfo: nil, repeats: true)
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        locationUpdateTimer.invalidate()
+        locationUpdateTimer = nil
+    }
+    
     @objc func updateLocation() {
-        let parentVc = self.presentingViewController as! ViewController
-        if let currentPosition = parentVc.position {
-            labelLattitude.text = "Latitude: \(currentPosition.coordinate.latitude)"
-            labelLongitude.text = "Longitude: \(currentPosition.coordinate.longitude)"
-        }
+        if let parentVc = self.presentingViewController as? ViewController,
+            let currentPosition = parentVc.position {
+                labelLattitude.text = "Latitude: \(currentPosition.coordinate.latitude)"
+                labelLongitude.text = "Longitude: \(currentPosition.coordinate.longitude)"
+            }
     }
 
     func updateAvailableItems() {

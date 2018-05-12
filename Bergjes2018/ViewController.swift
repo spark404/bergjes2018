@@ -50,12 +50,12 @@ class ViewController: UIViewController {
 
         let start: GameLocation = self.gameManager.retrieveLocationsDatabase()["start"]!
         
-        let camera = GMSCameraPosition.camera(withLatitude: start.latitude, longitude: start.longitude, zoom: 16.2348)
+        let camera = GMSCameraPosition.camera(withLatitude: 52.21174, longitude:  5.256663, zoom: 15.1)
         mapView.camera = camera
         mapView.delegate = self
         mapView.isMyLocationEnabled = true
         mapView.mapType = .hybrid
-        mapView.setMinZoom(16.0, maxZoom: 18.0)
+        mapView.setMinZoom(14.0, maxZoom: 18.0)
         // TODO mapView.bounds
         
         gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self,
