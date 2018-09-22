@@ -24,6 +24,8 @@
 		9A3C085620A39DDD00D1B14D /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C085520A39DDD00D1B14D /* Action.swift */; };
 		9A3C085820A39F6100D1B14D /* ActionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C085720A39F6100D1B14D /* ActionManager.swift */; };
 		9A3C085B20A7504D00D1B14D /* GameSetupBaarn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C085A20A7504C00D1B14D /* GameSetupBaarn.swift */; };
+		9A4526EA21564332009B80CE /* GameSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4526E921564332009B80CE /* GameSetup.swift */; };
+		9A4526EC215645AF009B80CE /* locations_strocamp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A4526EB215645AF009B80CE /* locations_strocamp.plist */; };
 		9A72BB91209DBFE7006F417D /* Location Start.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB8E209DBFE6006F417D /* Location Start.gpx */; };
 		9A72BB92209DBFE7006F417D /* All Game Locations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */; };
 		9A72BB93209DBFE7006F417D /* Location Boom.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9A72BB90209DBFE7006F417D /* Location Boom.gpx */; };
@@ -88,6 +90,8 @@
 		9A3C085720A39F6100D1B14D /* ActionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManager.swift; sourceTree = "<group>"; };
 		9A3C085920A460FC00D1B14D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9A3C085A20A7504C00D1B14D /* GameSetupBaarn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSetupBaarn.swift; sourceTree = "<group>"; };
+		9A4526E921564332009B80CE /* GameSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetup.swift; sourceTree = "<group>"; };
+		9A4526EB215645AF009B80CE /* locations_strocamp.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = locations_strocamp.plist; sourceTree = "<group>"; };
 		9A72BB8E209DBFE6006F417D /* Location Start.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Start.gpx"; sourceTree = "<group>"; };
 		9A72BB8F209DBFE7006F417D /* All Game Locations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "All Game Locations.gpx"; sourceTree = "<group>"; };
 		9A72BB90209DBFE7006F417D /* Location Boom.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Location Boom.gpx"; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				9A72BBAB209F193F006F417D /* InventoryManager.swift */,
 				9A3C084D209F9F5800D1B14D /* LocationManager.swift */,
 				9A3C085720A39F6100D1B14D /* ActionManager.swift */,
+				9A4526E921564332009B80CE /* GameSetup.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				9AB1BF572095E50000B4B413 /* LaunchScreen.storyboard */,
 				9AB1BF5A2095E50000B4B413 /* Info.plist */,
 				9A72BBA3209DF843006F417D /* Utility.swift */,
+				9A4526EB215645AF009B80CE /* locations_strocamp.plist */,
 			);
 			path = Bergjes2018;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 				9A72BB93209DBFE7006F417D /* Location Boom.gpx in Resources */,
 				9A72BBA1209DEBEB006F417D /* Location Koopman.gpx in Resources */,
 				9A72BBA2209DEBEB006F417D /* Location Berg.gpx in Resources */,
+				9A4526EC215645AF009B80CE /* locations_strocamp.plist in Resources */,
 				9A3C0843209F5A9E00D1B14D /* GameData.plist in Resources */,
 				9A72BB9D209DEBEB006F417D /* Location Moeras.gpx in Resources */,
 				9A72BB9F209DEBEB006F417D /* Location Rivier.gpx in Resources */,
@@ -485,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A72BBA8209EFEDB006F417D /* GameSetupStrocamp.swift in Sources */,
+				9A4526EA21564332009B80CE /* GameSetup.swift in Sources */,
 				9A3C085620A39DDD00D1B14D /* Action.swift in Sources */,
 				9A3C085B20A7504D00D1B14D /* GameSetupBaarn.swift in Sources */,
 				9A3C084E209F9F5800D1B14D /* LocationManager.swift in Sources */,

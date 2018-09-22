@@ -1,455 +1,2021 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>ErrorMessages</key>
-	<dict>
-		<key>Zakmes-koopman</key>
-		<dict>
-			<key>identifier1</key>
-			<string>Zakmes</string>
-			<key>identifier2</key>
-			<string>koopman</string>
-			<key>errorMessage</key>
-			<string>Probeer je nou het zakmes dat je al jaren hebt te verkopen? Geen goed idee. Je komt vast nog in een situatie dat je deze dit stuk gereedschap hard nodig hebt.</string>
-		</dict>
-        <key>Touw-koopman</key>
+    <dict>
+        <key>ErrorMessages</key>
         <dict>
-            <key>identifier1</key>
-            <string>Touw</string>
-            <key>identifier2</key>
-            <string>koopman</string>
-            <key>errorMessage</key>
-            <string>Een mooi stuk touw, dat moet de koopman toegeven. Je zult het zelf echter harder nodig hebben.</string>
+            <key>Zakmes-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Probeer je nou het zakmes dat je al jaren hebt te verkopen? Geen goed idee. Je komt vast nog in een situatie dat je dit stuk gereedschap hard nodig hebt.</string>
+                <key>identifier1</key>
+                <string>Zakmes</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Touw-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Een mooi stuk touw, dat moet de koopman toegeven. Je zult het zelf echter harder nodig hebben.</string>
+                <key>identifier1</key>
+                <string>Touw</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Duikbril-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>De koopman lacht zich rot. Het is toch geen superhelden verkleed partij?</string>
+                <key>identifier1</key>
+                <string>Duikbril</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Kapmes-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Stoer hoor zo’n kapmes. Helaas is de koopman niet onder de indruk. Als je nog een keer je mes trekt dreigt hij zijn prijzen te verhogen.</string>
+                <key>identifier1</key>
+                <string>Kapmes</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Zweep-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Indiana Jones die zijn zweep verkoopt? Dat is als de Dukes of Hazard die de General Lee verkopen. No way dus.</string>
+                <key>identifier1</key>
+                <string>Zweep</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Schroef-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>"Zie jij hier water? Nee dus, wat moet ik nou met bootonderdelen?"</string>
+                <key>identifier1</key>
+                <string>Schroef</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Motor-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>"Zie jij hier water? Nee dus, wat moet ik nou met bootonderdelen?"</string>
+                <key>identifier1</key>
+                <string>Motor</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Motorboot-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>"Zie jij hier water? Nee dus, wat moet ik nou met een boot?"</string>
+                <key>identifier1</key>
+                <string>Motorboot</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Kano-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>"Zie jij hier water? Nee dus, wat moet ik nou met een kano?"</string>
+                <key>identifier1</key>
+                <string>Kano</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Ladder-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Via de ladder sluip je op het dak. Toch betrapt de koopman je en citeert luidkeels de grootste hit van Peter Koelewijn.</string>
+                <key>identifier1</key>
+                <string>Ladder</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Ladder-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je probeert de ladder over de rivier te leggen. Je komt alleen net anderhalve meter te kort. Je zult een andere manier moeten vinden.</string>
+                <key>identifier1</key>
+                <string>Ladder</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Ladder-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>De kloof is veel te diep. Hier is helaas geen ladder tegen opgewassen.</string>
+                <key>identifier1</key>
+                <string>Ladder</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Ladder-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>De ladder heb je niet nodig om de kloof uit te komen. Vanaf beneden zie je een paadje dat je zo weer naar boven leidt.</string>
+                <key>identifier1</key>
+                <string>Ladder</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Duikbril-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Het zicht is fascinerend onder water. Grote vissen, kleine vissen. Ehmm… Is dat Nemo die naar je zwaait? Helaas zie je niks dat je kunt gebruiken.</string>
+                <key>identifier1</key>
+                <string>Duikbril</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Kano-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je dobbert wat rond.</string>
+                <key>identifier1</key>
+                <string>Kano</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Motorboot-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>De schroef loopt vast in de vegetatie, gelukkig heb je een zakmes om je los te snijden. Dit lijkt niet voor herhaling vatbaar.</string>
+                <key>identifier1</key>
+                <string>Motorboot</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Duikbril-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Een duikbril opzetten? Hier? Het lijkt erop dat je een zonnesteek begint te krijgen.</string>
+                <key>identifier1</key>
+                <string>Duikbril</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Duikbril-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Een duikbril opzetten? Hier? Het lijkt erop dat je een zonnesteek begint te krijgen.</string>
+                <key>identifier1</key>
+                <string>Duikbril</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Duikbril-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Een duikbril opzetten? Hier? Het lijkt erop dat je een zonnesteek begint te krijgen.</string>
+                <key>identifier1</key>
+                <string>Duikbril</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Duikbril-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Een duikbril opzetten? Hier? Het lijkt erop dat je een zonnesteek begint te krijgen.</string>
+                <key>identifier1</key>
+                <string>Duikbril</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Munt-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Iedereen zou wel een geldboom willen. Zelfs jij krijgt dit niet voor elkaar.</string>
+                <key>identifier1</key>
+                <string>Munt</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Tak-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>De tak komt inderdaad van deze boom. Terug plakken lukt echt niet meer hoor.</string>
+                <key>identifier1</key>
+                <string>Tak</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Lemmet-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je haalt bijna je handen open. Met alleen het lemmet kan je helaas niks.</string>
+                <key>identifier1</key>
+                <string>Lemmet</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Smeerolie-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Het klopt dat de boom wat piept als het waait. Hem smeren heeft alleen geen zin.</string>
+                <key>identifier1</key>
+                <string>Smeerolie</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Kano-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is geen water te bekennen, met een kano kan je hier niet zoveel.</string>
+                <key>identifier1</key>
+                <string>Kano</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Motorboot-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is geen water te bekennen, met een kano kan je hier niet zoveel.</string>
+                <key>identifier1</key>
+                <string>Motorboot</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Motorboot-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Motorboot</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Schroefmotor-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Schroefmotor</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Schroevendraaier-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Schroevendraaier</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Zweep-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Zweep</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Schroef-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Schroef</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Motor-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Motor</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Kano-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Kano</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Ladder-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Ladder</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Kapmes-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Kapmes</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Smeerolie-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Smeerolie</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Duikbril-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Duikbril</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Lemmet-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Lemmet</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Touw-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Touw</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Tak-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Tak</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Munt-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Munt</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Zakmes-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Is het spel uitspelen niet genoeg? Het is klaar, basta, over enzo..</string>
+                <key>identifier1</key>
+                <string>Zakmes</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Schatkist-berg</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Ja, ja, veel glimmend goud...</string>
+                <key>identifier1</key>
+                <string>Schatkist</string>
+                <key>identifier2</key>
+                <string>berg</string>
+            </dict>
+            <key>Schroefmotor-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Het bootje is dusdanig vergaan dat je deze nooit meer zeewaardig zult krijgen. De schroefmotor zal daar geen verschil in maken.</string>
+                <key>identifier1</key>
+                <string>Schroefmotor</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Schroevendraaier-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>De schroeven van de boot zijn zo aangetast dat zelfs jij er geen beweging meer in krijgt.</string>
+                <key>identifier1</key>
+                <string>Schroevendraaier</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Zweep-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is hier niks om je zweep omheen te slaan.</string>
+                <key>identifier1</key>
+                <string>Zweep</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Schroef-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Zonder motor kan je weinig met een schroef en half gezonken bootje.</string>
+                <key>identifier1</key>
+                <string>Schroef</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Motor-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Het bootje is dusdanig vergaan dat je deze nooit meer zeewaardig zult krijgen. De motor zal daar geen verschil in maken.</string>
+                <key>identifier1</key>
+                <string>Motor</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Ladder-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>De paar bomen die hier staan zijn verschrompeld en dood. Er is niks om je ladder tegenaan te zetten.</string>
+                <key>identifier1</key>
+                <string>Ladder</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Kapmes-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Alles is hier al vergaan en verrot. Er is niks van waarde om hier te kappen.</string>
+                <key>identifier1</key>
+                <string>Kapmes</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Smeerolie-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er valt hier niks te smeren, alles loopt al soepel.</string>
+                <key>identifier1</key>
+                <string>Smeerolie</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Duikbril-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Duikbril</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Lemmet-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je haalt bijna je handen open. Met alleen het lemmet kan je helaas niks.</string>
+                <key>identifier1</key>
+                <string>Lemmet</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Touw-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is niks te knopen of vangen hier.</string>
+                <key>identifier1</key>
+                <string>Touw</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Tak-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je roert met de tak wat in het troebele water. Een hoop zand en stof…maar verder niks.</string>
+                <key>identifier1</key>
+                <string>Tak</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Munt-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is hier niks te koop. Je gooit de munt op en het is munt.</string>
+                <key>identifier1</key>
+                <string>Munt</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Zakmes-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er valt hier helemaal niks te snijden.</string>
+                <key>identifier1</key>
+                <string>Zakmes</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Schatkist-moeras</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schatkist</string>
+                <key>identifier2</key>
+                <string>moeras</string>
+            </dict>
+            <key>Motorboot-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is geen water te bekennen, met een motorboot kan je hier niet zoveel.</string>
+                <key>identifier1</key>
+                <string>Motorboot</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Schroefmotor-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je kan de motor er wel opzetten maar dit wrakstuk gaat nergens meer heen helaas.</string>
+                <key>identifier1</key>
+                <string>Schroefmotor</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Schroevendraaier-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroevendraaier</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Zweep-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>De zweep heb je niet nodig om de kloof uit te komen. Vanaf beneden zie je een paadje dat je zo weer naar boven leidt.</string>
+                <key>identifier1</key>
+                <string>Zweep</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Schroef-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Na al die moeite om hem er af te krijgen? Nee, geen goed idee.</string>
+                <key>identifier1</key>
+                <string>Schroef</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Motor-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je kan de motor er wel opzetten maar dit wrakstuk gaat nergens meer heen helaas.</string>
+                <key>identifier1</key>
+                <string>Motor</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Kano-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is geen water te bekennen, met een kano kan je hier niet zoveel.</string>
+                <key>identifier1</key>
+                <string>Kano</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Kapmes-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je gebruikt een vlak stuk rots om het kapmes te slijpen, niet dat het iets uitmaakt verder.</string>
+                <key>identifier1</key>
+                <string>Kapmes</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Smeerolie-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Door de smeerolie maakt dat alles alleen maar gladder wordt. Je hebt echt goed stuk gereedschap nodig.</string>
+                <key>identifier1</key>
+                <string>Smeerolie</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Lemmet-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je haalt bijna je handen open. Met alleen het lemmet kan je helaas niks.</string>
+                <key>identifier1</key>
+                <string>Lemmet</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Touw-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Het touw heb je niet nodig om de kloof uit te komen. Vanaf beneden zie je een paadje dat je zo weer naar boven leidt.</string>
+                <key>identifier1</key>
+                <string>Touw</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Tak-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Met de tak krijg je helaas geen beweging in de onderdelen van de vissersboot.</string>
+                <key>identifier1</key>
+                <string>Tak</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Munt-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je gooit de munt op en het is kop.</string>
+                <key>identifier1</key>
+                <string>Munt</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Zakmes-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Alles om je heen is van massief gesteente. De onderdelen van de vissersboot krijg je met het mes helaas niet los. Je hebt hier specialistisch gereedschap voor nodig.</string>
+                <key>identifier1</key>
+                <string>Zakmes</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Schatkist-kloofbodem</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schatkist</string>
+                <key>identifier2</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Motorboot-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is geen water te bekennen, met een Motorboot kan je hier niet zoveel.</string>
+                <key>identifier1</key>
+                <string>Motorboot</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Schroefmotor-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroefmotor</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Schroevendraaier-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroevendraaier</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Zweep-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Zweep</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Schroef-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroef</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Motor-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Motor</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Kano-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is geen water te bekennen, met een kano kan je hier niet zoveel.</string>
+                <key>identifier1</key>
+                <string>Kano</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Kapmes-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>De kloof bestaat uit stenen en rots. Je zou je kapmes hier alleen maar bot op slaan.</string>
+                <key>identifier1</key>
+                <string>Kapmes</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Smeerolie-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er valt hier niks te smeren, alles loopt al soepel.</string>
+                <key>identifier1</key>
+                <string>Smeerolie</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Lemmet-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je haalt bijna je handen open. Met alleen het lemmet kan je helaas niks.</string>
+                <key>identifier1</key>
+                <string>Lemmet</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Touw-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Touw</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Tak-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je kan de tak naar de overkant of naar beneden gooien. Heel veel schiet je daar niet mee op. Misschien heb je hem ergens anders harder nodig.</string>
+                <key>identifier1</key>
+                <string>Tak</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Munt-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je gooit de munt op en het is munt.</string>
+                <key>identifier1</key>
+                <string>Munt</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Zakmes-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>De stenen van de kloof zijn enorm hard. Je slijpt je zakmes nog eens. Iets nuttigs op los te snijden vind je helaas niet.</string>
+                <key>identifier1</key>
+                <string>Zakmes</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Schatkist-kloofrand</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schatkist</string>
+                <key>identifier2</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Motorboot-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Motorboot</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Schroefmotor-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroefmotor</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Schroevendraaier-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroevendraaier</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Zweep-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Zweep</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Schroef-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroef</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Motor-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Zonder schroef helpt de motor je helaas de rivier niet over.</string>
+                <key>identifier1</key>
+                <string>Motor</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Kano-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Kano</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Kapmes-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Kapmes</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Smeerolie-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Hey joh, je moet geen olie in het water gooien! Eco-terrorist!</string>
+                <key>identifier1</key>
+                <string>Smeerolie</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Lemmet-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je haalt bijna je handen open. Met alleen het lemmet kan je helaas niks.</string>
+                <key>identifier1</key>
+                <string>Lemmet</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Touw-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Touw</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Tak-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je overweegt de tak in de rivier te gooien, maar misschien heb je hem later nog nodig.</string>
+                <key>identifier1</key>
+                <string>Tak</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Munt-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je gooit de munt op en de munt land op zijn kant, hoe nu verder?</string>
+                <key>identifier1</key>
+                <string>Munt</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Zakmes-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je wast je zakmes in de rivier. Hij glimt weer als nooit tevoren.</string>
+                <key>identifier1</key>
+                <string>Zakmes</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Schatkist-rivier</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schatkist</string>
+                <key>identifier2</key>
+                <string>rivier</string>
+            </dict>
+            <key>Schroefmotor-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroefmotor</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Schroevendraaier-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroevendraaier</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Smeerolie-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Smeerolie</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Lemmet-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Lemmet</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Tak-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Tak</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Munt-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Munt</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Schatkist-koopman</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schatkist</string>
+                <key>identifier2</key>
+                <string>koopman</string>
+            </dict>
+            <key>Motorboot-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is geen water te bekennen, met een motorboot kan je hier niet zoveel.</string>
+                <key>identifier1</key>
+                <string>Motorboot</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Schroefmotor-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroefmotor</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Schroevendraaier-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit hutje is al zo oud dat er bij de bouw nooit schroeven gebruikt zijn.</string>
+                <key>identifier1</key>
+                <string>Schroevendraaier</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Zweep-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is hier niks om je zweep omheen te slaan.</string>
+                <key>identifier1</key>
+                <string>Zweep</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Schroef-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroef</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Motor-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Motor</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Kano-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is geen water te bekennen, met een kano kan je hier niet zoveel.</string>
+                <key>identifier1</key>
+                <string>Kano</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Ladder-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Ladder</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Kapmes-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je zou met gemak het hele hutje kort en klein kunnen slaan. Dat is echter zonde van je energie!</string>
+                <key>identifier1</key>
+                <string>Kapmes</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Smeerolie-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er valt hier niks te smeren, alles loopt al soepel.</string>
+                <key>identifier1</key>
+                <string>Smeerolie</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Lemmet-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je haalt bijna je handen open. Met alleen het lemmet kan je helaas niks.</string>
+                <key>identifier1</key>
+                <string>Lemmet</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Touw-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is nergens een plek waar je het touw vast kan maken.</string>
+                <key>identifier1</key>
+                <string>Touw</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Tak-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Je slaat flink tegen de muur. Los van een grote stofwolk gebeurd er niks.</string>
+                <key>identifier1</key>
+                <string>Tak</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Munt-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Er is hier niks te koop. Je gooit de munt op en het is kop.</string>
+                <key>identifier1</key>
+                <string>Munt</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Zakmes-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Alles is al stuk er vergaan. Er valt niks te snijden hier.</string>
+                <key>identifier1</key>
+                <string>Zakmes</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Schatkist-houthakkershut</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schatkist</string>
+                <key>identifier2</key>
+                <string>houthakkershut</string>
+            </dict>
+            <key>Schroefmotor-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroefmotor</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Schroevendraaier-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroevendraaier</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Zweep-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Zweep</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Schroef-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schroef</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Motor-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Motor</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Ladder-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Ladder</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Kapmes-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Kapmes</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Touw-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Touw</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Zakmes-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Zakmes</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Schatkist-boom</key>
+            <dict>
+                <key>errorMessage</key>
+                <string>Dit lijkt hier niet veel zin te hebben.</string>
+                <key>identifier1</key>
+                <string>Schatkist</string>
+                <key>identifier2</key>
+                <string>boom</string>
+            </dict>
+            <key>Zakmes-Tak</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Zakmes</string>
+                <key>identifierMunt</key>
+                <string>Tak</string>
+                <key>errorMessage</key>
+                <string>Je hebt de tak al helemaal ontdaan van zijtakjes en bramen. Tijd om je naam in de tak te kerven heb je niet.</string>
+            </dict>
+            <key>Zakmes-Touw</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Zakmes</string>
+                <key>identifierMunt</key>
+                <string>Touw</string>
+                <key>errorMessage</key>
+                <string>Je kan met gemak het touw doormidden snijden. Je verwacht echter de volle lengte van het touw nodig te hebben.</string>
+            </dict>
+            <key>Zakmes-Lemmet</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Zakmes</string>
+                <key>identifierMunt</key>
+                <string>Lemmet</string>
+                <key>errorMessage</key>
+                <string>Beide messenbladen zijn al vlijmscherp. Het heeft geen zin om ze langs elkaar te halen.</string>
+            </dict>
+            <key>Zakmes-Duikbril</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Zakmes</string>
+                <key>identifierMunt</key>
+                <string>Duikbril</string>
+                <key>errorMessage</key>
+                <string>Ook met een duikbril op is een zakmes een zakmes.</string>
+            </dict>
+            <key>Zakmes-Smeerolie</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Zakmes</string>
+                <key>identifierMunt</key>
+                <string>Smeerolie</string>
+                <key>errorMessage</key>
+                <string>De smeerolie brengt beweging in de roestige onderdelen van het zakmes. Je ontdekt dat er zelfs een schroevendraaier in verscholen zit.</string>
+            </dict>
+            <key>Zakmes-Kapmes</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Zakmes</string>
+                <key>identifierMunt</key>
+                <string>Kapmes</string>
+                <key>errorMessage</key>
+                <string>Beide messenbladen zijn al vlijmscherp. Het heeft geen zin om ze langs elkaar te halen.</string>
+            </dict>
+            <key>Zakmes-Kano</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Zakmes</string>
+                <key>identifierMunt</key>
+                <string>Kano</string>
+                <key>errorMessage</key>
+                <string>Je kerft jouw initialen in de voorkant van de kano. Nu is ie helemaal af!</string>
+            </dict>
+            <key>Zakmes-Motor</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Zakmes</string>
+                <key>identifierMunt</key>
+                <string>Motor</string>
+                <key>errorMessage</key>
+                <string>De motor is van gehard metaal. Hier je zakmes op botvieren zou zonde zijn.</string>
+            </dict>
+            <key>Zakmes-Zweep</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Zakmes</string>
+                <key>identifierMunt</key>
+                <string>Zweep</string>
+                <key>errorMessage</key>
+                <string>Je kijkt nog eens goed naar jouw twee meest geliefde tools. Los van elkaar hebben ze toch de meeste waarde.</string>
+            </dict>
+            <key>Zakmes-Schroevendraaier</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Zakmes</string>
+                <key>identifierMunt</key>
+                <string>Schroevendraaier</string>
+                <key>errorMessage</key>
+                <string>De schroevendraaier is technisch gezien een onderdeel van het zakmes. Deze combineren zou derhalve dubbel op zijn. Snap jij het nog?</string>
+            </dict>
+            <key>Zakmes-Motorboot</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Zakmes</string>
+                <key>identifierMunt</key>
+                <string>Motorboot</string>
+                <key>errorMessage</key>
+                <string>Je kerft jouw initialen in de achtersteven van de boot. Nu is ie helemaal af!</string>
+            </dict>
+            <key>Munt-Duikbril</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Munt</string>
+                <key>identifierMunt</key>
+                <string>Duikbril</string>
+                <key>errorMessage</key>
+                <string>Met de bril op inspecteer je uiterst nauwkeurig de munt. Zelfs de kleinste inscripties kan je zien maar levert je geen waardevolle informatie op.</string>
+            </dict>
+            <key>Munt-Smeerolie</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Munt</string>
+                <key>identifierMunt</key>
+                <string>Smeerolie</string>
+                <key>errorMessage</key>
+                <string>Met een beetje smeerolie poets je de munt extra op. Hij shined nog meer dan de toppers.</string>
+            </dict>
+            <key>Munt-Motor</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Munt</string>
+                <key>identifierMunt</key>
+                <string>Motor</string>
+                <key>errorMessage</key>
+                <string>Het is een dieselmotor, geen kermisattractie! Het helpt echt niet om hier een muntje in te gooien.</string>
+            </dict>
+            <key>Munt-Schroefmotor</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Munt</string>
+                <key>identifierMunt</key>
+                <string>Schroefmotor</string>
+                <key>errorMessage</key>
+                <string>Het is een dieselmotor, geen kermisattractie! Het helpt echt niet om hier een muntje in te gooien.</string>
+            </dict>
+            <key>Tak-Touw</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Tak</string>
+                <key>identifierMunt</key>
+                <string>Touw</string>
+                <key>errorMessage</key>
+                <string>Het begin van het touw wikkel je strak om de tak waarna je een stevige knoop maakt. De tak fungeert als handvat van deze primitieve zweep.</string>
+            </dict>
+            <key>Tak-Lemmet</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Tak</string>
+                <key>identifierMunt</key>
+                <string>Lemmet</string>
+                <key>errorMessage</key>
+                <string>Met behulp van je zakmes maak je een inkeping in het hout ter grote van de onderkant van het lemmet. Je klemt het lemmet stevig vast en bewerkt het hout tot een passend handvat. Je verdient een schouderklopje voor dit vakwerk!</string>
+            </dict>
+            <key>Tak-Duikbril</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Tak</string>
+                <key>identifierMunt</key>
+                <string>Duikbril</string>
+                <key>errorMessage</key>
+                <string>Ook met een duikbril op is een tak een tak.</string>
+            </dict>
+            <key>Tak-Kapmes</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Tak</string>
+                <key>identifierMunt</key>
+                <string>Kapmes</string>
+                <key>errorMessage</key>
+                <string>Met een flinke klap kan je de tak precies doormidden slaan. Je heft het kapmes omhoog maar bedenkt je. Misschien kan je de tak in zijn geheel beter gebruiken.</string>
+            </dict>
+            <key>Tak-Ladder</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Tak</string>
+                <key>identifierMunt</key>
+                <string>Ladder</string>
+                <key>errorMessage</key>
+                <string>De ladder is al helemaal af. Je kan hem niet verlengen of verstevigen met de tak.</string>
+            </dict>
+            <key>Tak-Kano</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Tak</string>
+                <key>identifierMunt</key>
+                <string>Kano</string>
+                <key>errorMessage</key>
+                <string>Probeer je een mast op de kano te zetten? Daar is de tak niet lang genoeg voor.</string>
+            </dict>
+            <key>Tak-Schroef</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Tak</string>
+                <key>identifierMunt</key>
+                <string>Schroef</string>
+                <key>errorMessage</key>
+                <string>Je monteert de stok op de schroef. Je draait het geheel als test rond in een flinke plas water. Je merkt als snel dat je niet genoeg kracht kan overbrengen om hier echt profijt van te hebben. Test mislukt.</string>
+            </dict>
+            <key>Tak-Zweep</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Tak</string>
+                <key>identifierMunt</key>
+                <string>Zweep</string>
+                <key>errorMessage</key>
+                <string>Je wikkelt de zweep zorgvuldig om de tak. Met een ferme ruk naar achter breng je de tak als een ware draaitol in beweging. Dat ziet er best tof uit! Praktisch nut heeft het helaas niet.</string>
+            </dict>
+            <key>Touw-Lemmet</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Touw</string>
+                <key>identifierMunt</key>
+                <string>Lemmet</string>
+                <key>errorMessage</key>
+                <string>Met een beetje geduld kan je best touw doormidden snijden. Je verwacht echter de volle lengte van het touw nodig te hebben.</string>
+            </dict>
+            <key>Touw-Duikbril</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Touw</string>
+                <key>identifierMunt</key>
+                <string>Duikbril</string>
+                <key>errorMessage</key>
+                <string>Kom op, je bent nog geen Duikbril0+. Je hoeft echt geen touwtje om je bril te doen om hem niet kwijt te raken.</string>
+            </dict>
+            <key>Touw-Smeerolie</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Touw</string>
+                <key>identifierMunt</key>
+                <string>Smeerolie</string>
+                <key>errorMessage</key>
+                <string>Je drenkt het topje van het rouw in de smeerolie. Dit zou een mooie lont kunnen zijn. Je hebt alleen geen vuur en kan je ook geen reden bedenken om vuur nodig te hebben.</string>
+            </dict>
+            <key>Touw-Kapmes</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Touw</string>
+                <key>identifierMunt</key>
+                <string>Kapmes</string>
+                <key>errorMessage</key>
+                <string>Je kan met gemak het touw doormidden hakken. Je verwacht echter de volle lengte van het touw nodig te hebben.</string>
+            </dict>
+            <key>Touw-Ladder</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Touw</string>
+                <key>identifierMunt</key>
+                <string>Ladder</string>
+                <key>errorMessage</key>
+                <string>Je knoopt het touw aan de ladder. Nu heb je een touw-ladder. Meer dan het begin van een slechte woordgrap heb je nu niet.</string>
+            </dict>
+            <key>Lemmet-Duikbril</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Lemmet</string>
+                <key>identifierMunt</key>
+                <string>Duikbril</string>
+                <key>errorMessage</key>
+                <string>Ook met een duikbril op is een lemmet een lemmet.</string>
+            </dict>
+            <key>Lemmet-Smeerolie</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Lemmet</string>
+                <key>identifierMunt</key>
+                <string>Smeerolie</string>
+                <key>errorMessage</key>
+                <string>Met een druppeltje smeerolie poetst je het lemmet zorgvuldig op. Hij blinkt weer als nieuw.</string>
+            </dict>
+            <key>Duikbril-Smeerolie</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Duikbril</string>
+                <key>identifierMunt</key>
+                <string>Smeerolie</string>
+                <key>errorMessage</key>
+                <string>Met de duikbril op kan je de kleine lettertjes onderop het flesje lezen. T.H.T.  sepLadderKapmes. Gelukkig vergaat olie niet zo snel.</string>
+            </dict>
+            <key>Duikbril-Kapmes</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Duikbril</string>
+                <key>identifierMunt</key>
+                <string>Kapmes</string>
+                <key>errorMessage</key>
+                <string>Ook met een duikbril op is een kapmes een kapmes.</string>
+            </dict>
+            <key>Duikbril-Ladder</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Duikbril</string>
+                <key>identifierMunt</key>
+                <string>Ladder</string>
+                <key>errorMessage</key>
+                <string>Ook met een duikbril op is een ladder een ladder.</string>
+            </dict>
+            <key>Duikbril-Kano</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Duikbril</string>
+                <key>identifierMunt</key>
+                <string>Kano</string>
+                <key>errorMessage</key>
+                <string>Kom op zeg. Zonder duikbril kan je ook prima kanovaren hoor.</string>
+            </dict>
+            <key>Duikbril-Motor</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Duikbril</string>
+                <key>identifierMunt</key>
+                <string>Motor</string>
+                <key>errorMessage</key>
+                <string>Je bestudeert aandachtig het serienummerplaatje. HT-RS-FL-Munt0ZakmesKapmes, interessant!</string>
+            </dict>
+            <key>Duikbril-Schroef</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Duikbril</string>
+                <key>identifierMunt</key>
+                <string>Schroef</string>
+                <key>errorMessage</key>
+                <string>Ook met een duikbril op is een schroef een schroef.</string>
+            </dict>
+            <key>Duikbril-Zweep</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Duikbril</string>
+                <key>identifierMunt</key>
+                <string>Zweep</string>
+                <key>errorMessage</key>
+                <string>Ook met een duikbril op is een zweep een zweep.</string>
+            </dict>
+            <key>Duikbril-Schroevendraaier</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Duikbril</string>
+                <key>identifierMunt</key>
+                <string>Schroevendraaier</string>
+                <key>errorMessage</key>
+                <string>Ook met een duikbril op is een schroevendraaier een schroevendraaier.</string>
+            </dict>
+            <key>Duikbril-Schroefmotor</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Duikbril</string>
+                <key>identifierMunt</key>
+                <string>Schroefmotor</string>
+                <key>errorMessage</key>
+                <string>Ook met een duikbril op is een schroefmotor een schroefmotor.</string>
+            </dict>
+            <key>Duikbril-Motorboot</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Duikbril</string>
+                <key>identifierMunt</key>
+                <string>Motorboot</string>
+                <key>errorMessage</key>
+                <string>Kom op zeg. Zonder duikbril kan je ook prima bootje varen hoor.</string>
+            </dict>
+            <key>Smeerolie-Kapmes</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Smeerolie</string>
+                <key>identifierMunt</key>
+                <string>Kapmes</string>
+                <key>errorMessage</key>
+                <string>Met een druppeltje smeerolie poetst je het lemmet zorgvuldig op. Hij blinkt weer als nieuw.</string>
+            </dict>
+            <key>Smeerolie-Motor</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Smeerolie</string>
+                <key>identifierMunt</key>
+                <string>Motor</string>
+                <key>errorMessage</key>
+                <string>Een beetje olie doet wonderen. Het motortje liep al prima maar nu helemaal als een zonnetje.</string>
+            </dict>
+            <key>Smeerolie-Schroef</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Smeerolie</string>
+                <key>identifierMunt</key>
+                <string>Schroef</string>
+                <key>errorMessage</key>
+                <string>De schroef word niet anders van een druppeltje smeerolie.</string>
+            </dict>
+            <key>Smeerolie-Schroefmotor</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Smeerolie</string>
+                <key>identifierMunt</key>
+                <string>Schroefmotor</string>
+                <key>errorMessage</key>
+                <string>Een beetje olie doet wonderen. Het motortje liep al prima maar nu helemaal als een zonnetje.</string>
+            </dict>
+            <key>Smeerolie-Motorboot</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Smeerolie</string>
+                <key>identifierMunt</key>
+                <string>Motorboot</string>
+                <key>errorMessage</key>
+                <string>Een beetje olie doet wonderen. Het motortje liep al prima maar nu helemaal als een zonnetje.</string>
+            </dict>
+            <key>Ladder-Kano</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Ladder</string>
+                <key>identifierMunt</key>
+                <string>Kano</string>
+                <key>errorMessage</key>
+                <string>Je monteert de ladder op de kano en aanschouwt het resultaat. Een prima voertuig voor ter land, ter zee en in de lucht maar hier kan je er niks mee.</string>
+            </dict>
+            <key>Ladder-Motorboot</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Ladder</string>
+                <key>identifierMunt</key>
+                <string>Motorboot</string>
+                <key>errorMessage</key>
+                <string>Je monteert de ladder op de motorboot en aanschouwt het resultaat. Een prima voertuig voor ter land, ter zee en in de lucht maar hier kan je er niks mee.</string>
+            </dict>
+            <key>Kano-Motor</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Kano</string>
+                <key>identifierMunt</key>
+                <string>Motor</string>
+                <key>errorMessage</key>
+                <string>Zonder schroef heb je helaas niks aan deze motor.</string>
+            </dict>
+            <key>Kano-Schroef</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Kano</string>
+                <key>identifierMunt</key>
+                <string>Schroef</string>
+                <key>errorMessage</key>
+                <string>Hand aangedreven werkt deze combinatie niet. Je zult een andere krachtbron moeten zoeken.</string>
+            </dict>
+            <key>Kano-Schroefmotor</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Kano</string>
+                <key>identifierMunt</key>
+                <string>Schroefmotor</string>
+                <key>errorMessage</key>
+                <string>Met behulp van de schroevendraaier weet je de schroefmotor vast te maken aan de kano. Nu kan je wel tegen de stroming in varen. Toch?</string>
+            </dict>
+            <key>Motor-Schroef</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Motor</string>
+                <key>identifierMunt</key>
+                <string>Schroef</string>
+                <key>errorMessage</key>
+                <string>Gelukkig zijn de schroef en motor van dezelfde makelaardij. Soms zit het mee! Zonder problemen bevestig je de schroef op de motor.</string>
+            </dict>
+            <key>Motor-Zweep</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Motor</string>
+                <key>identifierMunt</key>
+                <string>Zweep</string>
+                <key>errorMessage</key>
+                <string>Gelukkig is dit geen trek-start motor.</string>
+            </dict>
+            <key>Motor-Schroevendraaier</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Motor</string>
+                <key>identifierMunt</key>
+                <string>Schroevendraaier</string>
+                <key>errorMessage</key>
+                <string>Je stelt de ontsteking, carburatie en brandstoftoevoer nauwkeurig af. Dhr. Verstappen zou in zijn nopjes zijn met zo’n monteur.</string>
+            </dict>
+            <key>Schroef-Schroevendraaier</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Schroef</string>
+                <key>identifierMunt</key>
+                <string>Schroevendraaier</string>
+                <key>errorMessage</key>
+                <string>Ok ok, taaltechnisch kan je een schroevendraaier gebruiken met een schroef. Deze zijn nogal uit verhouding vind je niet?</string>
+            </dict>
+            <key>Schroevendraaier-Schroefmotor</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Schroevendraaier</string>
+                <key>identifierMunt</key>
+                <string>Schroefmotor</string>
+                <key>errorMessage</key>
+                <string>Je stelt de ontsteking, carburatie en brandstoftoevoer nauwkeurig af. Dhr. Verstappen zou in zijn nopjes zijn met zo’n monteur.</string>
+            </dict>
+            <key>Schroevendraaier-Motorboot</key>
+            <dict>
+                <key>identifierZakmes</key>
+                <string>Schroevendraaier</string>
+                <key>identifierMunt</key>
+                <string>Motorboot</string>
+                <key>errorMessage</key>
+                <string>Je stelt de ontsteking, carburatie en brandstoftoevoer nauwkeurig af. Dhr. Verstappen zou in zijn nopjes zijn met zo’n monteur.</string>
+            </dict>
         </dict>
-        <key>Duikbril-koopman</key>
+        <key>MerchantPrices</key>
         <dict>
-            <key>identifier1</key>
-            <string>Duikbril</string>
-            <key>identifier2</key>
-            <string>koopman</string>
-            <key>errorMessage</key>
-            <string>De koopman lacht zich rot, het is toch geen carnaval rare westerling?</string>
+            <key>Smeerolie</key>
+            <integer>5</integer>
+            <key>Duikbril</key>
+            <integer>1</integer>
+            <key>Lemmet</key>
+            <integer>2</integer>
+            <key>Touw</key>
+            <integer>1</integer>
         </dict>
-        <key>Kapmes-koopman</key>
+        <key>ItemCombinations</key>
         <dict>
-            <key>identifier1</key>
-            <string>Kapmes</string>
-            <key>identifier2</key>
-            <string>koopman</string>
-            <key>errorMessage</key>
-            <string>Stoer hoor zo’n kapmes. Helaas is de koopman niet onder de indruk. Als je nog een keer je mes trekt dreigt hij zijn prijzen te verhogen.</string>
+            <key>Zakmes-Smeerolie</key>
+            <dict>
+                <key>item1</key>
+                <string>Zakmes</string>
+                <key>item2</key>
+                <string>Smeerolie</string>
+                <key>grantItem</key>
+                <string>Schroevendraaier</string>
+                <key>removeItem1</key>
+                <false />
+                <key>removeItem2</key>
+                <false />
+                <key>description</key>
+                <string>De smeerolie brengt weer beweging in de roestige onderdelen van het zakmes. Je ontdekt dat er zelfs een schroevendraaier in verscholen zit.</string>
+            </dict>
+            <key>Tak-Touw</key>
+            <dict>
+                <key>item1</key>
+                <string>Tak</string>
+                <key>item2</key>
+                <string>Touw</string>
+                <key>grantItem</key>
+                <string>Zweep</string>
+                <key>removeItem1</key>
+                <true />
+                <key>removeItem2</key>
+                <true />
+                <key>description</key>
+                <string>Het begin van het touw wikkel je strak om de tak waarna je een stevige knoop maakt. De tak fungeert als handvat van deze primitieve zweep.</string>
+            </dict>
+            <key>Tak-Lemmet</key>
+            <dict>
+                <key>item1</key>
+                <string>Tak</string>
+                <key>item2</key>
+                <string>Lemmet</string>
+                <key>grantItem</key>
+                <string>Kapmes</string>
+                <key>removeItem1</key>
+                <true />
+                <key>removeItem2</key>
+                <true />
+                <key>description</key>
+                <string>Met behulp van je zakmes maak je een inkeping in het hout ter grote van de onderkant van het lemmet. Je klemt het lemmet in deze inkeping. Tenslotte schraap je de schors van het hout tot deze precies in je hand past.</string>
+            </dict>
+            <key>Kano-Schroefmotor</key>
+            <dict>
+                <key>item1</key>
+                <string>Kano</string>
+                <key>item2</key>
+                <string>Schroefmotor</string>
+                <key>grantItem</key>
+                <string>Motorboot</string>
+                <key>removeItem1</key>
+                <true />
+                <key>removeItem2</key>
+                <true />
+                <key>description</key>
+                <string>Met behulp van de schroevendraaier weet je de schroefmotor vast te maken aan de kano. Nu kan je misschien wel tegen de stroming in varen.</string>
+            </dict>
+            <key>Motor-Schroef</key>
+            <dict>
+                <key>item1</key>
+                <string>Motor</string>
+                <key>item2</key>
+                <string>Schroef</string>
+                <key>grantItem</key>
+                <string>Schroefmotor</string>
+                <key>removeItem1</key>
+                <true />
+                <key>removeItem2</key>
+                <true />
+                <key>description</key>
+                <string>Gelukkig zijn de schroef en motor van dezelfde leverancier. Ze passen zonder problemen op elkaar en met een klik bevestig je de schroef op de motor.</string>
+            </dict>
         </dict>
-        <key>Zweep-koopman</key>
+        <key>ItemUsage</key>
         <dict>
-            <key>identifier1</key>
-            <string>Zweep</string>
-            <key>identifier2</key>
-            <string>koopman</string>
-            <key>errorMessage</key>
-            <string>Indiana Jones die zijn zweep verkoopt? Dat is alles de Dukes of Hazard die de General Lee verkopen, no way dus.</string>
+            <key>Ladder-houthakkershut</key>
+            <dict>
+                <key>description</key>
+                <string>Om een beter overzicht te krijgen zet je de ladder tegen het hutje aan. Door de enorme bomen in de omgeving valt dit enorm tegen. Net voordat je weer wilt afdalen zie je in de nok van het hutje één gouden munt. Wie weet brengt deze nog geluk!</string>
+                <key>item</key>
+                <string>Ladder</string>
+                <key>matchLocation</key>
+                <string>houthakkershut</string>
+                <key>grantItem</key>
+                <string>Munt</string>
+            </dict>
+            <key>Zakmes-boom</key>
+            <dict>
+                <key>description</key>
+                <string>Met gemak snij je een flinke tak los van de boom. Alle oneffenheden schaaf je eraf. Wie weet wanneer je dit kunt gebruiken...</string>
+                <key>item</key>
+                <string>Zakmes</string>
+                <key>matchLocation</key>
+                <string>boom</string>
+                <key>grantItem</key>
+                <string>Tak</string>
+                <key>repeatable</key>
+                <true />
+            </dict>
+            <key>Ladder-boom</key>
+            <dict>
+                <key>description</key>
+                <string>Je zet de ladder tegen een stevige tak. Omhoog klimmen is nu een eitje. Je hebt prima uitzicht over de omgeving en ziet in de verte de grillige contouren van de rivier.</string>
+                <key>item</key>
+                <string>Ladder</string>
+                <key>matchLocation</key>
+                <string>boom</string>
+                <key>unlockLocation</key>
+                <string>rivier</string>
+            </dict>
+            <key>Touw-boom</key>
+            <dict>
+                <key>description</key>
+                <string>Met een soepele worp gooi je het touw over een overhangende tak. Nu is het simpel om naar boven te klimmen. In de verte zie je de kronkelende lijn van een rivier.</string>
+                <key>item</key>
+                <string>Touw</string>
+                <key>matchLocation</key>
+                <string>boom</string>
+                <key>unlockLocation</key>
+                <string>rivier</string>
+            </dict>
+            <key>Duikbril-moeras</key>
+            <dict>
+                <key>description</key>
+                <string>Met het blote oog zie je niks door het troebele water. Met de duikbril op zie je aanmerkelijk meer. Dicht bij de vergane boot vind je een tweetaktmotor. Deze heeft nog niet zo lang in het water gelegen.</string>
+                <key>item</key>
+                <string>Duikbril</string>
+                <key>matchLocation</key>
+                <string>moeras</string>
+                <key>grantItem</key>
+                <string>Motor</string>
+            </dict>
+            <key>Kapmes-boom</key>
+            <dict>
+                <key>description</key>
+                <string>Na flink hak werk komt de boom krakend naar beneden. Het echte werk moet echter nog beginnen. Vele zweetdruppels, splinters en blaren verder aanschouw je het resultaat: Een haast zeewaardige kano!</string>
+                <key>item</key>
+                <string>Kapmes</string>
+                <key>matchLocation</key>
+                <string>boom</string>
+                <key>grantItem</key>
+                <string>Kano</string>
+            </dict>
+            <key>Kano-rivier</key>
+            <dict>
+                <key>description</key>
+                <string>Voorzichtig laat je de kano te water. Gelukkig blijft hij drijven! Door de sterke stroming kan je alleen stroomafwaarts. Na verloop van tijd wordt de stroming minder en minder en dobber je langzaam verder. Recht het stinkend moeras in...</string>
+                <key>item</key>
+                <string>Kano</string>
+                <key>matchLocation</key>
+                <string>rivier</string>
+                <key>unlockLocation</key>
+                <string>moeras</string>
+            </dict>
+            <key>Zweep-boom</key>
+            <dict>
+                <key>description</key>
+                <string>Met een klap sla je de zweep om een overhangende tak. Nu is het simpel om naar boven te klimmen. In de verte zie je de kronkelende lijn van een rivier.</string>
+                <key>item</key>
+                <string>Zweep</string>
+                <key>matchLocation</key>
+                <string>boom</string>
+                <key>unlockLocation</key>
+                <string>rivier</string>
+            </dict>
+            <key>Zweep-rivier</key>
+            <dict>
+                <key>description</key>
+                <string>Met een ferme klap wikkelt de zweep zich veilig om een boomtak. Je neemt een korte aanloop en slingert over de rivier alsof je dit vaker doet. Na een korte wandeling door het bos arriveer je bij de rand van een diepe afgrond.</string>
+                <key>item</key>
+                <string>Zweep</string>
+                <key>matchLocation</key>
+                <string>rivier</string>
+                <key>unlockLocation</key>
+                <string>kloofrand</string>
+            </dict>
+            <key>Zweep-kloofrand</key>
+            <dict>
+                <key>description</key>
+                <string>Je zoekt een dikke boom aan de rand van de kloof en knoopt de zweep stevig vast. Als een ware professional daal je af naar de bodem van de kloof.</string>
+                <key>item</key>
+                <string>Zweep</string>
+                <key>matchLocation</key>
+                <string>kloofrand</string>
+                <key>unlockLocation</key>
+                <string>kloofbodem</string>
+            </dict>
+            <key>Schroevendraaier-kloofbodem</key>
+            <dict>
+                <key>description</key>
+                <string>Het kost wat kracht maar na flink wrikkend en sjorren krijg je de oude schroef los van de boot. Helaas was de schroef het enige onderdeel dat bestand was tegen de natuurelementen.</string>
+                <key>item</key>
+                <string>Schroevendraaier</string>
+                <key>matchLocation</key>
+                <string>kloofbodem</string>
+                <key>grantItem</key>
+                <string>Schroef</string>
+            </dict>
+            <key>Motorboot-rivier</key>
+            <dict>
+                <key>description</key>
+                <string>De boot ligt verrassend stabiel in het water. Slalommend tussen de rotsblokken kom je bij een steile waterval. Je kunt niet verder dus dat wordt klimmen!</string>
+                <key>item</key>
+                <string>Motorboot</string>
+                <key>matchLocation</key>
+                <string>rivier</string>
+                <key>unlockLocation</key>
+                <string>berg</string>
+            </dict>
         </dict>
-        <key>Schroef-koopman</key>
+        <key>LocationDescriptions</key>
         <dict>
-            <key>identifier1</key>
-            <string>Schroef</string>
-            <key>identifier2</key>
-            <string>koopman</string>
-            <key>errorMessage</key>
-            <string>Koopman: "Zie jij hier water? Nee dus, wat moet ik nou met bootonderdelen?"</string>
+            <key>start</key>
+            <string>Hier kom je dus vandaan...</string>
+            <key>berg</key>
+            <string>Na een uitdagende klim bereik je eindelijk de top van de berg. Je kijkt om je heen en ziet de restanten van de grote boom, de houthakkershut, de kolkende rivier, de fel rode dakpannen van de koopman, de diepe kloof en de damp die boven het moeras hangt. Het uitzicht zorgt er bijna voor dat je de schatkist recht voor je voeten over het hoofd ziet. Eindelijk heb je gevonden waar je naar zocht!</string>
+            <key>moeras</key>
+            <string>De geur van rotte vis en stilstaand water trekt hordes muggen aan. Met een zakdoek voor je neus ploeg je lijdzaam door het troebele water. Dan stuit je opeens op een half gezonken blauw vissersbootje. Een kikker springt verschrikt weg als je aan boord stapt. Je vind hier een metalen kistje met maar liefst vier gouden munten. Een meevaller! Op de plek waar ooit de buitenboordmotor zat, zit nu een gapend gat.</string>
+            <key>kloofbodem</key>
+            <string>Na een gevaarlijke afdaling bereik je zwetend de bodem van de kloof. Het is hier windstil en bloedheet. De flikkering die je boven zag werd niet veroorzaakt door gouden munten maar door de metalen resten van een rode vissersboot. Blijkbaar liep er in het verleden een flinke rivier door de kloof. Misschien zijn er toch nog onderdelen af te schroeven?</string>
+            <key>kloofrand</key>
+            <string>Achter een rij hoge bomen ligt een diepe kloof. De overkant is te ver om te springen! De kloof strekt zich aan beide kanten zo ver uit als je kunt kijken. De felle zon reflecteert op iets in het mulle zand: een gouden munt. Even zoeken levert nog twee munten op. Diep in de kloof ligt nog iets wat het zonlicht weerkaatst. Meer gouden munten?</string>
+            <key>rivier</key>
+            <string>Het kolkende water maakt witte schuimkoppen langs de rotsen in de rivier. Door de sterke stroming is naar de overkant zwemmen geen optie. De laaghangende takken van een overhellende boom raken zo af en toe de golven in het midden van de rivier. Stroomopwaarts lonken de toppen van een schitterende berg en stroomafwaarts zie je een drassig moeraslandschap. Deze liggen echter te ver weg om de locatie te kunnen bepalen.</string>
+            <key>koopman</key>
+            <string>Aan een zanderig karrepad vind je een winkelpand met fel rode dakpannen. Bij het openen van de deur klinkt een belletje. Vanachter de toonbank verschijnt een bebaarde koopman. Wellicht verkoopt hij iets van waarde maar laat je niet misleiden...</string>
+            <key>houthakkershut</key>
+            <string>Verscholen in het bos ligt een vervallen huisje. De vergane deur geeft je simpel toegang. De resten kaphout en een verrotte schommelstoel verraden dat dit het werkdomein was van een houthakker. Zijn gereedschap heeft helaas de tand des tijds niet overleeft. In de beschutting van wat ooit de zoldertrap is geweest vind je een oude maar stevige ladder.</string>
+            <key>boom</key>
+            <string>Je ziet een opvallend grote eik staan tussen verder lage begroeiing. Het bovenste topje zou een fantastisch uitzicht bieden... Via takken  aan de onderkant van de boom kun je makkelijk een klein stuk omhoog klimmen. In de verte zie je een vervallen hut met een bemost dak. Aan de andere kant zie je een huisje met fel rode dakpannen. Verder klimmen is helaas geen optie op dit moment.</string>
         </dict>
-        <key>Motor-koopman</key>
+        <key>ItemDescriptions</key>
         <dict>
-            <key>identifier1</key>
-            <string>Motor</string>
-            <key>identifier2</key>
-            <string>koopman</string>
-            <key>errorMessage</key>
-            <string>Koopman: "Zie jij hier water? Nee dus, wat moet ik nou met bootonderdelen?"</string>
+            <key>Motorboot</key>
+            <string>Who’s McGyver? The A-team? Bekijk deze heuse boot maar eens!</string>
+            <key>Schroefmotor</key>
+            <string>Een knap stukje techniek. Her en der wat roestig maar hij pruttelt nog prima.</string>
+            <key>Schroevendraaier</key>
+            <string>Lang niet gebruikt maar daarom niet minder effectief. Schroeft wat er geschroefd moet worden.</string>
+            <key>Zweep</key>
+            <string>Slaan, grijpen en klimmen. Als je weet hoe je hem moet gebruiken is dit met recht een multitool.</string>
+            <key>Schroef</key>
+            <string>Drie roestige metalen bladen vormen samen deze bootschroef.</string>
+            <key>Motor</key>
+            <string>De vette olie heeft ervoor gezorgt dat het water de tweetaktmotor amper heeft aangetast.</string>
+            <key>Kano</key>
+            <string>Een waterdichte en degelijke kano. Wat kun je je nog meer wensen?</string>
+            <key>Ladder</key>
+            <string>Zwaar, hout en 4 meter lang. Een oud maar stevig model.</string>
+            <key>Kapmes</key>
+            <string>Vlijmscherp en oersterk. In jouw handen kan hij zelfs de dichtst begroeide bossen aan.</string>
+            <key>Smeerolie</key>
+            <string>Sterk geurende smeerolie. Maakt los wat al jaren vast zit.</string>
+            <key>Duikbril</key>
+            <string>Twee ronde dikke glazen geklemd in een rubber masker. De schoonheidsprijs ga je hier zeker niet mee winnen.</string>
+            <key>Lemmet</key>
+            <string>Ruim 25 centimeter gehard en vlijmscherp metaal. Pas op je vingers!</string>
+            <key>Touw</key>
+            <string>Niet al te dik maar leerachtig sterk touw van bijna 3 meter</string>
+            <key>Tak</key>
+            <string>Een stevige tak van 9.85 centimeter en netjes afgezaagd. Wat moet je ermee?</string>
+            <key>Munt</key>
+            <string>Een blinkende gouden munt. Hoewel je de inscripties niet kunt lezen verwacht je dat deze best wat waard is.</string>
+            <key>Zakmes</key>
+            <string>Al jaren jouw steun en toeverlaat in donkere tijden. Sommige onderdelen zitten al jaren vast maar het mes is nog altijd goed te gebruiken.</string>
+            <key>Schatkist</key>
+            <string>Gouden bekers, een ontelbaar aantal munten en bergen sieraden. Je hebt de enorme schat gevonden. Je hebt het spel uitgespeeld. Gefeliciteerd!</string>
         </dict>
-        <key>Motorboot-koopman</key>
-        <dict>
-            <key>identifier1</key>
-            <string>Motorboot</string>
-            <key>identifier2</key>
-            <string>koopman</string>
-            <key>errorMessage</key>
-            <string>Koopman: "Zie jij hier water? Nee dus, wat moet ik nou met een boot?"</string>
-        </dict>
-        <key>Kano-koopman</key>
-        <dict>
-            <key>identifier1</key>
-            <string>Kano</string>
-            <key>identifier2</key>
-            <string>koopman</string>
-            <key>errorMessage</key>
-            <string>Koopman: "Zie jij hier water? Nee dus, wat moet ik nou met een kano?"</string>
-        </dict>
-        <key>Ladder-koopman</key>
-        <dict>
-            <key>identifier1</key>
-            <string>Ladder</string>
-            <key>identifier2</key>
-            <string>koopman</string>
-            <key>errorMessage</key>
-            <string>Via de ladder sluip je op het dak. Toch betrapt de koopman je en citeert hij onmiskenbaar uit de grootste hit van Peter Koelewijn.</string>
-        </dict>
-        <key>Ladder-rivier</key>
-        <dict>
-            <key>identifier1</key>
-            <string>Ladder</string>
-            <key>identifier2</key>
-            <string>rivier</string>
-            <key>errorMessage</key>
-            <string>Je probeert de ladder over de rivier te leggen. Je komt alleen net 1,5 meter te kort. Je zult een andere manier moeten vinden.</string>
-        </dict>
-        <key>Ladder-kloofrand</key>
-        <dict>
-            <key>identifier1</key>
-            <string>Ladder</string>
-            <key>identifier2</key>
-            <string>kloofrand</string>
-            <key>errorMessage</key>
-            <string>De kloof is veel te diep. Hier is helaas geen ladder tegen opgewassen.</string>
-        </dict>
-        <key>Ladder-kloofbodem</key>
-        <dict>
-            <key>identifier1</key>
-            <string>Ladder</string>
-            <key>identifier2</key>
-            <string>kloofbodem</string>
-            <key>errorMessage</key>
-            <string>De kloof is veel te diep. Hier is helaas geen ladder tegen opgewassen.</string>
-        </dict>
-        <key>Duikbril-rivier</key>
-        <dict>
-            <key>identifier1</key>
-            <string>Duikbril</string>
-            <key>identifier2</key>
-            <string>rivier</string>
-            <key>errorMessage</key>
-            <string>Het zicht er fascinerend uit onder water. Grote vissen, kleine vissen en allerlei kiezels en takjes. Helaas zie je niks dat je kunt gebruiken.</string>
-        </dict>
-        <key>Kano-moeras</key>
-        <dict>
-            <key>identifier1</key>
-            <string>Kano</string>
-            <key>identifier2</key>
-            <string>moeras</string>
-            <key>errorMessage</key>
-            <string>Je dobbert wat rond.</string>
-        </dict>
-        <key>Motorboot-moeras</key>
-        <dict>
-            <key>identifier1</key>
-            <string>Motorboot</string>
-            <key>identifier2</key>
-            <string>moeras</string>
-            <key>errorMessage</key>
-            <string>De schroef loopt vast in de vegetatie, gelukkig heb je een zakmes om je los te snijden. Dit lijkt niet voor herhaling vatbaar.</string>
-        </dict>
-	</dict>
-	<key>MerchantPrices</key>
-	<dict>
-		<key>Smeerolie</key>
-		<integer>5</integer>
-		<key>Duikbril</key>
-		<integer>1</integer>
-		<key>Lemmet</key>
-		<integer>2</integer>
-		<key>Touw</key>
-		<integer>1</integer>
-	</dict>
-	<key>ItemCombinations</key>
-	<dict>
-		<key>Zakmes-Smeerolie</key>
-		<dict>
-			<key>item1</key>
-			<string>Zakmes</string>
-			<key>item2</key>
-			<string>Smeerolie</string>
-			<key>grantItem</key>
-			<string>Schroevendraaier</string>
-			<key>removeItem1</key>
-			<false/>
-			<key>removeItem2</key>
-			<false/>
-			<key>description</key>
-			<string>De smeerolie brengt weer beweging in de roestige onderdelen van het zakmes. Je ontdekt dat er zelfs een schroevendraaier in verscholen zit.</string>
-		</dict>
-		<key>Twijg-Touw</key>
-		<dict>
-			<key>item1</key>
-			<string>Twijg</string>
-			<key>item2</key>
-			<string>Touw</string>
-			<key>grantItem</key>
-			<string>Zweep</string>
-			<key>removeItem1</key>
-			<true/>
-			<key>removeItem2</key>
-			<true/>
-			<key>description</key>
-			<string>Het begin van het touw wikkel je strak om het twijgje waarna je een stevige knoop maakt. Het twijgje fungeert als handvat van deze primitieve zweep.</string>
-		</dict>
-		<key>Twijg-Lemmet</key>
-		<dict>
-			<key>item1</key>
-			<string>Twijg</string>
-			<key>item2</key>
-			<string>Lemmet</string>
-			<key>grantItem</key>
-			<string>Kapmes</string>
-			<key>removeItem1</key>
-			<true/>
-			<key>removeItem2</key>
-			<true/>
-			<key>description</key>
-			<string>Met behulp van je zakmes maak je een inkeping in het hout te grote van de onderkant van het lemmet. Voorzichtig klem je het lemmet in de inkeping en schraap je de schors van de hout tot deze precies in je hand past.</string>
-		</dict>
-		<key>Kano-Schroefmotor</key>
-		<dict>
-			<key>item1</key>
-			<string>Kano</string>
-			<key>item2</key>
-			<string>Schroefmotor</string>
-			<key>grantItem</key>
-			<string>Motorboot</string>
-			<key>removeItem1</key>
-			<true/>
-			<key>removeItem2</key>
-			<true/>
-			<key>description</key>
-			<string>Met behulp van de schroevendraaier weet je de schroefmotor vast te maken aan de kano. Nu kan je misschien wel tegen de stroming in varen.</string>
-		</dict>
-		<key>Motor-Schroef</key>
-		<dict>
-			<key>item1</key>
-			<string>Motor</string>
-			<key>item2</key>
-			<string>Schroef</string>
-			<key>grantItem</key>
-			<string>Schroefmotor</string>
-			<key>removeItem1</key>
-			<true/>
-			<key>removeItem2</key>
-			<true/>
-			<key>description</key>
-			<string>Gelukkig zijn de schroef en motor van dezelfde makelaardij. Ze lijken voor elkaar gemaakt en zonder problemen bevestig je de schroef op de motor.</string>
-		</dict>
-	</dict>
-	<key>ItemUsage</key>
-	<dict>
-		<key>Ladder-houthakkershut</key>
-		<dict>
-			<key>description</key>
-			<string>Om een beter overzicht te krijgen zet je de ladder tegen het hutje aan. Door de enorme bomen in de omgeving valt dit enorm tegen. Net voordat je weer wilt afdalen zie je in de nok van het hutje één gouden munt tegen. Wie weet brengt deze nog geluk!</string>
-			<key>item</key>
-			<string>Ladder</string>
-			<key>matchLocation</key>
-			<string>houthakkershut</string>
-			<key>grantItem</key>
-			<string>Munt</string>
-		</dict>
-		<key>Zakmes-boom</key>
-		<dict>
-			<key>description</key>
-			<string>Met gemak snij je een flinke tak los van de boom. Alle oneffenheden schaaf je eraf. Wie weet wanneer je dit kunt gebruiken...</string>
-			<key>item</key>
-			<string>Zakmes</string>
-			<key>matchLocation</key>
-			<string>boom</string>
-			<key>grantItem</key>
-			<string>Twijg</string>
-			<key>repeatable</key>
-			<true/>
-		</dict>
-		<key>Ladder-boom</key>
-		<dict>
-			<key>description</key>
-			<string>Je zet de ladder tegen een stevige tak. Omhoog klimmen is nu een eitje. Je hebt prima uitzicht over de omgeving en ziet in de verte de grillige contouren van de rivier.</string>
-			<key>item</key>
-			<string>Ladder</string>
-			<key>matchLocation</key>
-			<string>boom</string>
-			<key>unlockLocation</key>
-			<string>rivier</string>
-		</dict>
-		<key>Touw-boom</key>
-		<dict>
-			<key>description</key>
-			<string>Met een soepele worp gooi je het touw over een overhangende tak. Nu is het simpel om naar boven te klimmen. In de verte zie je de kronkelende lijn van een rivier.</string>
-			<key>item</key>
-			<string>Touw</string>
-			<key>matchLocation</key>
-			<string>boom</string>
-			<key>unlockLocation</key>
-			<string>rivier</string>
-		</dict>
-		<key>Duikbril-moeras</key>
-		<dict>
-			<key>description</key>
-			<string>Met het blote oog zie je niks door het troebele water. Met de duikbril op zie je aanmerkelijk meer. Dicht bij de vergane boot vind je een tweetaktmotor. Deze heeft nog niet zo lang in het water gelegen.</string>
-			<key>item</key>
-			<string>Duikbril</string>
-			<key>matchLocation</key>
-			<string>moeras</string>
-			<key>grantItem</key>
-			<string>Motor</string>
-		</dict>
-		<key>Kapmes-boom</key>
-		<dict>
-			<key>description</key>
-			<string>Na flink hak werk komt de boom krakend naar beneden. Het echte werk moet echter nog beginnen. Vele zweetdruppels, splinters en blaren verder aanschouw je het resultaat. Een haast zeewaardige kano!</string>
-			<key>item</key>
-			<string>Kapmes</string>
-			<key>matchLocation</key>
-			<string>boom</string>
-			<key>grantItem</key>
-			<string>Kano</string>
-		</dict>
-		<key>Kano-rivier</key>
-		<dict>
-			<key>description</key>
-			<string>Voorzichtig laat je de kano te water. Gelukkig blijft hij drijven! Door de sterke stroming kan je alleen stroomafwaarts. Na verloop van tijd wordt de stroming minder en minder en dobber je langzaam verder. Recht het stinkend moeras in...</string>
-			<key>item</key>
-			<string>Kano</string>
-			<key>matchLocation</key>
-			<string>rivier</string>
-			<key>unlockLocation</key>
-			<string>moeras</string>
-		</dict>
-		<key>Zweep-boom</key>
-		<dict>
-			<key>description</key>
-			<string>Met een klap sla je de zweep om een overhangende tak. Nu is het simpel om naar boven te klimmen. In de verte zie je de kronkelende lijn van een rivier.</string>
-			<key>item</key>
-			<string>Zweep</string>
-			<key>matchLocation</key>
-			<string>boom</string>
-			<key>unlockLocation</key>
-			<string>rivier</string>
-		</dict>
-		<key>Zweep-rivier</key>
-		<dict>
-			<key>description</key>
-			<string>Met een ferme klap wikkelt de zweep zich veilig om een boomtak. Je neemt een korte aanloop en slingert over de rivier alsof je dit vaker doet. Na een korte wandeling door het bos arriveer je bij de rand van een diepe afgrond.</string>
-			<key>item</key>
-			<string>Zweep</string>
-			<key>matchLocation</key>
-			<string>rivier</string>
-			<key>unlockLocation</key>
-			<string>kloofrand</string>
-		</dict>
-		<key>Zweep-kloofrand</key>
-		<dict>
-			<key>description</key>
-			<string>Je zoekt een dikke boom aan de rand van de kloof en knoopt de zweep stevig vast. Langzaam leun je over de rand en steeds sneller daal je af naar de bodem van de kloof.</string>
-			<key>item</key>
-			<string>Zweep</string>
-			<key>matchLocation</key>
-			<string>kloofrand</string>
-			<key>unlockLocation</key>
-			<string>kloofbodem</string>
-		</dict>
-		<key>Zweep-kloofbodem</key>
-		<dict>
-			<key>description</key>
-			<string>Je zoekt een dikke boom aan de rand van de kloof en knoopt de zweep stevig vast. Als een ware professional daal je af naar de bodem van de kloof.</string>
-			<key>item</key>
-			<string>Schroevendraaier</string>
-			<key>matchLocation</key>
-			<string>kloofbodem</string>
-			<key>grantItem</key>
-			<string>Schroef</string>
-		</dict>
-        <key>Schroevendraaier-kloofbodem</key>
-        <dict>
-            <key>description</key>
-            <string>Het kost wat kracht maar na flink wrikkend en sjorren krijg je de oude schroef los van de boot. Helaas was de schroef het enige onderdeel dat bestand was tegen de natuurelementen.</string>
-            <key>item</key>
-            <string>Schroevendraaier</string>
-            <key>matchLocation</key>
-            <string>kloofbodem</string>
-            <key>grantItem</key>
-            <string>Schroef</string>
-        </dict>
-		<key>Motorboot-rivier</key>
-		<dict>
-			<key>description</key>
-			<string>De boot ligt verrassend stabiel in het water. Slalommend tussen de rotsblokken kom je bij een steile waterval. Je kunt niet verder dus dat wordt klimmen!</string>
-			<key>item</key>
-			<string>Motorboot</string>
-			<key>matchLocation</key>
-			<string>rivier</string>
-			<key>unlockLocation</key>
-			<string>berg</string>
-		</dict>
-		<key>Motorboot-moeras</key>
-		<dict>
-			<key>description</key>
-			<string>De boot ligt verrassend stabiel in het water. Slalommend tussen de rotsblokken kom je bij een steile waterval. Je kunt niet verder dus dat wordt klimmen!</string>
-			<key>item</key>
-			<string>Motorboot</string>
-			<key>matchLocation</key>
-			<string>moeras</string>
-			<key>unlockLocation</key>
-			<string>berg</string>
-		</dict>
-	</dict>
-	<key>LocationDescriptions</key>
-	<dict>
-		<key>berg</key>
-		<string>Na een uitdagende klim bereik je eindelijk de top van de berg. Je kijkt om je heen en ziet de restanten van de grote boom, de houthakkershut, de kolkende rivier, de fel rode dakpannen van de koopman, de diepe kloof en de damp die boven het moeras hangt. Het uitzicht zorgt er bijna voor dat je de schatkist recht voor je voeten over het hoofd ziet. Eindelijk heb je gevonden waar je naar zocht!</string>
-		<key>moeras</key>
-		<string>De geur van rotte vis en stilstaand water trekt hordes muggen aan. Met een zakdoek voor je neus ploeg je lijdzaam door het troebele water. Dan stuit je opeens op een half gezonken blauw vissersbootje. Een kikker springt verschrikt weg als je aan boord stapt. Je vind hier een metalen kistje met maar liefst 5 gouden munten, een meevaller. Op de plek waar ooit de buitenboordmotor zat, zit nu een gapend gat.</string>
-		<key>kloofbodem</key>
-		<string>Na een gevaarlijke afdaling bereik je zwetend de bodem van de kloof. Het is hier windstil en bloedheet. De flikkering die je boven zag werd niet veroorzaakt door gouden munten maar door de metalen resten van een rode vissersboot. Blijkbaar liep er in het verleden een flinke rivier door de kloof. Misschien zijn er toch nog onderdelen af te schroeven?</string>
-		<key>kloofrand</key>
-		<string>Achter een rij hoge bomen ligt een diepe kloof. De overkant is een kleine 5 meter ver. Te ver om te springen! De kloof strekt zich aan beide kanten zo ver uit als je kunt kijken. Maar de felle zon reflecteert op iets in het mulle zand: een gouden munt. Even zoeken levert nog twee munten op. Diep in de kloof ligt nog iets wat het zonlicht weerkaatst. Meer gouden munten?</string>
-		<key>rivier</key>
-		<string>Het kolkende water maakt witte schuimkoppen langs de rotsen in de rivier. Door de sterke stroming is naar de overkant zwemmen geen optie. De laaghangende takken van een overhellende boom raken zo af en toe de golven in het midden van de rivier. Stroomopwaarts lonken de toppen van een schitterende berg en stroomafwaarts zie je een drassig moeraslandschap.</string>
-		<key>koopman</key>
-		<string>Aan een zanderig karrepad ligt een verrassend degelijk huisje met fel rode dakpannen. Bij het open van de deur klinkt een belletje. Vanachter de toonbank verschijnt een bebaarde koopman. Wellicht verkoopt hij iets van waarde maar laat je niet misleiden...</string>
-		<key>houthakkershut</key>
-		<string>Verscholen in het bos ligt een vervallen huisje met een kleine zolder. De vergane deur geeft je simpel toegang. De resten kaphout en een verrotte schommelstoel verraden dat dit het werkdomein was van een houthakker. Zijn gereedschap heeft helaas de tand des tijds niet overleeft. In de beschutting van wat ooit de zoldertrap is geweest vind je een oude maar stevige ladder.</string>
-		<key>boom</key>
-		<string>Je ziet een opvallend grote eik staan tussen verder lage begroeiing. Het bovenste topje zou een fantastisch uitzicht bieden... Via takken  aan de onderkant van de boom kun je makkelijk een klein stuk omhoog klimmen. In de verte zie je een vervallen hut met een bemost dak. Aan de andere kant zie je een huisje met fel rode dakpannen. Verder klimmen is helaas geen optie op dit moment.</string>
-	</dict>
-	<key>ItemDescriptions</key>
-	<dict>
-		<key>Motorboot</key>
-		<string>Who’s McGyver? The A-team? Bekijk deze heuse boot maar eens!</string>
-		<key>Schroefmotor</key>
-		<string>Een knap stukje techniek. Her en der wat roestig maar hij pruttelt nog prima.</string>
-		<key>Schroevendraaier</key>
-		<string>Lang niet gebruikt maar daarom niet minder effectief. Schroeft wat er geschroefd moet worden.</string>
-		<key>Zweep</key>
-		<string>Slaan, grijpen en klimmen. Als je weet hoe je hem moet gebruiken is dit oprecht een multitool.</string>
-		<key>Schroef</key>
-		<string>Drie roestige metalen bladen vormen samen deze bootschroef.</string>
-		<key>Motor</key>
-		<string>De vette olie heeft ervoor gezorgt dat het water de tweetaktmotor amper heeft aangetast.</string>
-		<key>Kano</key>
-		<string>Een waterdichte en degelijke kano. Wat kun je je nog meer wensen?</string>
-		<key>Ladder</key>
-		<string>Zwaar, hout en 4m lang. Een oud maar stevig model.</string>
-		<key>Kapmes</key>
-		<string>Vlijmscherp en oersterk. In jouw handen kan hij zelfs de dichtst begroeide bossen aan.</string>
-		<key>Smeerolie</key>
-		<string>Sterk geurende smeerolie. Maakt los wat al jaren vast zit.</string>
-		<key>Duikbril</key>
-		<string>Twee ronde dikke glazen geklemd in een dik rubber masker. De schoonheidsprijs zal je er in ieder geval niet mee winnen.</string>
-		<key>Lemmet</key>
-		<string>Ruim 25 cm gehard en vlijmscherp metaal. Pas op je vingers!</string>
-		<key>Touw</key>
-		<string>Bijna 3 meter lang, niet al te dik maar leerachtig sterk touw.</string>
-		<key>Twijg</key>
-		<string>Een tak van net geen 10 cm lang. Netjes afgezaagd, sterk hout maar wat moet je ermee?</string>
-		<key>Munt</key>
-		<string>Een blinkende gouden munt. Hoewel je de inscripties niet kunt lezen verwacht je dat deze best wat waard is.</string>
-		<key>Zakmes</key>
-		<string>Al jaren jouw steun en toeverlaat in donkere tijden. Sommige onderdelen zitten al jaren vast maar het mes is nog altijd goed te gebruiken.</string>
-	</dict>
-</dict>
+    </dict>
 </plist>

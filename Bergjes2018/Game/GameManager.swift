@@ -32,13 +32,15 @@ class GameManager {
     var locationManager =  LocationManager()
     var actionManager = ActionManager()
     
+    let gameSetup: GameSetup = GameSetupStrocamp()
+    
     init() {
         readPropertyList()
         
         // Initialize when needed
         if (locationManager.locations.isEmpty) {
             NSLog("Initializing persisted location list")
-            let locationList = GameSetupBaarn.loadLocations().mapValues({
+            let locationList = gameSetup.loadLocations().mapValues({
                 (gameLocation: GameLocation) -> Location in
                 return Location(name: gameLocation.name, visible: false, visited: false)
             })
@@ -49,16 +51,20 @@ class GameManager {
         
         if inventoryManager.inventory.isEmpty {
             NSLog("Initializing persisted location list")
-            inventory = inventoryManager.loadInventory(cleanInventory: GameSetupBaarn.loadItems())
+            inventory = inventoryManager.loadInventory(cleanInventory: gameSetup.loadItems())
             self.addItemToInventory(itemName: "Zakmes")
             self.addItemToInventory(itemName: "Munt")
         }
 
         // locations = GameSetupStrocamp.loadLocations()
-        locations = GameSetupBaarn.loadLocations()
-        inventory = inventoryManager.loadInventory(cleanInventory: GameSetupBaarn.loadItems())
+        locations = gameSetup.loadLocations()
+        inventory = inventoryManager.loadInventory(cleanInventory: gameSetup.loadItems())
         
         currentLocationId = "startup" // Fake location to force update at the start
+    }
+    
+    func getMapHome() -> GameLocation {
+        return gameSetup.getMapHome()
     }
     
     func retrieveVisibleLocations() -> [GameLocation] {
@@ -222,18 +228,16 @@ class GameManager {
     // Returns:
     //   String: error message
     func getErrorMessageForAttempt(identifier1: String, identifier2: String?) -> String {
-        if (identifier2 == nil) {
+        if (identifier2 == nil || identifier2 == "startup") {
             return "Dat gaat hier niet lukken..."
         }
         
+        let searchKey = "\(identifier1)-\(identifier2!)"
+        let reversedKey = "\(identifier2!)-\(identifier1)"
         let result = errorMessages
             .filter { (arg) -> Bool in
-                let (_, value) = arg
-                return {value["identifier1"] as! String == identifier1 || value["identifier2"] as! String == identifier1}()
-            }
-            .filter { (arg) -> Bool in
-                let (_, value) = arg
-                return {value["identifier1"] as! String == identifier2! || value["identifier2"] as! String == identifier2!}()
+                let (key, _) = arg
+                return {key == searchKey || key == reversedKey}()
             }
             .first
 
@@ -384,12 +388,12 @@ class GameManager {
     
     func resetGame() {
         NSLog("Reset all game data")
-        inventoryManager.updateInventory(gameItems: GameSetupBaarn.loadItems())
-        inventory = inventoryManager.loadInventory(cleanInventory: GameSetupBaarn.loadItems())
+        inventoryManager.updateInventory(gameItems: gameSetup.loadItems())
+        inventory = inventoryManager.loadInventory(cleanInventory: gameSetup.loadItems())
         self.addItemToInventory(itemName: "Zakmes")
         self.addItemToInventory(itemName: "Munt")
 
-        let locationList = GameSetupBaarn.loadLocations().mapValues({
+        let locationList = gameSetup.loadLocations().mapValues({
             (gameLocation: GameLocation) -> Location in
             return Location(name: gameLocation.name, visible: false, visited: false)
         })
@@ -397,7 +401,7 @@ class GameManager {
         locationManager.setVisible(locationId: "start", visible: true)
         locationManager.setVisible(locationId: "boom", visible: true)
         
-        locations = GameSetupBaarn.loadLocations()
+        locations = gameSetup.loadLocations()
         
         actionManager.resetActions()
         

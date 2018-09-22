@@ -164,8 +164,12 @@ extension RugzakViewController: UITableViewDataSource {
         let itemImage = Utility.resizeImage(image: UIImage(named: item.imageReference)!,
                                             targetSize: CGSize(width: 50.0, height: 50.0))
         
-        if item.amount > 1, item.name == "Munt" {
-            cell.rugzakCellLabel.text = "\(item.amount) \(item.name)en"
+        if item.amount > 1 {
+            if item.name == "Munt" {
+                cell.rugzakCellLabel.text = "\(item.amount) \(item.name)en"
+            } else {
+                cell.rugzakCellLabel.text = "\(item.name) \(item.amount)x"
+            }
         } else {
             cell.rugzakCellLabel.text = "\(item.name)"
         }
@@ -227,5 +231,9 @@ extension RugzakViewController: BlurredViewControllerDelegate {
                 subview.removeFromSuperview()
             }
         }
+        
+        // FIXME Hack
+        self.items = self.gameManager!.retrieveBackpackContents().filter({ $0.amount > 0 })
+        self.rugzakContents.reloadData()
     }
 }

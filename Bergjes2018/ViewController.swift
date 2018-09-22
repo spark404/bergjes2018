@@ -48,9 +48,9 @@ class ViewController: UIViewController {
 
         self.gameManager.delegate = self
 
-        let start: GameLocation = self.gameManager.retrieveLocationsDatabase()["start"]!
+        let home: GameLocation = self.gameManager.getMapHome()
         
-        let camera = GMSCameraPosition.camera(withLatitude: 52.21174, longitude:  5.256663, zoom: 15.1)
+        let camera = GMSCameraPosition.camera(withLatitude: home.latitude, longitude:  home.longitude, zoom: 15.1)
         mapView.camera = camera
         mapView.delegate = self
         mapView.isMyLocationEnabled = true

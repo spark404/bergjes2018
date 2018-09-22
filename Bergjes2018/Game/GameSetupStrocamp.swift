@@ -8,57 +8,61 @@
 
 import Foundation
 
-class GameSetupStrocamp {
-    private init() {
-        // Empty
+class GameSetupStrocamp: GameSetup {
+    var filetype: String
+    var reference: String
+    var maphome: [String: Double]
+    var maplocations: [String: [String: Any]]
+    
+    init() {
+        var format = PropertyListSerialization.PropertyListFormat.xml
+        var plistData:[String:AnyObject] = [:]
+        let plistPath:String? = Bundle.main.path(forResource: "locations_strocamp", ofType: "plist")!
+        let plistXML = FileManager.default.contents(atPath: plistPath!)!
+        
+        do{ //convert the data to a dictionary and handle errors.
+            plistData = try PropertyListSerialization.propertyList(from: plistXML, options: .mutableContainersAndLeaves,format: &format)as! [String:AnyObject]
+            
+            self.filetype = plistData["type"] as! String
+            self.reference = plistData["reference"] as! String
+            self.maphome = plistData["maphome"] as! [String: Double]
+            self.maplocations = plistData["locations"] as! [String: [String: Any]]
+        }
+        catch{ // error condition
+            print("Error reading plist: \(error), format: \(format)")
+            // TODO we can do better than this
+            self.filetype = "error"
+            self.reference = "error"
+            self.maplocations = [String: [String: Any]]()
+            self.maphome = [String: Double]()
+        }
     }
     
-    static func loadLocations() -> [String: GameLocation] {
+    func getMapHome() -> GameLocation {
+        return GameLocation(name: "maphome", latitude: maphome["latitude"]!, longitude: maphome["longitude"]!)
+    }
+    
+    func loadLocations() -> [String: GameLocation] {
         var locations: [String: GameLocation] = [:]
         
-        locations["start"] = GameLocation(name: "start",
-                                          latitude: 52.034280, longitude: 5.151333)
+        maplocations.forEach { (kvpair) in
+            let (key, value) = kvpair
+            let location = GameLocation(name: key, latitude: value["latitude"] as! Double,
+                                        longitude: value["longitude"] as! Double, imageReference: value["name"] as! String)
+            locations[key] = location;
+        }
         
-        locations["boom"] = GameLocation(name: "boom",
-                                         latitude: 52.034017, longitude: 5.150460,
-                                         imageReference: "Boom")
-        
-        locations["houthakkershut"] =  GameLocation(name: "houthakkershut",
-                                                    latitude: 52.033655, longitude: 5.150145,
-                                                    imageReference: "Houthakkershut")
-        
-        locations["koopman"] = GameLocation(name: "koopman",
-                                            latitude: 52.032535, longitude: 5.150588,
-                                            imageReference: "Koopman")
-        
-        locations["rivier"] = GameLocation(name: "rivier",
-                                           latitude: 52.032490, longitude: 5.149937,
-                                           imageReference: "Rivier")
-        
-        locations["kloofrand"] = GameLocation(name: "kloofrand",
-                                              latitude: 52.032730, longitude: 5.149270,
-                                              imageReference: "KloofRand")
-        
-        locations["kloofbodem"] = GameLocation(name: "kloofbodem",
-                                               latitude: 52.033210, longitude: 5.149109,
-                                               imageReference: "KloofBodem")
-        
-        locations["moeras"] = GameLocation(name: "moeras",
-                                           latitude: 52.033866, longitude: 5.148644,
-                                           imageReference: "Moeras")
-        
-        locations["berg"] = GameLocation(name: "berg",
-                                         latitude: 52.033870, longitude: 5.149835,
-                                         imageReference: "Berg")
+        // FIXME
+        locations["start"]?.imageReference = nil
 
         return locations
     }
     
-    static func loadItems() -> [GameItem] {
+    func loadItems() -> [GameItem] {
         var items: [GameItem] = []
         items.append(GameItem(name: "Zakmes", imageReference: "01. Zakmes"))
         items.append(GameItem(name: "Munt", imageReference: "02. Munt"))
-        items.append(GameItem(name: "Twijg", imageReference: "03. Twijg"))
+        items.append(GameItem(name: "Tak", imageReference: "03. Twijg"))
         items.append(GameItem(name: "Touw", imageReference: "04. Touw"))
         items.append(GameItem(name: "Lemmet", imageReference: "05. Lemmet"))
         items.append(GameItem(name: "Duikbril", imageReference: "06. Duikbril"))
