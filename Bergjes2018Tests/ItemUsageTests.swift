@@ -97,8 +97,8 @@ class ItemUsageTests: XCTestCase {
 
         let result = gameManager.retrieveBackpackContents();
         XCTAssertEqual(result.count, 3, "Expected 3 items in the backpack")
-        XCTAssertTrue(result.contains(where: {$0.name == "Twijg"}))
-        XCTAssertEqual(result.first(where: {$0.name == "Twijg"})?.amount, 2)
+        XCTAssertTrue(result.contains(where: {$0.name == "Tak"}))
+        XCTAssertEqual(result.first(where: {$0.name == "Tak"})?.amount, 2)
     }
 
 }

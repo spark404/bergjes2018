@@ -42,16 +42,16 @@ class ItemCombinationTests: XCTestCase {
         super.tearDown()
     }
     
-    func testCombinationTwijgAndTouw() {
+    func testCombinationTakAndTouw() {
         let gameManager = GameManager()
         
-        gameManager.inventory.first(where: { $0.name == "Twijg"})!.amount += 1
+        gameManager.inventory.first(where: { $0.name == "Tak"})!.amount += 1
         gameManager.inventory.first(where: { $0.name == "Touw"})!.amount += 1
         gameManager.inventoryManager.updateInventory(gameItems: gameManager.inventory)
         
-        let combineResult = gameManager.attemptCombine(itemsToCombine: gameManager.inventory.filter { $0.name == "Twijg" || $0.name == "Touw" })
+        let combineResult = gameManager.attemptCombine(itemsToCombine: gameManager.inventory.filter { $0.name == "Tak" || $0.name == "Touw" })
         
-        XCTAssertNotNil(combineResult, "Twijg and Touw should be a valid combination")
+        XCTAssertNotNil(combineResult, "Tak and Touw should be a valid combination")
         
         let result = gameManager.retrieveBackpackContents();
         XCTAssertEqual(result.count, 3, "Expected 3 items in the backpack")

@@ -140,7 +140,7 @@ class GameManagerTests: XCTestCase {
         gameManager.currentLocationId = "boom";
         XCTAssertNotNil(gameManager.attemptUse(itemToUse: gameManager.inventory.first(where: {$0.name == "Zakmes"})!), "Should be possible to use Zakmes")
         XCTAssertNotNil(gameManager.attemptUse(itemToUse: gameManager.inventory.first(where: {$0.name == "Zakmes"})!), "Should be possible to use Zakmes")
-        assertInventoryContains(inventory: gameManager.inventory, itemId: "Twijg", amount: 2)
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Tak", amount: 2)
         
         // Buy Lemmet from koopman
         gameManager.addItemToInventory(itemName: "Lemmet")
@@ -148,10 +148,10 @@ class GameManagerTests: XCTestCase {
         assertInventoryContains(inventory: gameManager.inventory, itemId: "Lemmet", amount: 1)
         assertInventoryContains(inventory: gameManager.inventory, itemId: "Munt", amount: 0)
         
-        // Combine Lemmet and Twijg
-        XCTAssertNotNil(gameManager.attemptCombine(itemsToCombine: getGameItemsAsList(allItems: gameManager.inventory, ids: ["Lemmet", "Twijg"])))
+        // Combine Lemmet and Tak
+        XCTAssertNotNil(gameManager.attemptCombine(itemsToCombine: getGameItemsAsList(allItems: gameManager.inventory, ids: ["Lemmet", "Tak"])))
         assertInventoryContains(inventory: gameManager.inventory, itemId: "Lemmet", amount: 0)
-        assertInventoryContains(inventory: gameManager.inventory, itemId: "Twijg", amount: 1)
+        assertInventoryContains(inventory: gameManager.inventory, itemId: "Tak", amount: 1)
         assertInventoryContains(inventory: gameManager.inventory, itemId: "Kapmes", amount: 1)
 
         // Use Kapmes
