@@ -1,6 +1,6 @@
 language: objective-c
 os: osx
-osx_image: xcode9.3
+osx_image: xcode10.2
 
 xcode_project: Bergjes2018.xcodeproj
 xcode_scheme: Bergjes2018
