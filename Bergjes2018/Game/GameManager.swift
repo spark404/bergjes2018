@@ -32,7 +32,7 @@ class GameManager {
     var locationManager =  LocationManager()
     var actionManager = ActionManager()
     
-    let gameSetup: GameSetup = GameSetupStrocamp()
+    let gameSetup: GameSetup = GameSetupBushcamp()
     
     init() {
         readPropertyList()

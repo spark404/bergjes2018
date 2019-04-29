@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         mapView.setMinZoom(14.0, maxZoom: 18.0)
         // TODO mapView.bounds
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self,
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self,
                                          selector: #selector(updateLocationState), userInfo: nil, repeats: true)
         
     }
@@ -231,9 +231,10 @@ extension ViewController: GameManagerDelegate {
             marker.position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             marker.title = location.name
             
-            if (location.imageReference != nil) {
-                marker.icon = Utility.resizeImage(image: UIImage(named: location.imageReference!)!,
-                                          targetSize: CGSize(width: 50.0, height: 50.0))
+            if let reference = location.imageReference {
+                if let locationImage = UIImage(named: reference) {
+                    marker.icon = Utility.resizeImage(image: locationImage, targetSize: CGSize(width: 50.0, height: 50.0))
+                }
             }
             
             marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)

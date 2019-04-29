@@ -49,6 +49,8 @@
 		9AB1BF6F2095E50000B4B413 /* Bergjes2018UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB1BF6E2095E50000B4B413 /* Bergjes2018UITests.swift */; };
 		9AB1BF7D2095E60B00B4B413 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9AB1BF7C2095E60B00B4B413 /* Podfile */; };
 		9AB579892095FB570056AB6C /* RugzakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB579882095FB570056AB6C /* RugzakViewController.swift */; };
+		B823B87C215683A400E92A99 /* locations_bushcamp.plist in Resources */ = {isa = PBXBuildFile; fileRef = B823B87B215683A400E92A99 /* locations_bushcamp.plist */; };
+		B823B87E215683E200E92A99 /* GameSetupBushcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B823B87D215683E200E92A99 /* GameSetupBushcamp.swift */; };
 		C8F8647BFA213B2561BAC12B /* libPods-Bergjes2018.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81311F7421D0202F83295305 /* libPods-Bergjes2018.a */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +123,8 @@
 		9AB1BF702095E50000B4B413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AB1BF7C2095E60B00B4B413 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9AB579882095FB570056AB6C /* RugzakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RugzakViewController.swift; sourceTree = "<group>"; };
+		B823B87B215683A400E92A99 /* locations_bushcamp.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = locations_bushcamp.plist; sourceTree = "<group>"; };
+		B823B87D215683E200E92A99 /* GameSetupBushcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupBushcamp.swift; sourceTree = "<group>"; };
 		EE8165650147B17319E3CAE8 /* Pods-Bergjes2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bergjes2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bergjes2018/Pods-Bergjes2018.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +238,7 @@
 				9A3C084D209F9F5800D1B14D /* LocationManager.swift */,
 				9A3C085720A39F6100D1B14D /* ActionManager.swift */,
 				9A4526E921564332009B80CE /* GameSetup.swift */,
+				B823B87D215683E200E92A99 /* GameSetupBushcamp.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				9AB1BF5A2095E50000B4B413 /* Info.plist */,
 				9A72BBA3209DF843006F417D /* Utility.swift */,
 				9A4526EB215645AF009B80CE /* locations_strocamp.plist */,
+				B823B87B215683A400E92A99 /* locations_bushcamp.plist */,
 			);
 			path = Bergjes2018;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 				9A72BB9D209DEBEB006F417D /* Location Moeras.gpx in Resources */,
 				9A72BB9F209DEBEB006F417D /* Location Rivier.gpx in Resources */,
 				9AB1BF7D2095E60B00B4B413 /* Podfile in Resources */,
+				B823B87C215683A400E92A99 /* locations_bushcamp.plist in Resources */,
 				9A72BBA0209DEBEB006F417D /* Location Hut.gpx in Resources */,
 				9A72BB95209DCB69006F417D /* Location Kloofrand.gpx in Resources */,
 				9A72BB91209DBFE7006F417D /* Location Start.gpx in Resources */,
@@ -491,6 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B823B87E215683E200E92A99 /* GameSetupBushcamp.swift in Sources */,
 				9A72BBA8209EFEDB006F417D /* GameSetupStrocamp.swift in Sources */,
 				9A4526EA21564332009B80CE /* GameSetup.swift in Sources */,
 				9A3C085620A39DDD00D1B14D /* Action.swift in Sources */,

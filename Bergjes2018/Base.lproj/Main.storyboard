@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,9 +67,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mef-Hx-gbN">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mef-Hx-gbN">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Sluit" id="Nnz-6o-r06">
                                         <connections>
@@ -94,9 +92,8 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-G7-vyj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-G7-vyj">
                                 <rect key="frame" x="16" y="20" width="343" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rugzakCell" id="fE7-Yn-f54" customClass="RugzakTableViewCell" customModule="Bergjes2018" customModuleProvider="target">
@@ -107,7 +104,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="843-Ub-Tsw">
-                                                    <rect key="frame" x="67" y="11" width="269" height="21"/>
+                                                    <rect key="frame" x="67" y="11.5" width="269" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -137,6 +134,17 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mef-Hx-gbN" secondAttribute="trailing" id="B3G-PW-fru"/>
+                            <constraint firstItem="mef-Hx-gbN" firstAttribute="top" secondItem="TzX-G7-vyj" secondAttribute="bottom" id="Hkl-iT-ouw"/>
+                            <constraint firstItem="TzX-G7-vyj" firstAttribute="top" secondItem="Q6B-e0-zwu" secondAttribute="top" id="LpN-Gf-Q0V"/>
+                            <constraint firstItem="TzX-G7-vyj" firstAttribute="leading" secondItem="GPg-mM-9OE" secondAttribute="leadingMargin" id="Ls1-OK-YPl"/>
+                            <constraint firstItem="mef-Hx-gbN" firstAttribute="top" secondItem="TzX-G7-vyj" secondAttribute="bottom" id="OoB-OA-lpr"/>
+                            <constraint firstItem="mef-Hx-gbN" firstAttribute="bottom" secondItem="Q6B-e0-zwu" secondAttribute="bottom" id="QdH-GN-tRS"/>
+                            <constraint firstItem="mef-Hx-gbN" firstAttribute="leading" secondItem="GPg-mM-9OE" secondAttribute="leading" id="Yo3-Px-jzA"/>
+                            <constraint firstItem="mef-Hx-gbN" firstAttribute="top" secondItem="TzX-G7-vyj" secondAttribute="bottom" id="ntD-X5-rxV"/>
+                            <constraint firstItem="mef-Hx-gbN" firstAttribute="centerX" secondItem="TzX-G7-vyj" secondAttribute="centerX" id="rzY-qt-0SM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Q6B-e0-zwu"/>
                     </view>
                     <connections>
@@ -181,13 +189,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="563"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lwy-iK-QaG">
-                                                <rect key="frame" x="20" y="20" width="294" height="294"/>
+                                                <rect key="frame" x="20" y="20" width="295" height="295"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Lwy-iK-QaG" secondAttribute="height" multiplier="1:1" id="IxI-Uz-fAu"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0O-HG-bTs">
-                                                <rect key="frame" x="20" y="322" width="294" height="21"/>
+                                                <rect key="frame" x="20" y="323" width="295" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
