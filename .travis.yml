@@ -15,6 +15,6 @@ before_install:
  - mkdir temp
 
 script:
-    - set -o pipefail && xcodebuild  -scheme Bergjes2018 -sdk iphonesimulator11.3 -workspace Bergjes2018.xcworkspace  -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.3' -enableCodeCoverage YES -derivedDataPath temp CODE_SIGNING_REQUIRED=NO test | xcpretty
+    - set -o pipefail && xcodebuild  -scheme Bergjes2018 -sdk iphonesimulator12.2 -workspace Bergjes2018.xcworkspace  -destination 'platform=iOS Simulator,name=iPhone 8,OS=12.2' -enableCodeCoverage YES -derivedDataPath temp CODE_SIGNING_REQUIRED=NO test | xcpretty
     - ./xccov-to-sonarqube-generic.sh temp/Logs/Test/*.xccovarchive/ > sonarqube-generic-coverage.xml
     - sonar-scanner
