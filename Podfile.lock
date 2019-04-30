@@ -9,18 +9,12 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (3.1.0):
     - GoogleMaps/Base (= 3.1.0)
-  - MarqueeLabel/Swift (3.2.1)
-  - NotificationBannerSwift (2.1.0):
-    - MarqueeLabel/Swift (~> 3.2.1)
-    - SnapKit (~> 4.2.0)
-  - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - GoogleMaps
   - GooglePlaces
-  - NotificationBannerSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -28,19 +22,13 @@ SPEC REPOS:
     - Fabric
     - GoogleMaps
     - GooglePlaces
-    - MarqueeLabel
-    - NotificationBannerSwift
-    - SnapKit
 
 SPEC CHECKSUMS:
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
   GooglePlaces: e874db179f2675c4f3eeda0b686b540273a578b0
-  MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
-  NotificationBannerSwift: 4483919639202bec56d6bfe8f106ebc352d38bc7
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 7e9efe73240820c14f509d3458670f28058b6a6d
+PODFILE CHECKSUM: 2347b730fb65f3549409f9bc72fb4d9f64ff824d
 
 COCOAPODS: 1.6.1
